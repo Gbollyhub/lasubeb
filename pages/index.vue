@@ -80,7 +80,6 @@
             </div>
        </div> 
 <newsletter/>
-<sitefooter/>
   </div>
 </template>
 <script>
@@ -89,8 +88,7 @@ import sitefooter from '@/components/sitefooter/sitefooter.vue'
 import { mapGetters } from 'vuex'
 export default {
   components:{
-    newsletter,
-    sitefooter
+    newsletter
   },
   computed:{
     ...mapGetters([

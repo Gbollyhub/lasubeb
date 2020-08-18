@@ -13,18 +13,15 @@
     </section>
 <subebPartner/>
 <newsletter/>
-<sitefooter/>
   </div>
 </template>
 <script>
 import newsletter from '@/components/newsletter/newsletter.vue'
 import subebPartner from '@/components/subeb-partner/subeb-partner.vue'
-import sitefooter from '@/components/sitefooter/sitefooter.vue'
 export default {
   components:{
     newsletter,
-    subebPartner,
-    sitefooter
+    subebPartner
   },
   head(){
     return{
