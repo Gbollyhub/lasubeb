@@ -1,5 +1,4 @@
 <template>
-  <div>
   <div data-w-id="89adaaaa-2335-f8b3-5bc9-bf6f952a2fc5" class="page-wrapper">
         <section id="feature-section" class="feature-section">
       <h2 class="heading-2 featured"><span class="text-span">ABOUT LASUBEB</span> &amp; STATUTORY ROLES</h2>
@@ -14,16 +13,18 @@
     </section>
 <subebPartner/>
 <newsletter/>
-  </div>
+<sitefooter/>
   </div>
 </template>
 <script>
 import newsletter from '@/components/newsletter/newsletter.vue'
 import subebPartner from '@/components/subeb-partner/subeb-partner.vue'
+import sitefooter from '@/components/sitefooter/sitefooter.vue'
 export default {
   components:{
     newsletter,
-    subebPartner
+    subebPartner,
+    sitefooter
   },
   head(){
     return{

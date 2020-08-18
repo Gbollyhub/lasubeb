@@ -32,10 +32,9 @@ export default {
 
 <style>
 .lasubeb-body{
-    font-family: Ubuntu, Helvetica, sans-serif;
-  font-size: 0.9em;
-  line-height: 1.1em;
-  font-weight: 400;
+  font-family: Ubuntu, Helvetica, sans-serif;
+  font-size: 15px;
+  line-height: 1.4em;
 }
 </style>
 

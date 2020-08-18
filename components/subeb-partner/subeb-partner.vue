@@ -1,5 +1,4 @@
 <template>
-    <div>
             <section id="call-to-action" class="call-to-action-partnership">
       <div class="centered-container w-container">
         <div class="partnership-div-block">
@@ -10,5 +9,4 @@
         </div>
       </div>
     </section>
-    </div>
 </template>

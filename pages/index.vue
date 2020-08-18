@@ -1,5 +1,4 @@
 <template>
-  <div>
   <div data-w-id="661b91c8-2114-6795-2e17-1bba3da77fd7" class="page-wrapper">
   <section id="feature-section" class="feature-section">
       <h2 class="heading-2 featured"><span class="text-span">Message</span> from LASUBEB chairman</h2>
@@ -8,7 +7,8 @@
           <div class="home-message-img-mask"><img src="../assets/images/lasubeb_wahab_alawiye-king.jpg" alt="Hon. Dr. Alawiye-King, Executive Chairman, LASUBEB" srcset="../assets/images/lasubeb_wahab_alawiye-king-p-500.jpeg 500w, images/lasubeb_wahab_alawiye-king.jpg 767w" sizes="(max-width: 479px) 41vw, (max-width: 767px) 44vw, (max-width: 991px) 41vw, 248.0113525390625px" class="home-feature-img"></div>
         </div>
         <div class="message-div-block mesage-content">
-          <p class="home-p w-clearfix">In 2019, Lagos State Governor Babajide Sanwo-Olu initiated the EKO EXCEL (Excellence in Child Education and Learning) initiative, an “educational transformation programme … to reposition basic education in Lagos State to enhance teacher effectiveness through leveraging technology…” EKOEXCEL is already having a noticeable impact on the quality of classroom instruction, judging by the enthusiasm of the teachers and head teachers who have experienced its technology-integrated learning platform and practical professional development!<br><br>Now, to ensure that EKO EXCEL lives upto its promise, the Lagos State Universal Basic Education Board (LASUBEB) must institutionalise the conditions and support structures that would facilitate full-scale implementation and long-term sustainability.<br><br>This Strategic Plan outlines how LASUBEB will step up to that responsibility. The plan was developed during a 3-day retreat of 50 participants, including SUBEB board members, SUBEB directors and heads of unit, LGEA education secretaries, and union leaders. The retreat was designed and facilitated by Performance Fact, led by Mr. Mutiu O. Fagbayi (President/CEO).<br><br>Now that we have a results-focused strategic plan, the next step is disciplined implementation; that is how we will turn our good intentions into positive outcomes for our learners. LASUBEB is totally committed to following through on this plan, to ensure full realisation of Governor Sanwo-Olu’s EKOEXCEL initiative and to <strong>LEAVE NO CHILD BEHIND! </strong>I invite you to join us.<br><br>‍<br><strong>Hon. Dr. Alawiye-King | Executive Chairman, Lagos Universal Basic Education Board </strong><a href="lasubeb-board.html" class="inline-link-reverse message"><strong data-title="learn more" class="bold-text-2"></strong></a></p>
+          <p class="home-p w-clearfix">In 2019, Lagos State Governor Babajide Sanwo-Olu initiated the EKO EXCEL (Excellence in Child Education and Learning) initiative, an “educational transformation programme … to reposition basic education in Lagos State to enhance teacher effectiveness through leveraging technology…” EKOEXCEL is already having a noticeable impact on the quality of classroom instruction, judging by the enthusiasm of the teachers and head teachers who have experienced its technology-integrated learning platform and practical professional development!<br><br>Now, to ensure that EKO EXCEL lives upto its promise, the Lagos State Universal Basic Education Board (LASUBEB) must institutionalise the conditions and support structures that would facilitate full-scale implementation and long-term sustainability.<br><br>This Strategic Plan outlines how LASUBEB will step up to that responsibility. The plan was developed during a 3-day retreat of 50 participants, including SUBEB board members, SUBEB directors and heads of unit, LGEA education secretaries, and union leaders. The retreat was designed and facilitated by Performance Fact, led by Mr. Mutiu O. Fagbayi (President/CEO).<br><br>Now that we have a results-focused strategic plan, the next step is disciplined implementation; that is how we will turn our good intentions into positive outcomes for our learners. LASUBEB is totally committed to following through on this plan, to ensure full realisation of Governor Sanwo-Olu’s EKOEXCEL initiative and to <strong>LEAVE NO CHILD BEHIND! </strong>I invite you to join us.<br><br>‍<br><strong>Hon. Dr. Alawiye-King | Executive Chairman, Lagos Universal Basic Education Board </strong>
+          <a href="/lasubeb-board" class="inline-link-reverse message"><strong data-title="learn more" class="bold-text-2"></strong></a></p>
         </div>
       </div>
     </section>
@@ -78,18 +78,24 @@
  </div>
         </div>
             </div>
-       </div>
-      
+       </div> 
 <newsletter/>
-  </div>
+<sitefooter/>
   </div>
 </template>
 <script>
 import newsletter from '@/components/newsletter/newsletter.vue'
+import sitefooter from '@/components/sitefooter/sitefooter.vue'
+import { mapGetters } from 'vuex'
 export default {
   components:{
     newsletter,
-
+    sitefooter
+  },
+  computed:{
+    ...mapGetters([
+      'getImageSlider'
+    ])
   },
   head(){
     return{

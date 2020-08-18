@@ -1,5 +1,4 @@
 <template>
-    <div>
        <div class="footer">
       <div class="footnote-col w-row">
         <div class="w-col w-col-3 w-col-stack">
@@ -14,6 +13,5 @@
           <div class="footer-block-text">2 Ikorodu Rd, Mende, Lagos State<br>Phone :  <a href="tel:+234010101111" class="inline-link-reverse">+234 010 101 111<br></a></div>
         </div>
       </div>
-    </div>
     </div>
 </template>

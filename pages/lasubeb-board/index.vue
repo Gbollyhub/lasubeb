@@ -1,81 +1,46 @@
 <template>
-  <div>
   <div data-w-id="89adaaaa-2335-f8b3-5bc9-bf6f952a2fc5" class="page-wrapper">
     <section id="feature-section" class="feature-section">
       <div class="board-intro-container w-container">
         <h2 class="heading-2 featured"><span class="text-span">THE BOARD</span> COMPOSITION</h2>
         <p class="board-composiiton-p">The Board under the Chairmanship of Hon. Wahab Alawiye-King was appointed by the Lagos State Governor, His Excellency, Mr. Babajide Olushola Sanwo-Olu on 11th September, 2019</p>
       </div>
-      <div class="board-container-list w-container">
-        <div class="board-member-div-block">
-          <div class="board-img-mask"><img src="../../assets/images/lasubeb_wahab_alawiye-king.jpg" alt="Hon. Wahab Alawiye-King, Executive Chairman LASUBEB" width="338" srcset="../../assets/images/lasubeb_wahab_alawiye-king-p-500.jpeg 500w, ../../assets/images/lasubeb_wahab_alawiye-king.jpg 767w" sizes="(max-width: 479px) 250px, (max-width: 767px) 400px, (max-width: 991px) 71vw, 21vw" class="board-img"></div>
-          <h4 class="boardname-h4">Hon. Wahab Alawiye-King</h4>
-          <div class="board-position">Executive Chairman</div>
-          <p class="board-paragraph w-clearfix">Hon. Wahab Olawale Alawiye-King hails from Lagos Island, Lagos State. He was appointed the Executive Chairman, Lagos State Universal Basic Education Board (LASUBEB) in September, 2019.<br>‍<br>He obtained a Bachelor’s degree in Finance from Brooklyn College... <a href="lasubeb-board-member-detail-page.html" class="inline-link-board"></a></p>
-        </div>
-        <div class="board-member-div-block">
-          <div class="board-img-mask"><img src="../../assets/images/lasubeb_saheed_ibikunle_1.jpg" alt="Dr. Saheed Ibikunle, Permanent Board member LASUBEB" class="board-img others"></div>
-          <h4 class="boardname-h4">Dr. Saheed O. Ibikunle</h4>
-          <div class="board-position">Permanent Board Member</div>
-          <p class="board-paragraph">Dr. Saheed Oladapo Ibikunle is an erudite scholar and seasoned educational administrator with over 30 years of experience.<br>‍<br>A 1992 graduate of Physics from the prestigious University of Lagos. Saheed O. Ibikunle had his PGD &amp; M.Sc in Computer Science, M.Ed in Educational Administration &amp; Planning and Ph.D in Education Management all from the University of Lagos...<a href="#" class="inline-link-board"></a></p>
-        </div>
-        <div class="board-member-div-block">
-          <div class="board-img-mask"><img src="../../assets/images/lasubeb_hakeem_shittu_1.jpg" alt="Hon. Wahab Alawiye-King, Executive Chairman LASUBEB" class="board-img others"></div>
-          <h4 class="boardname-h4">DR. HAKEEM SHITTU</h4>
-          <div class="board-position">Permanent Board Member</div>
-          <p class="board-paragraph">Dr. Shittu...<a href="#" class="inline-link-board"></a></p>
-        </div>
-      </div>
-      <div class="board-container-list w-container">
-        <div class="board-member-div-block">
-          <div class="board-img-mask"><img src="../../assets/images/lasubeb_shijuade_idowu.jpg" alt="Dr. Saheed Ibikunle, Permanent Board member LASUBEB" srcset="../../assets/images/lasubeb_shijuade_idowu-p-500.jpeg 500w, ../../assets/images/lasubeb_shijuade_idowu.jpg 800w" sizes="(max-width: 479px) 250px, (max-width: 767px) 400px, (max-width: 991px) 71vw, 21vw" class="board-img others"></div>
-          <h4 class="boardname-h4">MRS. SHIJUADE IDOWU-TIAMIYU</h4>
-          <div class="board-position">Permanent Board Member</div>
-          <p class="board-paragraph">Shijuade Idowu-Tiamiyu holds a Bachelor degree in English Education from the University of Lagos where she was awarded the best graduating student, faculty of Arts and Social Sciences Education.<br>‍<br>She also holds a Masters in Sustainable Development, International Policies and Management from the School for International Training Washington DC and a certificate in Teaching English to Speakers of Other Languages from Hampshire College Boston Massachusetts...<a href="#" class="inline-link-board"></a></p>
-        </div>
-        <div class="board-member-div-block">
-          <div class="board-img-mask"><img src="../../assets/images/lasubeb_dayo_israel_1.jpg" alt="Dr. Saheed Ibikunle, Permanent Board member LASUBEB" srcset="../../assets/images/lasubeb_dayo_israel_1-p-500.jpeg 500w, ../../assets/images/lasubeb_dayo_israel_1.jpg 800w" sizes="(max-width: 479px) 250px, (max-width: 767px) 400px, (max-width: 991px) 71vw, 21vw" class="board-img others"></div>
-          <h4 class="boardname-h4">DAYO ISRAEL</h4>
-          <div class="board-position">Permanent Board Member</div>
-          <p class="board-paragraph">Dayo Israel was named one of the 100 Most Influential People of African Descent (under 40) as part of the 2017 celebration of the UN Decade for people of Africa Descent at the One UN Plaza in New York. A Henley Business School Young Leader, Dayo has twice been named in 2016 and 2017 as one of 50 UK’s brightest young leaders. He was recognised as one of the top 25 Promising Nigerian Youths under 35 To Serve Nigeria in 2016 and as one of Africa’s top 30 most inspirational young people of 2013...<a href="#" class="inline-link-board"></a></p>
-        </div>
-        <div class="board-member-div-block">
-          <div class="board-img-mask"><img src="../../assets/images/lasubeb_adebayo_adefuye_1.jpg" alt="Hon. Wahab Alawiye-King, Executive Chairman LASUBEB" srcset="../../assets/images/lasubeb_adebayo_adefuye_1-p-500.jpeg 500w, ../../assets/images/lasubeb_adebayo_adefuye_1.jpg 800w" sizes="(max-width: 479px) 250px, (max-width: 767px) 400px, (max-width: 991px) 71vw, 21vw" class="board-img others"></div>
-          <h4 class="boardname-h4">HON. ADEBAYO ADEFUYE</h4>
-          <div class="board-position">Permanent Board Member</div>
-          <p class="board-paragraph">Hon Adebayo Adefuye is a Permanent Board Member of LASUBEB in charge of special projects which include EKOEXCEL and HOME GROWN SCHOOL FEEDING. He is an astute  Politician and  business man with a degree in Estate Management ,a fellow of the Chartered Institute of Local Government and public Administration and also a Fellow of the Chartered Institute of Environmental and public Health management in Nigeria.He is also a Fellow of the Institute of Corporate Administration...<a href="#" class="inline-link-board"></a></p>
-        </div>
-      </div>
-      <div class="board-container-list w-container">
-        <div class="board-member-div-block">
-          <div class="board-img-mask"><img src="../../assets/images/lasubeb_adedoyin_sanusi_1.jpg" alt="Dr. Saheed Ibikunle, Permanent Board member LASUBEB" srcset="../../assets/images/lasubeb_adedoyin_sanusi_1-p-500.jpeg 500w, ../../assets/images/lasubeb_adedoyin_sanusi_1.jpg 800w" sizes="(max-width: 479px) 250px, (max-width: 767px) 400px, (max-width: 991px) 71vw, 249.328125px" class="board-img others"></div>
-          <h4 class="boardname-h4">MRS. ADEDOYIN SETIFAT ABIODUN <br>NEE SANUSI</h4>
-          <div class="board-position">Permanent Board Member</div>
-          <p class="board-paragraph">Adedoyin is a seasoned professional with an exceedingly rich experience in the corporate world, private business, social work and politics. She is also experienced in Telecommunications, Food processing, Bakery, Cosmetics, &amp; Garments/Footwear.<br><br>Being a consummate businesswoman, Adedoyin over the years have had cause to transact business across various countries in Europe, Asia as well as the United States of America imparting the lives of many young people...<a href="#" class="inline-link-board"></a><br><br>‍</p>
-        </div>
-        <div class="board-member-div-block">
-          <div class="board-img-mask"><img src="../../assets/images/lasubeb_pic_holder_1.jpg" alt="Dr. Saheed Ibikunle, Permanent Board member LASUBEB" srcset="../../assets/images/lasubeb_pic_holder_1-p-500.jpeg 500w, ../../assets/images/lasubeb_pic_holder_1.jpg 800w" sizes="(max-width: 479px) 250px, (max-width: 767px) 400px, (max-width: 991px) 71vw, 249.328125px" class="board-img others"></div>
-          <h4 class="boardname-h4">MRS. FOLUSHO AJIMOTI</h4>
-          <div class="board-position">Board Secretary</div>
-          <p class="board-paragraph">Mrs. Folusho Ajimoti ...<a href="#" class="inline-link-board"></a><br></p>
-        </div>
-      </div>
+      <div class="lasubeb-row">
+  <div v-for="member in getBoardMembers" :key="member.id" class="lasubeb-col">
+    <div class="lasubeb-col-div">
+<a style="text-decoration:none" :href="`/lasubeb-board/${member.id}`"> 
+    <div class="board-img-mask"><img :src="getAdminUrl + member.MemberImage.url" :alt="member.MemberName" width="338"  class="board-img admin-img"></div>
+  <h4 class="boardname-h4">{{member.MemberName}}</h4></a>  
+          <div class="board-position">{{member.Position}}</div>
+          <p class="block-with-text board-paragraph w-clearfix">{{ member.Biography}}<a href="lasubeb-board-member-detail-page.html" class="inline-link-board"></a></p>
+    </div>
+    
+  </div>
+</div>
+
     </section>
 <subebPartner/>
 <dataSection/>
 <newsletter/>
-  </div>
   </div>
 </template>
 <script>
 import newsletter from '@/components/newsletter/newsletter.vue'
 import subebPartner from '@/components/subeb-partner/subeb-partner.vue'
 import dataSection from '@/components/data-section/data-section.vue'
+import { mapGetters } from 'vuex'
+import marked from 'marked'
 export default {
   components:{
     newsletter,
     subebPartner,
     dataSection
+  },
+  computed:{
+   ...mapGetters([
+      'getAdminUrl',
+     'getBoardMembers'
+   ])
   },
   head(){
     return{
@@ -90,4 +55,75 @@ export default {
 }
 </script>
 
-      
+  <style scoped>
+  .admin-img{
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
+  }
+  .admin-img:hover{
+      -webkit-filter: none; /* Safari 6.0 - 9.0 */
+  filter: none;
+  }
+  .lasubeb-row{
+max-width: 100%;
+    margin: 0 auto;
+    height: 100vh;
+  }
+
+  .lasubeb-row::after {
+      content: "";
+    display: table;
+    clear: both;  
+    } 
+  .lasubeb-col{
+    float: left;
+  width: 33.33%;
+  padding: 10px;
+  height: auto;
+  margin-bottom: 30px;
+  text-align: center;
+  }
+    .lasubeb-col-div{
+display: block;
+  }
+
+/* styles for '...' */ 
+.block-with-text {
+  /* hide text if it more than N lines  */
+  overflow: hidden;
+  /* for set '...' in absolute position */
+  position: relative; 
+  /* use this value to count block height */
+  line-height: 1.2em;
+  /* max-height = line-height (1.2) * lines max number (3) */
+  max-height: 3.6em; 
+  /* fix problem when last visible word doesn't adjoin right side  */
+  text-align: justify;
+  
+  /* */
+  margin-right: -1em;
+  padding-right: 1em;
+}
+.block-with-text:before {
+  /* points in the end */
+  content: '...';
+  /* absolute position */
+  position: absolute;
+  /* set position to right bottom corner of block */
+  right: 0;
+  bottom: 0;
+}
+.block-with-text:after {
+  /* points in the end */
+  content: '';
+  /* absolute position */
+  position: absolute;
+  /* set position to right bottom corner of text */
+  right: 0;
+  width: 1em;
+  /* set width and height */
+  height: 1em;
+  margin-top: 0.2em;
+  background: white;
+}
+  </style>

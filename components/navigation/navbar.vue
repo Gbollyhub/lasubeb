@@ -1,5 +1,4 @@
 <template>
-    <div>
        <div data-collapse="medium" data-animation="default" data-duration="400" data-w-id="13ae2dcf-7665-0d99-ad9f-e35f748912f7" role="banner" class="navbar w-nav">
     <div class="container w-container"><a href="/" aria-current="page" class="logo-brand w-clearfix w-nav-brand w--current"><img src="@/assets/images/lasubeb_logo_only.png" width="86" alt="LAGOS STATE UNIVERSAL BASIC EDUCATION BOARD" class="brand-logo"><div class="brandname">LAGOS STATE UNIVERSAL<br>BASIC EDUCATION BOARD</div></a>
       <nav role="navigation" class="nav-menu w-nav-menu">
@@ -50,5 +49,4 @@
       </div>
     </div>
   </div>   
-    </div>
 </template>
