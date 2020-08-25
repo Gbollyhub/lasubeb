@@ -7,14 +7,14 @@
             <div class="w-icon-dropdown-toggle"></div>
             <div>ABOUT LASUBEB</div>
           </div>
-          <nav class="navlink-dropdown-list-container w-dropdown-list"><a href="about-lasubeb-and-statutory-roles" class="navlink dropdown w-dropdown-link">LASUBEB STATUTORY ROLES</a><a href="lasubeb-vision-mission-values" class="navlink dropdown w-dropdown-link">VISION, MISSION</a><a href="lasubeb-goals-and-measure-of-success" class="navlink dropdown w-dropdown-link">MEASUREs OF LEARNER&#x27;S SUCCESS</a><a href="lasubeb-pillars" class="navlink dropdown w-dropdown-link">OUR PILLARS </a><a href="lasubeb-department-statutory-units-key-functions" class="navlink dropdown w-dropdown-link">DEPARTMENTS/STATUTORY UNITS</a><a href="lasubeb-lg-education-authority" class="navlink dropdown w-dropdown-link">LOCAL GOVERNMENT EDUCATION AUTHORITY (LGEA)</a></nav>
+          <nav class="navlink-dropdown-list-container w-dropdown-list"><a href="/about-lasubeb-and-statutory-roles" class="navlink dropdown w-dropdown-link">LASUBEB STATUTORY ROLES</a><a href="lasubeb-vision-mission-values" class="navlink dropdown w-dropdown-link">VISION, MISSION</a><a href="/lasubeb-goals-and-measure-of-success" class="navlink dropdown w-dropdown-link">MEASUREs OF LEARNER&#x27;S SUCCESS</a><a href="/lasubeb-pillars" class="navlink dropdown w-dropdown-link">OUR PILLARS </a><a href="/lasubeb-department-statutory-units-key-functions" class="navlink dropdown w-dropdown-link">DEPARTMENTS/STATUTORY UNITS</a><a href="/lasubeb-lg-education-authority" class="navlink dropdown w-dropdown-link">LOCAL GOVERNMENT EDUCATION AUTHORITY (LGEA)</a></nav>
         </div>
         <div data-hover="" data-delay="0" class="navlink w-dropdown">
           <div class="navlink dropdown-toggle w-dropdown-toggle">
             <div class="w-icon-dropdown-toggle"></div>
             <div>THE BOARD</div>
           </div>
-          <nav class="navlink-dropdown-list-container w-dropdown-list"><a href="lasubeb-board" class="navlink dropdown w-dropdown-link">COMPOSITION</a><a href="lasubeb-strategic-priorities" class="navlink dropdown w-dropdown-link">STRATEGIC PRIORITIES</a></nav>
+          <nav class="navlink-dropdown-list-container w-dropdown-list"><a href="/lasubeb-board" class="navlink dropdown w-dropdown-link">COMPOSITION</a><a href="/lasubeb-strategic-priorities" class="navlink dropdown w-dropdown-link">STRATEGIC PRIORITIES</a></nav>
         </div>
         <div data-hover="" data-delay="0" class="navlink w-dropdown">
           <div class="navlink dropdown-toggle w-dropdown-toggle">
@@ -42,8 +42,8 @@
             <div class="w-icon-dropdown-toggle"></div>
             <div>NEWS</div>
           </div>
-          <nav class="navlink-dropdown-list-container w-dropdown-list"><a href="lasubeb-board" class="navlink dropdown w-dropdown-link">NEWS</a><a href="lasubeb-strategic-priorities" class="navlink dropdown w-dropdown-link">GALLERY</a></nav>
-        </div><a href="#" class="navlink w-nav-link">contact</a></nav>
+          <nav class="navlink-dropdown-list-container w-dropdown-list"><a href="/lasubeb-news" class="navlink dropdown w-dropdown-link">NEWS</a><a href="lasubeb-strategic-priorities" class="navlink dropdown w-dropdown-link">GALLERY</a></nav>
+        </div><a href="/contact-us" class="navlink w-nav-link" style="font-size:12.15px">contact</a></nav>
       <div class="menubtn w-nav-button">
         <div class="w-icon-nav-menu"></div>
       </div>

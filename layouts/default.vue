@@ -2,8 +2,8 @@
   <div class="lasubeb-body">
     <navbar/>
     <banner/>
-    <Nuxt />
-<sitefooter/>
+    <Nuxt/>
+    <sitefooter/>
   </div>
 </template>
 

@@ -1,5 +1,4 @@
 <template>
-  <div>
   <div data-w-id="128243f3-7cbd-ad35-e990-3c0d89260f56" class="page-wrapper">
     <section id="feature-section" class="feature-section">
       <h2 class="heading-2 featured"><span class="text-span">DEPARTMENTS &amp; STATUTORY UNITS</span> &amp; KEY FUNCTIONS </h2>
@@ -568,7 +567,6 @@
 <dataSection/>
 <newsletter/>
   </div>
-  </div>
 </template>
 <script>
 import newsletter from '@/components/newsletter/newsletter.vue'
@@ -582,6 +580,10 @@ export default {
   },
   head(){
     return{
+        htmlAttrs: {
+        'data-wf-page': "5f1417f9ca411a056f4b8311",
+        'data-wf-site': "5eff351b1692982c192ff95b"
+              },
           title: 'LASUBEB Department Statutory units Key functions',
           meta: [
       { hid: 'description', name: 'description', content: 'LASUBEB Department &amp; Statutory units &amp; Key functions' },

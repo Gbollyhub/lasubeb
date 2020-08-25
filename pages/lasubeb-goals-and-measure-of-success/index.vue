@@ -1,5 +1,4 @@
 <template>
-  <div>
  <div data-w-id="50683659-4b5e-f6f1-6789-51e146ebb6f4" class="page-wrapper">
     <section id="feature-section" class="feature-section">
       <h2 class="heading-2 featured"><span class="text-span">Goals and Measures</span> of Learner Success</h2>
@@ -60,7 +59,6 @@
 <subebPartner/>
 <newsletter/>
   </div>
-  </div>
 </template>
 <script>
 import newsletter from '@/components/newsletter/newsletter.vue'
@@ -74,6 +72,10 @@ export default {
   },
   head(){
     return{
+        htmlAttrs: {
+        'data-wf-page': "5f1417f9ca411a300f4b830d",
+        'data-wf-site': "5eff351b1692982c192ff95b"
+              },
           title: 'LASUBEB Goals and Measure of Success',
           meta: [
       { hid: 'description', name: 'description', content: 'Our five aspirational goals are the equitable outcomes that we desire for all learners, without exception. The goals reaffirm our commitment to social-emotional development, continuous academic growth, and readiness for success at the next level for every learner, irrespective of their background and circumstance.' },

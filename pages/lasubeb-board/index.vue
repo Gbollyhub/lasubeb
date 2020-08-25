@@ -1,23 +1,21 @@
 <template>
-  <div data-w-id="89adaaaa-2335-f8b3-5bc9-bf6f952a2fc5" class="page-wrapper">
+  <div data-w-id="937d40df-8ce4-010b-69f5-b421e2944efd" class="page-wrapper">
     <section id="feature-section" class="feature-section">
       <div class="board-intro-container w-container">
         <h2 class="heading-2 featured"><span class="text-span">THE BOARD</span> COMPOSITION</h2>
         <p class="board-composiiton-p">The Board under the Chairmanship of Hon. Wahab Alawiye-King was appointed by the Lagos State Governor, His Excellency, Mr. Babajide Olushola Sanwo-Olu on 11th September, 2019</p>
       </div>
-      <div class="lasubeb-row">
-  <div v-for="member in getBoardMembers" :key="member.id" class="lasubeb-col">
-    <div class="lasubeb-col-div">
-<a style="text-decoration:none" :href="`/lasubeb-board/${member.id}`"> 
-    <div class="board-img-mask"><img :src="getAdminUrl + member.MemberImage.url" :alt="member.MemberName" width="338"  class="board-img admin-img"></div>
-  <h4 class="boardname-h4">{{member.MemberName}}</h4></a>  
+      <div class="board-container-list w-container">
+        <div v-for="member in getBoardMembers" :key="member.id" class="board-member-div-block">
+          <div class="board-img-mask"><img :src="getAdminUrl + member.MemberImage.url" :alt="member.MemberName"  width="338" class="board-img"></div>
+          <h4 class="boardname-h4">{{member.MemberName}}</h4>
           <div class="board-position">{{member.Position}}</div>
-          <p class="block-with-text board-paragraph w-clearfix">{{ member.Biography}}<a href="lasubeb-board-member-detail-page.html" class="inline-link-board"></a></p>
-    </div>
-    
-  </div>
-</div>
-
+          <p class="board-paragraph block-with-text w-clearfix">{{ member.Biography}} </p>
+           <p style="margin-top:-22px;" class="board-paragraph w-clearfix">
+       <a @click="addIdToStore(member.id)" :href="`/lasubeb-board/${member.MemberName}/${member.id}`" class="inline-link-board"></a>      
+             </p> 
+        </div>
+      </div>
     </section>
 <subebPartner/>
 <dataSection/>
@@ -42,8 +40,17 @@ export default {
      'getBoardMembers'
    ])
   },
+  methods:{
+   addIdToStore(id){
+     this.$store.commit('setMemberId',id)
+   }
+  },
   head(){
     return{
+       htmlAttrs: {
+        'data-wf-page': "5f1417f9ca411ab1744b8310",
+        'data-wf-site': "5eff351b1692982c192ff95b"
+              },
           title: 'LASUBEB BOARD',
           meta: [
       { hid: 'description', name: 'description', content: 'The Board under the Chairmanship of Hon. Wahab Alawiye-King was appointed by the Lagos State Governor, His Excellency, Mr. Babajide Olushola Sanwo-Olu on 11th September, 2019' },

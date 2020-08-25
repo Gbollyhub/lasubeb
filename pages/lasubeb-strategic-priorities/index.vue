@@ -40,6 +40,10 @@ export default {
   },
   head(){
     return{
+        htmlAttrs: {
+        'data-wf-page': "5f1417f9ca411a85064b830f",
+        'data-wf-site': "5eff351b1692982c192ff95b"
+              },
           title: 'LASUBEB Strategic Priorities',
           meta: [
       { hid: 'description', name: 'description', content: 'The Strategic Priorities represent specific initiatives which, when fully implemented, will facilitate successful implementation of EKO EXCEL, Lagos State’s flagship educational programme initiated by Governor Babajide SanwoOlu.' },

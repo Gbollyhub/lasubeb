@@ -25,6 +25,10 @@ export default {
   },
   head(){
     return{
+             htmlAttrs: {
+        'data-wf-page': "5f1417f9ca411a71cb4b830c",
+        'data-wf-site': "5eff351b1692982c192ff95b"
+              },
           title: 'ABOUT LASUBEB  AND STATUTORY ROLES',
           meta: [
       { hid: 'description', name: 'description', content: 'The Lagos State Universal Basic Education is an agency under Lagos state  Ministry of Education step up according to Law to co-ordinate, manage, implement the Universal Basic Education program of the Lagos State in conjunction with the Federal Government of Nigeria.' },

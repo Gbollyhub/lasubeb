@@ -51,6 +51,10 @@ export default {
   },
   head(){
     return{
+        htmlAttrs: {
+        'data-wf-page': "5f1417f9ca411a2a334b830e",
+        'data-wf-site': "5eff351b1692982c192ff95b"
+              },
           title: 'LASUBEB Pillars',
           meta: [
       { hid: 'description', name: 'description', content: 'The Four Pillars are the building blocks for purposeful action. They define the capabilities and competencies that we must develop to achieve the outcomes for our learners.' },

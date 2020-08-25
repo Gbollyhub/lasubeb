@@ -1,5 +1,5 @@
 <template>
-  <div data-w-id="661b91c8-2114-6795-2e17-1bba3da77fd7" class="page-wrapper">
+<div data-w-id="661b91c8-2114-6795-2e17-1bba3da77fd7" class="page-wrapper">
   <section id="feature-section" class="feature-section">
       <h2 class="heading-2 featured"><span class="text-span">Message</span> from LASUBEB chairman</h2>
       <div class="message-container w-container">
@@ -48,39 +48,31 @@
         </div>
       </div>
     </div>
+
        <div class="featured-news-section">
       <h1 class="heading featured-news">LSUBEB <span class="text-span">NEWS &amp; BLOG</span></h1>
             <div class="wrapper">
         <div class="news-wrap w-clearfix">
-<div class="owl-carousel">
-  <div>
-     <a href="#" class="news-list w-inline-block">
-              <div class="featured-headin">LASUBEB trains ECCDE teachers to improve learning outcomes</div>
-              <div class="featured-date-block">12th June, 2020</div><img src="../assets/images/news_img.jpg" alt="" class="news-featured-img">
-              <p class="paragraph">The Lagos State Universal Basic Board Executive Chairman, Dr. Ganiyu Oluremi Sopeyin led other Stakeholders in the Basic Education to review the Y2015.</p>
+<div class="home-news-list owl-carousel">
+  <div v-for="news in getNews" :key="news.id">
+     <a :data-title="news.NewsTitle" :href="`/lasubeb-news/${news.NewsTitle}/${news.id}`" class="news-list w-inline-block">
+              <div class="featured-headin">{{news.NewsTitle}}</div>
+              <div class="featured-date-block">{{news.created_at}}</div>
+              <div v-for="image in news.NewsImages.slice(0,1)" :key="image.id">
+                   <img :src="getAdminUrl + image.url" :alt="news.NewsTitle" class="news-featured-img">
+              </div>
+                 <p class="paragraph block-with-text">
+              {{ news.NewsDescription }}
+            </p>
             </a>
     </div>
-  <div>  
-     <a href="#" class="news-list w-inline-block">
-              <div class="featured-headin">Lagos delegates understudy Edo State Education sector transformation</div>
-              <div class="featured-date-block">12th June, 2020</div><img src="../assets/images/news_img.jpg" alt="" class="news-featured-img">
-              <p class="paragraph">The Lagos State Universal Basic Board Executive Chairman, Dr. Ganiyu Oluremi Sopeyin led other Stakeholders in the Basic Education to review the Y2015.</p>
-            </a> 
-  </div>
-  <div>
-     <a href="#" class="news-list w-inline-block">
-              <div class="featured-headin">Ondo State understudies procurement process of LASUBEB</div>
-              <div class="featured-date-block">12th June, 2020</div><img src="../assets/images/news_img.jpg" alt="" class="news-featured-img">
-              <p class="paragraph">The Lagos State Universal Basic Board Executive Chairman, Dr. Ganiyu Oluremi Sopeyin led other Stakeholders in the Basic Education to review the Y2015.</p>
-            </a>
-  </div>
-
- </div>
         </div>
             </div>
        </div> 
+       </div>
+  
 <newsletter/>
-  </div>
+</div>
 </template>
 <script>
 import newsletter from '@/components/newsletter/newsletter.vue'
@@ -90,13 +82,25 @@ export default {
   components:{
     newsletter
   },
+    data(){
+    return{
+      img: "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg",
+      gradient: 'linear-gradient(180deg, hsla(0, 0%, 100%, 0) 60%, rgba(0, 45, 97, 0.88) 86%),'
+    }
+  },
   computed:{
     ...mapGetters([
-      'getImageSlider'
+       'getImageSlider',
+      'getAdminUrl',
+       'getNews'
     ])
   },
   head(){
     return{
+       htmlAttrs: {
+        'data-wf-page': "5f1417f9ca411a586c4b8305",
+        'data-wf-site': "5eff351b1692982c192ff95b"
+              },
           title: 'LASUBEB:: LAGOS STATE UNIVERSAL BASIC EDUCATION BOARD',
           meta: [
       { hid: 'description', name: 'description', content: 'The Lagos State Universal Basic Education is an agency under Lagos state Ministry of Education setup according to Law to co-ordinate, manage, implement the Universal Basic Education program of the Lagos State in conjunction with the Federal Government of Nigeria.' }
@@ -105,5 +109,47 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+/* styles for '...' */ 
+.block-with-text {
+  /* hide text if it more than N lines  */
+  overflow: hidden;
+  /* for set '...' in absolute position */
+  position: relative; 
+  /* use this value to count block height */
+  line-height: 1.2em;
+  /* max-height = line-height (1.2) * lines max number (3) */
+  max-height: 3.6em; 
+  /* fix problem when last visible word doesn't adjoin right side  */
+  text-align: justify;
+  
+  /* */
+  margin-right: -1em;
+  padding-right: 1em;
+}
+.block-with-text:before {
+  /* points in the end */
+  content: '...';
+  /* absolute position */
+  position: absolute;
+  /* set position to right bottom corner of block */
+  right: 0;
+  bottom: 0;
+}
+.block-with-text:after {
+  /* points in the end */
+  content: '';
+  /* absolute position */
+  position: absolute;
+  /* set position to right bottom corner of text */
+  right: 0;
+  width: 1em;
+  /* set width and height */
+  height: 1em;
+  margin-top: 0.2em;
+  background: white;
+}
+</style>
 
       

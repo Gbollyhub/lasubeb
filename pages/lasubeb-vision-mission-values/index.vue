@@ -1,5 +1,4 @@
 <template>
-  <div>
 <div data-w-id="92f17798-653a-6297-2bb4-1f15d6f24763" class="page-wrapper">
     <section id="feature-section" class="feature-section">
       <h2 class="heading-2 featured">EKO EXCEL - THE FOCAL POINT OF EDUCATIONAL TRANSFORMATION IN LAGOS STATE</h2>
@@ -40,7 +39,6 @@
     </section>
 <newsletter/>
 </div>
-  </div>
 </template>
 <script>
 import newsletter from '@/components/newsletter/newsletter.vue'
@@ -54,6 +52,10 @@ export default {
   },
   head(){
     return{
+        htmlAttrs: {
+        'data-wf-page': "5f1417f9ca411ac2734b830a",
+        'data-wf-site': "5eff351b1692982c192ff95b"
+              },
           title: 'LASUBEB Vision Mission Values',
           meta: [
       { hid: 'description', name: 'description', content: 'Our Vision, Mission, and Core Values frame the fundamental purpose and organising principles of the Lagos State Universal Basic Education Board. Our Vision provides a compelling image of our fondest hopes and dreams for our students. Our Mission expresses why we exist as a school system. Our Core Values articulate the timeless ideals that guide our decision-making, our day-to-day actions, and our relationship with each other' },

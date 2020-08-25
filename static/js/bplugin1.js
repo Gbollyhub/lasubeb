@@ -1,6 +1,6 @@
 
   $(document).ready(function(){
-    $(".owl-carousel").owlCarousel({
+    $(".home-news-list").owlCarousel({
       margin: 10,
       nav: false,
       loop: true,
@@ -24,4 +24,30 @@
         }
       }
     });
+
+    $('.board-others-list').owlCarousel({
+      margin: 5,
+      nav: true,
+      loop: true,
+      autoplay: false,
+      autoplayTimeout: 2000,
+      autoplayHoverPause: true,
+      //animateIn:true,
+      navText: ["<div class='nav-btn prev-slide'></div>", "<div class='nav-btn next-slide'></div>"],
+      responsive: {
+        0: {
+          items: 5
+        },
+        600: {
+          items: 5
+        },
+        1000: {
+          items: 5
+        },
+        1500: {
+          items: 5
+        }
+      }
+    });
+
   });
