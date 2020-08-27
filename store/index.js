@@ -8,8 +8,6 @@ const createStore = () => {
          imageSlider: [],
          boardMembers: [],
          news:[],
-         currentMemberId: '',
-         currentNewsId: '',
          Lgea: []
         },
         getters: {
@@ -25,12 +23,6 @@ const createStore = () => {
         getNews(state){
             return state.news
         },
-        getMemberId(state){
-            return state.currentMemberId
-        },
-        getNewsId(state){
-            return state.currentNewsId
-        },
         getLgea(state){
             return state.Lgea
         }
@@ -42,12 +34,6 @@ const createStore = () => {
          setBoardMember(state, payload){
              state.boardMembers = payload
          },
-         setMemberId(state, payload){
-            state.currentMemberId = payload
-        },
-        setNewsId(state, payload){
-            state.currentNewsId = payload
-        },
         setNews(state, payload){
             state.news = payload
         },

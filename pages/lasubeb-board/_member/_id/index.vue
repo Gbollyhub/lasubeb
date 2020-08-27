@@ -67,8 +67,7 @@ export default {
    computed:{
    ...mapGetters([
       'getAdminUrl',
-      'getBoardMembers',
-      'getMemberId'
+      'getBoardMembers'
       
    ])
   },
