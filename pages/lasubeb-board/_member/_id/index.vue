@@ -62,7 +62,7 @@ export default {
       }
   },
   created(){
-  this.currentId =this.$route.params.id
+  this.currentId = this.$route.params.id
   },
    computed:{
    ...mapGetters([

@@ -9,7 +9,8 @@ const createStore = () => {
          boardMembers: [],
          news:[],
          currentMemberId: '',
-         currentNewsId: ''
+         currentNewsId: '',
+         Lgea: []
         },
         getters: {
          getImageSlider(state){
@@ -29,6 +30,9 @@ const createStore = () => {
         },
         getNewsId(state){
             return state.currentNewsId
+        },
+        getLgea(state){
+            return state.Lgea
         }
         },
         mutations: {
@@ -47,12 +51,16 @@ const createStore = () => {
         setNews(state, payload){
             state.news = payload
         },
+        setLgea(state, payload){
+            state.Lgea = payload
+        },
         },
         actions:{
           async nuxtServerInit(vuexContext, payload){
                 const imageSlider = await this.$axios.$get('http://admin-lasubeb.correctornot.com/image-sliders')
                 const boardMembers = await this.$axios.$get('http://admin-lasubeb.correctornot.com/board-compositions')
                 const news = await this.$axios.$get('http://admin-lasubeb.correctornot.com/lasubeb-news')
+                const lgea = await this.$axios.$get('http://admin-lasubeb.correctornot.com/lasubeb-lg-education-authorities')
                 
                const newMembers = boardMembers.sort(function(a, b) {
                 var c = new Date(a.created_at);
@@ -65,10 +73,17 @@ const createStore = () => {
                 var d = new Date(b.created_at);
                 return c-d;
             });
+
+            const newLgea = lgea.sort(function(a, b) {
+                var c = new Date(a.created_at);
+                var d = new Date(b.created_at);
+                return c-d;
+            });
                   
                 vuexContext.dispatch('setSlider', imageSlider)
                 vuexContext.dispatch('setNews', newNews)
                 vuexContext.dispatch('setBoardMember', newMembers)
+                vuexContext.dispatch('setLgea', newLgea)
             },
          setSlider(vuexContext, payload){
             vuexContext.commit('setSlider', payload)
@@ -78,6 +93,9 @@ const createStore = () => {
          },
          setBoardMember(vuexContext, payload){
             vuexContext.commit('setBoardMember', payload)
+         },
+         setLgea(vuexContext, payload){
+            vuexContext.commit('setLgea', payload)
          }
         }
     })

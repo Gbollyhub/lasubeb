@@ -9,7 +9,7 @@
             <img :src="getAdminUrl + image.url" :alt="news.NewsTitle" width="530" loading="eager" class="news-img-list">
             </div>
           <h2 class="news-headline">{{news.NewsTitle}}</h2>
-          <p class="news-paragraph w-clearfix">by LASUBEB Publicity unit | {{news.created_at}}</p>
+          <p class="news-paragraph w-clearfix">by LASUBEB Publicity unit | {{news.created_at | moment }}</p>
         </a>
         </div>
       </div>
@@ -28,11 +28,17 @@ import subebPartner from '@/components/subeb-partner/subeb-partner.vue'
 import dataSection from '@/components/data-section/data-section.vue'
 import { mapGetters } from 'vuex'
 import marked from 'marked'
+import moment from 'moment'
 export default {
   components:{
     newsletter,
     subebPartner,
     dataSection
+  },
+  filters:{
+   moment: function(date){
+      return moment(date).format('MMMM Do YYYY');
+   }
   },
   computed:{
    ...mapGetters([

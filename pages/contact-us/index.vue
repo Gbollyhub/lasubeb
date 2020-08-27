@@ -2,8 +2,7 @@
   <div data-w-id="61eb59ef-3efb-8e23-10aa-9a7cd933685f" class="page-wrapper">
     <section id="feature-section" class="feature-section news">
       <h2 class="heading-2 featured"><span class="text-span">CONTACT</span> US</h2>
-      <div class="w-form">
-        <form v-show="form" id="email-form" name="email-form" data-name="Email Form" class="contact-form">
+        <form @submit.prevent="sendMessage" v-show="form" class="contact-form">
         <label for="name-3" class="form-label contact">Name</label>
         <input v-model="contactForm.name" type="text" class="form-text-field contact w-input" maxlength="256" name="name-3" data-name="Name 3" placeholder="Full name" id="name-3" required="">
         <label for="email-3" class="form-label contact">Email Address</label>
@@ -11,8 +10,7 @@
         <label for="email-4" class="form-label contact">Message</label>
         <textarea v-model="contactForm.message" placeholder="Message" maxlength="5000" id="field" name="field" required="" class="form-textarea contact w-input">
         </textarea>
-          <div class="w-form-formrecaptcha captcha g-recaptcha g-recaptcha-error g-recaptcha-disabled g-recaptcha-invalid-key"></div>
-          <input @click="sendMessage" value="Submit" data-wait="Please wait..." class="form-submit w-button">
+          <button type="submit" class="app-submit">Submit</button>
           </form>
         <div v-show="formSuccess" class="w-form-done" style="display:block">
           <div>Thank you! Your submission has been received!</div>
@@ -20,7 +18,6 @@
         <div v-show="formError" class="w-form-fail" style="display:block">
           <div>Oops! Something went wrong while submitting the form.</div>
         </div>
-      </div>
     </section>
 <subebPartner/>
 <dataSection/>
@@ -90,3 +87,16 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.app-submit{
+  padding: 9px 15px;
+    background-color: #3898EC;
+    color: white;
+    border: 0;
+    line-height: inherit;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 0
+}
+</style>
