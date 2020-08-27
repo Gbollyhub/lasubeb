@@ -57,7 +57,7 @@
   <div v-for="news in getNews" :key="news.id">
      <a :data-title="news.NewsTitle" :href="`/lasubeb-news/${news.NewsTitle}/${news.id}`" class="news-list w-inline-block">
               <div class="featured-headin">{{news.NewsTitle}}</div>
-              <div class="featured-date-block">{{news.created_at}}</div>
+              <div class="featured-date-block">{{news.created_at | moment }}</div>
               <div v-for="image in news.NewsImages.slice(0,1)" :key="image.id">
                    <img :src="getAdminUrl + image.url" :alt="news.NewsTitle" class="news-featured-img">
               </div>
@@ -78,6 +78,7 @@
 import newsletter from '@/components/newsletter/newsletter.vue'
 import sitefooter from '@/components/sitefooter/sitefooter.vue'
 import { mapGetters } from 'vuex'
+import moment from 'moment'
 export default {
   components:{
     newsletter
@@ -87,6 +88,11 @@ export default {
       img: "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg",
       gradient: 'linear-gradient(180deg, hsla(0, 0%, 100%, 0) 60%, rgba(0, 45, 97, 0.88) 86%),'
     }
+  },
+    filters:{
+   moment: function(date){
+      return moment(date).format('MMMM Do YYYY');
+   }
   },
   computed:{
     ...mapGetters([
