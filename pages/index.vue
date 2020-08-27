@@ -58,11 +58,13 @@
      <a :data-title="news.NewsTitle" :href="`/lasubeb-news/${news.NewsTitle}/${news.id}`" class="news-list w-inline-block">
               <div class="featured-headin">{{news.NewsTitle}}</div>
               <div class="featured-date-block">{{news.created_at | moment }}</div>
+               <div v-if="news.NewsImages.length > 0">
               <div v-for="image in news.NewsImages.slice(0,1)" :key="image.id">
                    <img :src="getAdminUrl + image.url" :alt="news.NewsTitle" class="news-featured-img">
               </div>
+               </div>
                  <p class="paragraph block-with-text">
-              {{ news.NewsDescription }}
+              {{ news.NewsBody }}
             </p>
             </a>
     </div>

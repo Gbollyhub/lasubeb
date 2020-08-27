@@ -45,7 +45,7 @@ const createStore = () => {
           async nuxtServerInit(vuexContext, payload){
                 const imageSlider = await this.$axios.$get('http://admin-lasubeb.correctornot.com/image-sliders')
                 const boardMembers = await this.$axios.$get('http://admin-lasubeb.correctornot.com/board-compositions')
-                const news = await this.$axios.$get('http://admin-lasubeb.correctornot.com/lasubeb-news')
+                const news = await this.$axios.$get('http://admin-lasubeb.correctornot.com/lasubeb-blogs')
                 const lgea = await this.$axios.$get('http://admin-lasubeb.correctornot.com/lasubeb-lg-education-authorities')
                 
                const newMembers = boardMembers.sort(function(a, b) {
