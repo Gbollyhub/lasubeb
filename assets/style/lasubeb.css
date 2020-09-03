@@ -991,8 +991,8 @@ blockquote {
 
 .pillar-block {
   display: block;
-  width: 23%;
-  height: 250px;
+  width: 19%;
+  height: 220px;
   margin-right: 2%;
   padding: 14px;
   border: 1px none #000;
@@ -2147,6 +2147,7 @@ blockquote {
 }
 
 .news-img-list {
+  height: auto;
   -o-object-fit: cover;
   object-fit: cover;
   -o-object-position: 50% 50%;
@@ -2326,17 +2327,23 @@ blockquote {
     flex: 1;
     border: 1px none #000;
   }
+  .cards-section {
+    text-align: left;
+  }
   .pillar-block {
     display: block;
-    width: 40%;
+    width: 35%;
+    height: auto;
     margin-bottom: 5%;
     margin-left: 7%;
+    padding-top: 60px;
+    padding-bottom: 60px;
   }
   .pillar-grid-container-copy {
     margin-right: auto;
     margin-left: auto;
     grid-column-gap: 20px;
-    text-align: left;
+    text-align: center;
   }
   .visison-mission-image-mask {
     width: 100%;
@@ -2632,7 +2639,6 @@ blockquote {
   }
   .pillar-block {
     width: 60%;
-    height: 300px;
     margin-left: 19%;
   }
   .pillar-grid-container-copy {
