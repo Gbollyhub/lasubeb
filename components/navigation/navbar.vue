@@ -32,7 +32,7 @@
               class="navlink dropdown w-dropdown-link"
             >LASUBEB STATUTORY ROLES</a>
             <a
-              href="lasubeb-vision-mission-values"
+              href="/lasubeb-vision-mission-values"
               class="navlink dropdown w-dropdown-link"
             >VISION, MISSION</a>
             <a
@@ -107,7 +107,7 @@
           </div>
           <nav class="navlink-dropdown-list-container w-dropdown-list">
             <a href="/lasubeb-news" class="navlink dropdown w-dropdown-link">NEWS</a>
-            <a href="lasubeb-strategic-priorities" class="navlink dropdown w-dropdown-link">GALLERY</a>
+            <a href="#" class="navlink dropdown w-dropdown-link">GALLERY</a>
           </nav>
         </div>
         <a href="/contact-us" class="navlink w-nav-link" style="font-size:12.15px">contact</a>
