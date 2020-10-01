@@ -1,7 +1,6 @@
 <template>
   <form
     ref="form"
-    action="?"
     method="post"
     @submit.prevent="onSubmit"
   >
@@ -65,7 +64,7 @@ export default {
       try {
         const token = await this.$recaptcha.getResponse()
         console.log('ReCaptcha token:', token)
-        await this.$recaptcha.reset()
+        // await this.$recaptcha.reset()
       } catch (error) {
         // eslint-disable-next-line no-console
         console.log('Login error:', error)
