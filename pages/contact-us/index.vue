@@ -1,29 +1,31 @@
 <template>
-  <div data-w-id="61eb59ef-3efb-8e23-10aa-9a7cd933685f" class="page-wrapper">
-    <section id="feature-section" class="feature-section news">
-      <h2 class="heading-2 featured"><span class="text-span">CONTACT</span> US</h2>
-        <form @submit.prevent="sendMessage" v-show="form" class="contact-form">
-        <label for="name-3" class="form-label contact">Name</label>
-        <input v-model="contactForm.name" type="text" class="form-text-field contact w-input" maxlength="256" name="name-3" data-name="Name 3" placeholder="Full name" id="name-3" required="">
-        <label for="email-3" class="form-label contact">Email Address</label>
-        <input v-model="contactForm.email" type="email" class="form-text-field contact w-input" maxlength="256" name="email-3" data-name="Email 3" placeholder="Email address" id="email-3" required="">
-        <label for="email-4" class="form-label contact">Message</label>
-        <textarea v-model="contactForm.message" placeholder="Message" maxlength="5000" id="field" name="field" required="" class="form-textarea contact w-input">
-        </textarea>
-          <button type="submit" class="app-submit">Submit</button>
-          </form>
-        <div v-show="formSuccess" class="w-form-done" style="display:block">
-          <div>Thank you! Your submission has been received!</div>
-        </div>
-        <div v-show="formError" class="w-form-fail" style="display:block">
-          <div>Oops! Something went wrong while submitting the form.</div>
-        </div>
-    </section>
-<subebPartner/>
-<dataSection/>
-<newsletter/>
-  </div>
+  <form
+    ref="form"
+    action="?"
+    method="post"
+    @submit.prevent="onSubmit"
+  >
+    <fieldset>
+      <input
+        type="text"
+        name="name"
+        placeholder="Name"
+      />
+      <input
+        type="email"
+        name="emil"
+        placeholder="Email"
+      />
+    </fieldset>
+    <recaptcha @error="onError" @success="onSuccess" @expired="onExpired" />
+    <button
+      type="submit"
+    >
+      Submit Form
+    </button>
+  </form>
 </template>
+
 <script>
 import newsletter from '@/components/newsletter/newsletter.vue'
 import subebPartner from '@/components/subeb-partner/subeb-partner.vue'
@@ -55,20 +57,27 @@ export default {
      'getBoardMembers'
    ])
   },
-  methods:{
-   async sendMessage(){
-    const data = axios.post('http://admin-lasubeb.correctornot.com/messages', {
-      "Name": this.contactForm.name,
-      "EmailAddress": this.contactForm.email,
-      "Message": this.contactForm.message,
-    })
-
-    if(data.error){
-      this.formError = true
-      this.form = false
-    }
-    this.form = false
-    this.formSuccess = true
+  methods: {
+    onError(error) {
+      console.log('Error happened:', error)
+    },
+    async onSubmit() {
+      try {
+        const token = await this.$recaptcha.getResponse()
+        console.log('ReCaptcha token:', token)
+        await this.$recaptcha.reset()
+      } catch (error) {
+        // eslint-disable-next-line no-console
+        console.log('Login error:', error)
+      }
+    },
+    onSuccess(token) {
+      console.log('Succeeded:', token)
+      // here you submit the form
+      this.$refs.form.submit()
+    },
+    onExpired() {
+      console.log('Expired')
     }
   },
   head(){

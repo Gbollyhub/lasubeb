@@ -28,6 +28,10 @@ export default {
     ],
     script: [
       {
+        src: "https://www.google.com/recaptcha/api.js",
+        type: "text/javascript"
+      },
+      {
         src:'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js',
         type: "text/javascript"
       },
@@ -101,7 +105,15 @@ export default {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
+    '@nuxtjs/recaptcha'
   ],
+
+  recaptcha: {
+    hideBadge: false, // Hide badge element (v3 & v2 via size=invisible)
+    siteKey: '6Lcmk9IZAAAAAP6_JrHVHumrGfv9ApT9AfJW0rjO', // Site key for requests
+    version: 2, // Version
+    size: 'invisible' // Size: 'compact', 'normal', 'invisible' (v2)
+  },
   /*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options

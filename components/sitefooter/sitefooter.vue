@@ -15,9 +15,9 @@
       </div>
       <div class="w-col w-col-3 w-col-stack">
         <h3 class="h3 reverse">Social</h3>
-        <a href="#" class="footer-links social"></a>
-        <a href="#" class="footer-links social"></a>
-        <a href="#" class="footer-links social"></a>
+        <a href="https://web.facebook.com/lagos.subeb" target="_blank" class="footer-links social"></a>
+        <a href="https://twitter.com/lsubeb" target="_blank" class="footer-links social"></a>
+        <a href="https://www.instagram.com/lagos_subeb" target="_blank" class="footer-links social"></a>
       </div>
       <div class="w-col w-col-3 w-col-stack">
         <h3 class="h3 reverse">Get in touch</h3>
