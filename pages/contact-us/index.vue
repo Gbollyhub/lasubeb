@@ -71,14 +71,14 @@ export default {
     },
     async onSuccess(token) {
       console.log('Succeeded:', token)
-      const url = 'http://localhost:5000/verify-form'
+      const url = 'https://lasubeb-api.herokuapp.com/verify-form'
        const captcha = await axios.post(url, { "token": token })
        if(captcha.data.google_response.success != true){
         this.formError = true
       this.form = false
        }
        else{
-          const mail = axios.post('http://localhost:5000/send-mail', {
+          const mail = axios.post('https://lasubeb-api.herokuapp.com/send-mail', {
        name: this.name,
        email: this.email,
        message: this.message
