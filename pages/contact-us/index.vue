@@ -74,8 +74,8 @@ export default {
     async onSuccess(token) {
       console.log('Succeeded:', token)
       let secretC = '6Lcmk9IZAAAAAFiIT1YoPl7WB9ETE6MX8EKHVQhx'
-       const data = axios.post(`https://www.google.com/recaptcha/api/siteverify?secret=${secretC}&response=${token}`)
-       console.log('Response======',data)
+       const data = await axios.post(`https://www.google.com/recaptcha/api/siteverify?secret=${secretC}&response=${token}`)
+       console.log('Response======', data)
     },
     onExpired() {
       console.log('Expired')
