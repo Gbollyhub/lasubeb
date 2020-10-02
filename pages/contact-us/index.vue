@@ -5,11 +5,11 @@
 
         <form action="" ref="form" method="post" @submit.prevent="onSubmit" v-show="form" class="contact-form">
         <label for="name-3" class="form-label contact">Name</label>
-        <input v-model="contactForm.name" type="text" class="form-text-field contact w-input" maxlength="256" name="name-3" data-name="Name 3" placeholder="Full name" id="name-3" required="">
+        <input v-model="name" type="text" class="form-text-field contact w-input" maxlength="256" name="name-3" data-name="Name 3" placeholder="Full name" id="name-3" required="">
         <label for="email-3" class="form-label contact">Email Address</label>
-        <input v-model="contactForm.email" type="email" class="form-text-field contact w-input" maxlength="256" name="email-3" data-name="Email 3" placeholder="Email address" id="email-3" required="">
+        <input v-model="email" type="email" class="form-text-field contact w-input" maxlength="256" name="email-3" data-name="Email 3" placeholder="Email address" id="email-3" required="">
         <label for="email-4" class="form-label contact">Message</label>
-        <textarea v-model="contactForm.message" placeholder="Message" maxlength="5000" id="field" name="field" required="" class="form-textarea contact w-input">
+        <textarea v-model="message" placeholder="Message" maxlength="5000" id="field" name="field" required="" class="form-textarea contact w-input">
         </textarea>
          <recaptcha @error="onError" @success="onSuccess" @expired="onExpired" />
           <button type="submit" class="app-submit">Submit</button>
@@ -44,11 +44,9 @@ export default {
     form:true,
     formError: false,
     formSuccess: false,
-    contactForm:{
       name: '',
       email: '',
       message: ''
-    }
   }
   },
   computed:{
@@ -74,8 +72,20 @@ export default {
     async onSuccess(token) {
       console.log('Succeeded:', token)
       const url = 'http://localhost:5000/verify-form'
-       const data = await axios.post(url, { "token": token })
-       console.log('Response======', data)
+       const captcha = await axios.post(url, { "token": token })
+       if(captcha.data.google_response.success != true){
+        this.formError = true
+      this.form = false
+       }
+       else{
+          const mail = await axios.post('http://localhost:5000/send-mail', {
+       name: this.name,
+       email: this.email,
+       message: this.message
+     })
+         this.form = false
+    this.formSuccess = true
+       }
     },
     onExpired() {
       console.log('Expired')
