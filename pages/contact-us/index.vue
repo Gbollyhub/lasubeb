@@ -73,8 +73,8 @@ export default {
     },
     async onSuccess(token) {
       console.log('Succeeded:', token)
-      let secretC = '6Lcmk9IZAAAAAFiIT1YoPl7WB9ETE6MX8EKHVQhx'
-       const data = await axios.post(`https://www.google.com/recaptcha/api/siteverify?secret=${secretC}&response=${token}`)
+      const url = 'http://localhost:5000/verify-form'
+       const data = await axios.post(url, { "token": token })
        console.log('Response======', data)
     },
     onExpired() {
