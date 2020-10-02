@@ -78,7 +78,7 @@ export default {
       this.form = false
        }
        else{
-          const mail = await axios.post('http://localhost:5000/send-mail', {
+          const mail = axios.post('http://localhost:5000/send-mail', {
        name: this.name,
        email: this.email,
        message: this.message
