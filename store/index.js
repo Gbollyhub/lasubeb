@@ -4,7 +4,7 @@ import Vuex from 'vuex'
 const createStore = () => {
     return new Vuex.Store({
         state: {
-         adminUrl: 'http://admin-lasubeb.correctornot.com',
+         adminUrl: 'https://admin.lasubeb.lg.gov.ng',
          imageSlider: [],
          boardMembers: [],
          news:[],
@@ -43,10 +43,10 @@ const createStore = () => {
         },
         actions:{
           async nuxtServerInit(vuexContext, payload){
-                const imageSlider = await this.$axios.$get('http://admin-lasubeb.correctornot.com/image-sliders')
-                const boardMembers = await this.$axios.$get('http://admin-lasubeb.correctornot.com/board-compositions')
-                const news = await this.$axios.$get('http://admin-lasubeb.correctornot.com/lasubeb-blogs')
-                const lgea = await this.$axios.$get('http://admin-lasubeb.correctornot.com/lasubeb-lg-education-authorities')
+                const imageSlider = await this.$axios.$get('https://admin.lasubeb.lg.gov.ng/image-sliders')
+                const boardMembers = await this.$axios.$get('https://admin.lasubeb.lg.gov.ng/board-compositions')
+                const news = await this.$axios.$get('https://admin.lasubeb.lg.gov.ng/lasubeb-blogs')
+                const lgea = await this.$axios.$get('https://admin.lasubeb.lg.gov.ng/lasubeb-lg-education-authorities')
                 
                const newMembers = boardMembers.sort(function(a, b) {
                 var c = new Date(a.created_at);
