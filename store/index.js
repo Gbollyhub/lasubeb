@@ -4,7 +4,7 @@ import Vuex from 'vuex'
 const createStore = () => {
     return new Vuex.Store({
         state: {
-         adminUrl: 'https://admin.lasubeb.lg.gov.ng',
+         adminUrl: 'http://admin.lasubeb.lg.gov.ng',
          imageSlider: [],
          boardMembers: [],
          news:[],
