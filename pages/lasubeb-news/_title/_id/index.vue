@@ -11,7 +11,7 @@
           <div class="p-detail-news" v-html="marked(news.NewsBody)"></div>
         </div>
         <div class="news-detail-col side-col w-col w-col-4 w-col-stack">
-          <div  v-for="news in getNews.slice(0,2)" :key="news.id">
+          <div v-show="news.Active" v-for="news in getNews.slice(0,2)" :key="news.id">
             <a :data-title="news.NewsTitle" :href="`/lasubeb-news/${news.NewsTitle}/${news.id}`" class="news-list w-inline-block">
             <div class="featured-headin">{{news.NewsTitle}}</div>
             <div class="featured-date-block">{{news.created_at | moment}}</div>

@@ -6,7 +6,7 @@
         <p class="board-composiiton-p">The Board under the Chairmanship of Hon. Wahab Alawiye-King was appointed by the Lagos State Governor, His Excellency, Mr. Babajide Olushola Sanwo-Olu on 11th September, 2019</p>
       </div>
       <div class="board-container-list w-container">
-        <div v-for="member in getBoardMembers" :key="member.id" class="board-member-div-block">
+        <div v-show="member.Active" v-for="member in getBoardMembers" :key="member.id" class="board-member-div-block">
           <div class="board-img-mask">
             <img :src="getAdminUrl + member.MemberImage.url" :alt="member.MemberName"  width="338" :class="[class1 , (member.isBoardMember == true) ? class2 : '']">
             </div>

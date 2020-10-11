@@ -5,7 +5,7 @@
       <div class="page-content-block">
         <p class="paragraph-2">LASUBEB as a government agency is duly constituted by law and efficiently run with the following departments, statutory units and experienced personnel.</p>
       </div>
-      <div v-for="lgea in getLgea" :key="lgea.id" data-hover="" data-delay="0" id="school-support-services" data-w-id="e14723d1-4b79-daf7-01bf-225fe16c9275" class="lgea-accordion w-dropdown">
+      <div v-show="lgea.Active" v-for="lgea in getLgea" :key="lgea.id" data-hover="" data-delay="0" id="school-support-services" data-w-id="e14723d1-4b79-daf7-01bf-225fe16c9275" class="lgea-accordion w-dropdown">
         <div class="dept-unit-accordion-toggle w-dropdown-toggle">
           <div class="dept-unit-icon w-icon-dropdown-toggle"></div>
           <div class="accordion-text-block">{{ lgea.LgeaTitle }} LGEA</div>

@@ -16,7 +16,7 @@
         <h1 class="heading other-board-members">OTHER LASUBEB<span class="text-span">BOARD MEMBERS</span></h1>
         <div class="news-wrap w-clearfix">
           <div class="board-others-list owl-carousel">
-            <div v-for="member in getBoardMembers" :key="member.id" :class="[class1, class2, (member.id == currentId) ? class3 : '']">
+            <div v-show="member.Active" v-for="member in getBoardMembers" :key="member.id" :class="[class1, class2, (member.id == currentId) ? class3 : '']">
                <a :href="`/lasubeb-board/${member.MemberName}/${member.id}`" aria-current="page" >
               <img :src="getAdminUrl + member.MemberImage.url" :alt="member.MemberName" width="250" class="board-others-img">
               <div class="board-name">{{member.MemberName}}</div></a>

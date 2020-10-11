@@ -1,7 +1,7 @@
 <template>
           <div data-delay="14000" data-animation="cross" data-autoplay="1" data-easing="ease-in-expo" data-duration="1000" data-infinite="1" class="hero-slider w-slider">
     <div class="hero-mask w-slider-mask">
-      <div v-for="slide in getImageSlider" :key="slide.id" id="subeb-hero-1" data-w-id="41b69d52-9a1f-da94-47d9-2dd97932bb5a" class="hero-slide w-slide">
+      <div v-show="slide.Active" v-for="slide in getImageSlider" :key="slide.id" id="subeb-hero-1" data-w-id="41b69d52-9a1f-da94-47d9-2dd97932bb5a" class="hero-slide w-slide">
         <div class="container-2 w-container">
           <h1 class="heading hero">{{slide.HeadingHero}}</h1>
           <div class="text-block">{{slide.TextBlock}}</div>
