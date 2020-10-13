@@ -3,7 +3,7 @@
     <section id="feature-section" class="feature-section news">
       <h2 class="heading-2 featured"><span class="text-span">latest NEWS</span> LASUBEB</h2>
       <div class="news-container-list w-container">
-            <a v-show="news.Active" v-for="news in getNews" :key="news.id" :data-title="news.NewsTitle" :href="`/lasubeb-news/${news.NewsTitle}/${news.id}`" class="news-list-div-block w-inline-block">
+            <a v-for="news in getNews" :key="news.id" :data-title="news.NewsTitle" :href="`/lasubeb-news/${news.NewsTitle}/${news.id}`" class="news-list-div-block w-inline-block">
             <div v-if="news.NewsImages.length > 0">
              <div class="news-image-mask" v-for="image in news.NewsImages.slice(0,1)" :key="image.id">
             <img :src="getAdminUrl + image.url" :alt="news.NewsTitle" width="530" loading="eager" class="news-img-list">

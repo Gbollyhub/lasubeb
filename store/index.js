@@ -48,25 +48,30 @@ const createStore = () => {
                 const news = await this.$axios.$get('http://admin.lasubeb.lg.gov.ng/lasubeb-blogs')
                 const lgea = await this.$axios.$get('http://admin.lasubeb.lg.gov.ng/lasubeb-lg-education-authorities')
                 
-               const newMembers = boardMembers.sort(function(a, b) {
+                const filterimageSlider = imageSlider.filter( function(fimageSlider) { return fimageSlider.Active == true })
+                const filterboardMembers = boardMembers.filter( function(fboardMembers) { return fboardMembers.Active == true })
+                const filterNews = news.filter( function(fnews) { return fnews.Active == true })
+                const filterlgea = lgea.filter( function(flgea) { return flgea.Active == true })
+                
+               const newMembers = filterboardMembers.sort(function(a, b) {
                 var c = new Date(a.created_at);
                 var d = new Date(b.created_at);
                 return c-d;
             });
 
-            const newNews = news.sort(function(a, b) {
+            const newNews = filterNews.sort(function(a, b) {
                 var c = new Date(a.created_at);
                 var d = new Date(b.created_at);
                 return c-d;
             });
 
-            const newLgea = lgea.sort(function(a, b) {
+            const newLgea = filterlgea.sort(function(a, b) {
                 var c = new Date(a.created_at);
                 var d = new Date(b.created_at);
                 return c-d;
             });
                   
-                vuexContext.dispatch('setSlider', imageSlider)
+                vuexContext.dispatch('setSlider', filterimageSlider)
                 vuexContext.dispatch('setNews', newNews)
                 vuexContext.dispatch('setBoardMember', newMembers)
                 vuexContext.dispatch('setLgea', newLgea)
