@@ -3,7 +3,7 @@
 <section id="feature-section" data-w-id="5140f89c-d73a-5b04-4de6-765fd78f9495" class="feature-section">
     <div class="flex-container w-container">
       <h2 class="heading-2 featured"><span class="text-span">OUR FOUR PILLARS</span></h2>
-      <div class="page-img-mask"><img src="../../assets/images/lasubeb_pillars.jpg" alt="LASUBEB Pillars" height="" class="feature-image-pillars"></div>
+      <div class="page-img-mask"><img src="../../assets/images/classroom.jpg" alt="LASUBEB Pillars" height="" class="feature-image-pillars"></div>
       <div class="page-content-block">
         <p class="paragraph-2">The Four Pillars are the building blocks for purposeful action. They define the capabilities and competencies that we must develop to achieve the outcomes for our learners.</p>
       </div>

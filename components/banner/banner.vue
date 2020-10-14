@@ -4,10 +4,10 @@
       <div v-for="slide in getImageSlider" :key="slide.id" id="subeb-hero-1" data-w-id="41b69d52-9a1f-da94-47d9-2dd97932bb5a" class="hero-slide w-slide">
         <div class="container-2 w-container">
           <h1 class="heading hero">{{slide.HeadingHero}}</h1>
-          <div class="text-block">{{slide.TextBlock}}</div>
+          <div class="text-block">{{slide.BannerText}}</div>
         </div>
         <div class="hero-img-holder">
-          <div class="hero-img-bg" :style="{ backgroundImage: gradient + `url('${ getAdminUrl + slide.SliderImage.url }')` }"></div>
+          <div class="hero-img-bg" :style="{ backgroundImage: gradient + `url('${ slide.Url }')` }"></div>
         </div>
       </div>
     </div>

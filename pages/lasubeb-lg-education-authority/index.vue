@@ -13,7 +13,7 @@
         <nav class="dept-unit-accordion-list w-dropdown-list">
           <div class="dept-column w-row">
             <div class="left-col-details w-col w-col-3">
-              <div class="lgea-img-mask"><img :src="getAdminUrl + lgea.HodImage.url" :alt="lgea.LgeaTitle" class="lgea-img"></div>
+              <div class="lgea-img-mask"><img :src="lgea.HodImage" :alt="lgea.LgeaTitle" class="lgea-img"></div>
               <div>
                 <h5 class="hod-data"><strong>{{ lgea.HodName }}</strong></h5>
                 <div class="title-lgea-position">{{ lgea.HodPosition }}<br><br><a :href="`tel:+234 ${lgea.HodPhoneNumber}`" class="dept-hod-phone-nos">{{ lgea.HodPhoneNumber }}</a></div>

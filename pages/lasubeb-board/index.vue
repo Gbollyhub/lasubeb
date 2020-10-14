@@ -8,7 +8,7 @@
       <div class="board-container-list w-container">
         <div v-for="member in getBoardMembers" :key="member.id" class="board-member-div-block">
           <div class="board-img-mask">
-            <img :src="getAdminUrl + member.MemberImage.url" :alt="member.MemberName"  width="338" :class="[class1 , (member.isBoardMember == true) ? class2 : '']">
+            <img :src="member.MemberImage" :alt="member.MemberName"  width="338" :class="[class1 , (member.isBoardMember == true) ? class2 : '']">
             </div>
           <h4 class="boardname-h4">{{member.MemberName}}</h4>
           <div class="board-position">{{member.Position}}</div>

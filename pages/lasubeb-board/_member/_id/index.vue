@@ -4,7 +4,7 @@
       <h2 class="heading-2 board-profile-detailed"><span class="text-span">THE BOARD</span> COMPOSITION | {{boardMember.MemberName}}</h2>
     </section>
     <div class="board-detail-container w-container">
-      <div class="testimonial-block"><img :src="getAdminUrl + boardMember.MemberImage.url"  :alt="boardMember.MemberName" class="image"></div>
+      <div class="testimonial-block"><img :src="boardMember.MemberImage"  :alt="boardMember.MemberName" class="image"></div>
       <div class="testimonial-block blank">
         <h2 class="board-member-h2-detailed"><span class="text-span" style="text-transform:uppercase">{{boardMember.MemberName}}</span></h2>
         <div class="board-member-profile w-clearfix bio" style="color: #fff;" v-html="marked(boardMember.Biography)"></div>
@@ -18,7 +18,7 @@
           <div class="board-others-list owl-carousel">
             <div v-for="member in getBoardMembers" :key="member.id" :class="[class1, class2, (member.id == currentId) ? class3 : '']">
                <a :href="`/lasubeb-board/${member.MemberName}/${member.id}`" aria-current="page" >
-              <img :src="getAdminUrl + member.MemberImage.url" :alt="member.MemberName" width="250" class="board-others-img">
+              <img :src="member.MemberImage" :alt="member.MemberName" width="250" class="board-others-img">
               <div class="board-name">{{member.MemberName}}</div></a>
             </div>
               </div>
@@ -56,7 +56,7 @@ export default {
     }
   },
     async asyncData({ params }) {
-    const  data  = await axios.get('http://admin-lasubeb.correctornot.com/board-compositions/' + params.id)
+    const  data  = await axios.get('http://admin-cms.lasubeb.lg.gov.ng/lasubeb-boards/' + params.id)
     return {
       boardMember: data.data
       }

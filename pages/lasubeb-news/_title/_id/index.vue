@@ -5,19 +5,22 @@
       <div class="content-news-block w-row">
         <div class="news-detail-col fullcontent w-col w-col-8 w-col-stack">
           <h2 class="news-headline-detail">{{news.NewsTitle}}</h2>
-          <div class="news-image-mask" v-for="image in news.NewsImages" :key="image.id">
-            <img :src="getAdminUrl + image.url" :alt="news.NewsTitle" width="916" loading="eager" class="news-img"></div>
-          <p class="news-info-details w-clearfix">by LASUBEB Publicity unit | {{news.created_at | moment}}</p>
+          <!-- <div class="news-image-mask" v-for="image in news.NewsImages" :key="image.id"> -->
+              <div>
+            <img :src="news.url" :alt="news.NewsTitle" width="916" loading="eager" class="news-img"></div>
+          <p class="news-info-details w-clearfix">by LASUBEB Publicity unit | {{news.NewsDate | moment}}</p>
           <div class="p-detail-news" v-html="marked(news.NewsBody)"></div>
         </div>
         <div class="news-detail-col side-col w-col w-col-4 w-col-stack">
           <div v-for="news in getNews.slice(0,2)" :key="news.id">
             <a :data-title="news.NewsTitle" :href="`/lasubeb-news/${news.NewsTitle}/${news.id}`" class="news-list w-inline-block">
             <div class="featured-headin">{{news.NewsTitle}}</div>
-            <div class="featured-date-block">{{news.created_at | moment}}</div>
-             <div v-if="news.NewsImages.length > 0">
-            <div v-for="image in news.NewsImages.slice(0,1)" :key="image.id">
-            <img :src="getAdminUrl + image.url" :alt="news.NewsTitle" class="news-featured-img">
+            <div class="featured-date-block">{{news.NewsDate | moment}}</div>
+             <!-- <div v-if="news.NewsImages.length > 0">
+            <div v-for="image in news.NewsImages.slice(0,1)" :key="image.id"> -->
+              <div>
+                <div>
+            <img :src="news.url" :alt="news.NewsTitle" class="news-featured-img">
             </div>
              </div>
             <p class="paragraph block-with-text" >
@@ -48,7 +51,7 @@ export default {
     dataSection
   },
    async asyncData({ params }) {
-    const  data  = await axios.get('http://admin-lasubeb.correctornot.com/lasubeb-blogs/' + params.id)
+    const  data  = await axios.get('http://admin-cms.lasubeb.lg.gov.ng/lasubeb-blogs/' + params.id)
     return {
       news: data.data
       }

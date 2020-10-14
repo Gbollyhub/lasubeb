@@ -2294,7 +2294,7 @@ blockquote {
     height: auto;
   }
   .page-img-mask {
-    width: 100%;
+    width: 500px;
     margin-right: auto;
     margin-left: auto;
     float: none;
