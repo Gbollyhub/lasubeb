@@ -8,9 +8,13 @@ const createStore = () => {
          imageSlider: [],
          boardMembers: [],
          news:[],
-         Lgea: []
+         Lgea: [],
+         Homepage:[]
         },
         getters: {
+            getHomepage(state){
+                return state.Homepage
+            },
          getImageSlider(state){
              return state.imageSlider
          },
@@ -28,6 +32,9 @@ const createStore = () => {
         }
         },
         mutations: {
+            setHomepage(state, payload){
+                state.Homepage = payload
+            },
          setSlider(state, payload){
              state.imageSlider = payload
          },
@@ -43,6 +50,7 @@ const createStore = () => {
         },
         actions:{
           async nuxtServerInit(vuexContext, payload){
+               const Homepage = await this.$axios.$get('http://admin.lasubeb.lg.gov.ng/lasubeb-homepage')
                 const imageSlider = await this.$axios.$get('http://admin.lasubeb.lg.gov.ng/image-sliders')
                 const boardMembers = await this.$axios.$get('http://admin.lasubeb.lg.gov.ng/board-compositions')
                 const news = await this.$axios.$get('http://admin.lasubeb.lg.gov.ng/lasubeb-blogs')
@@ -70,12 +78,15 @@ const createStore = () => {
                 var d = new Date(b.created_at);
                 return c-d;
             });
-                  
+            vuexContext.dispatch('setHomepage', Homepage)
                 vuexContext.dispatch('setSlider', filterimageSlider)
                 vuexContext.dispatch('setNews', newNews)
                 vuexContext.dispatch('setBoardMember', newMembers)
                 vuexContext.dispatch('setLgea', newLgea)
             },
+            setHomepage(vuexContext, payload){
+                vuexContext.commit('setHomepage', payload)
+             },
          setSlider(vuexContext, payload){
             vuexContext.commit('setSlider', payload)
          },
