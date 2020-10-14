@@ -16,7 +16,7 @@
             50 participants, including SUBEB board members, SUBEB directors and heads of unit, LGEA education secretaries, and union leaders. 
           <br><br>Now that we have a results-focused strategic plan, the next step is disciplined implementation; that is how we will turn our good intentions into 
           positive outcomes for our learners. LASUBEB is totally committed to following through on this plan, to ensure full realisation of 
-          Governor Sanwo-Olu’s EKOEXCEL initiative and to <strong>LEAVE NO CHILD BEHIND! </strong>I invite you to join us.<br><br>‍<br><strong>Hon.Alawiye-King | Executive Chairman, Lagos Universal Basic Education Board </strong>
+          Governor Sanwo-Olu’s EKOEXCEL initiative and to <strong>LEAVE NO CHILD BEHIND! </strong>I invite you to join us.<br><br>‍<br><strong>Hon. Alawiye-King | Executive Chairman, Lagos Universal Basic Education Board </strong>
           <a href="/lasubeb-board" class="inline-link-reverse message"><strong data-title="learn more" class="bold-text-2"></strong></a></p>
         </div>
       </div>
