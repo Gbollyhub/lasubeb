@@ -6,8 +6,17 @@
         <div class="news-detail-col fullcontent w-col w-col-8 w-col-stack">
           <h2 class="news-headline-detail">{{news.NewsTitle}}</h2>
           <!-- <div class="news-image-mask" v-for="image in news.NewsImages" :key="image.id"> -->
-              <div>
-            <img :src="news.url" :alt="news.NewsTitle" width="916" loading="eager" class="news-img"></div>
+              <div  v-if="news.NewsImages != null" class="news-image-mask" style="margin-bottom:20px">
+            <img v-if="news.NewsImages != null"  :src="news.NewsImages"  width="916" loading="eager" class="news-img"></div>
+             <div  v-if="news.NewsImages2 != null" class="news-image-mask" style="margin-bottom:20px">
+            <img v-if="news.NewsImages2 != null" :src="news.NewsImages2"  width="916" loading="eager" class="news-img"></div>
+             <div  v-if="news.NewsImages3 != null" class="news-image-mask" style="margin-bottom:20px">
+            <img v-if="news.NewsImages3 != null" :src="news.NewsImages3"  width="916" loading="eager" class="news-img"></div>
+             <div  v-if="news.NewsImages4 != null" class="news-image-mask" style="margin-bottom:20px">
+            <img v-if="news.NewsImages4 != null" :src="news.NewsImages4"  width="916" loading="eager" class="news-img"></div>
+             <div  v-if="news.NewsImages5 != null" class="news-image-mask" style="margin-bottom:20px">
+            <img v-if="news.NewsImages5 != null" :src="news.NewsImages5"  width="916" loading="eager" class="news-img"></div>
+
           <p class="news-info-details w-clearfix">by LASUBEB Publicity unit | {{news.NewsDate | moment}}</p>
           <div class="p-detail-news" v-html="marked(news.NewsBody)"></div>
         </div>
@@ -20,7 +29,7 @@
             <div v-for="image in news.NewsImages.slice(0,1)" :key="image.id"> -->
               <div>
                 <div>
-            <img :src="news.url" :alt="news.NewsTitle" class="news-featured-img">
+            <img :src="news.NewsImages"  class="news-featured-img">
             </div>
              </div>
             <p class="paragraph block-with-text" >

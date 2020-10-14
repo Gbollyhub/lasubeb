@@ -7,7 +7,7 @@
             <!-- <div v-if="news.NewsImages.length > 0"> -->
               <div>
              <!-- <div class="news-image-mask" v-for="image in news.NewsImages.slice(0,1)" :key="image.id"> -->
-               <div class="news-image-mask" :key="image.id">
+               <div class="news-image-mask">
             <img :src="news.NewsImages" :alt="news.NewsTitle" width="530" loading="eager" class="news-img-list">
             </div>  
             </div>
