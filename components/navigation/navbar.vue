@@ -66,7 +66,7 @@
         <div data-hover data-delay="0" class="navlink w-dropdown">
           <div class="navlink dropdown-toggle w-dropdown-toggle">
             <div class="w-icon-dropdown-toggle"></div>
-            <div>PROJECTs</div>
+            <div>Programs</div>
           </div>
           <nav class="navlink-dropdown-list-container w-dropdown-list">
             <a href="#" class="navlink dropdown w-dropdown-link">projects</a>

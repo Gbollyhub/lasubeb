@@ -60,12 +60,12 @@
 <div class="home-news-list owl-carousel">
   <div v-for="news in getNews" :key="news.id">
      <a :data-title="news.NewsTitle" :href="`/lasubeb-news/${news.NewsTitle}/${news.id}`" class="news-list w-inline-block">
-              <div class="featured-headin">{{news.NewsTitle}}</div>
+              <div class="featured-headin truncate">{{news.NewsTitle}}</div>
               <div class="featured-date-block">{{news.NewsDate | moment }}</div>
                <!-- <div v-if="news.NewsImages.length > 0"> -->
                  <div>
               <!-- <div v-for="image in news.NewsImages.slice(0,1)" :key="image.id"> -->
-                <div>
+                <div class="news-featured-img-mask">
                    <img :src="news.NewsImages" :alt="news.NewsTitle" class="news-featured-img">
               </div>
                </div>
