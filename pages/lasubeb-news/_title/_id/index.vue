@@ -87,11 +87,11 @@ export default {
         'data-wf-page': "5f4178b693052b6828a44701",
         'data-wf-site': "5eff351b1692982c192ff95b"
               },
-          title: 'LASUBEB NEWS',
+          title: this.news.NewsTitle,
           meta: [
-      { hid: 'description', name: 'description', content: 'LASUBEB NEWS' },
-      { hid: 'description', property:'og:description', content: 'LASUBEB NEWS' },
-      { hid: 'description', property:'twitter:description', content: 'LASUBEB NEWS' }
+      { hid: 'description', name: 'description', content: this.news.NewsTitle },
+      { hid: 'description', property:'og:description', content: this.news.NewsTitle },
+      { hid: 'description', property:'twitter:description', content: this.news.NewsTitle }
 ],
     }
   }
