@@ -24,8 +24,8 @@
         <div class="footer-block-text">
           2 Ikorodu Rd, Mende, Lagos State
           <br />Phone :
-          <a href="tel:+234010101111" class="inline-link-reverse">
-            +234 010 101 111
+          <a href="tel:+2348185431637" class="inline-link-reverse">
+            +2348185431637
             <br />
           </a>
         </div>

@@ -9,9 +9,17 @@ const createStore = () => {
          boardMembers: [],
          news:[],
          Lgea: [],
-         Homepage:[]
+         Homepage:[],
+         departments:[],
+         statutory:[],
         },
         getters: {
+            getDepartment(state){
+                return state.departments
+            },
+            getStatutory(state){
+                return state.statutory
+            },
             getHomepage(state){
                 return state.Homepage
             },
@@ -32,6 +40,12 @@ const createStore = () => {
         }
         },
         mutations: {
+            setDepartment(state, payload){
+                state.departments = payload
+            },  
+            setStatutory(state, payload){
+                state.statutory = payload
+            },
             setHomepage(state, payload){
                 state.Homepage = payload
             },
@@ -55,6 +69,8 @@ const createStore = () => {
                 const boardMembers = await this.$axios.$get('http://admin-cms.lasubeb.lg.gov.ng/lasubeb-boards')
                 const news = await this.$axios.$get('http://admin-cms.lasubeb.lg.gov.ng/lasubeb-blogs')
                 const lgea = await this.$axios.$get('http://admin-cms.lasubeb.lg.gov.ng/lasubeb-lg-education-authorities')
+                const department =  await this.$axios.$get('http://admin-cms.lasubeb.lg.gov.ng/departments')
+                const statutory =  await this.$axios.$get('http://admin-cms.lasubeb.lg.gov.ng/statutory-units')
                 
                 const filterimageSlider = imageSlider.filter( function(fimageSlider) { return fimageSlider.Active == true })
                 const filterboardMembers = boardMembers.filter( function(fboardMembers) { return fboardMembers.Active == true })
@@ -70,7 +86,7 @@ const createStore = () => {
             const newNews = filterNews.sort(function(a, b) {
                 var c = new Date(a.created_at);
                 var d = new Date(b.created_at);
-                return c-d;
+                return d-c;
             });
 
             const newLgea = filterlgea.sort(function(a, b) {
@@ -78,12 +94,26 @@ const createStore = () => {
                 var d = new Date(b.created_at);
                 return c-d;
             });
+
+            vuexContext.dispatch('setDepartment', department)
+            vuexContext.dispatch('setStatutory', statutory)
+
             vuexContext.dispatch('setHomepage', Homepage)
                 vuexContext.dispatch('setSlider', filterimageSlider)
                 vuexContext.dispatch('setNews', newNews)
                 vuexContext.dispatch('setBoardMember', newMembers)
                 vuexContext.dispatch('setLgea', newLgea)
             },
+
+            setDepartment(vuexContext, payload){
+                vuexContext.commit('setDepartment', payload)
+             },
+
+             setStatutory(vuexContext, payload){
+                vuexContext.commit('setStatutory', payload)
+             },
+
+
             setHomepage(vuexContext, payload){
                 vuexContext.commit('setHomepage', payload)
              },
