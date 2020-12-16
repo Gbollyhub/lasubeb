@@ -44,8 +44,7 @@ export default {
   },
   computed:{
    ...mapGetters([
-      'getDepartment',
-     'getStatutory'
+      'getBoardMembers',
    ])
   },
   methods:{
