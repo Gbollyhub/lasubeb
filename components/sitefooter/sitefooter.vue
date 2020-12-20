@@ -13,13 +13,14 @@
         <a href="#" class="footer-links">EMIS</a>
         <a href="#" class="footer-links">RECRUITMENT PORTAL</a>
       </div>
-      <div class="w-col w-col-3 w-col-stack">
-        <h3 class="h3 reverse">Social</h3>
-        <a href="https://web.facebook.com/lagos.subeb" target="_blank" class="footer-links social"></a>
-        <a href="https://twitter.com/lagossubeb" target="_blank" class="footer-links social"></a>
-        <a href="https://www.instagram.com/lagos_subeb" target="_blank" class="footer-links social"></a>
-      </div>
-      <div class="w-col w-col-3 w-col-stack">
+       <div class="w-col w-col-3 w-col-stack">
+          <h3 class="h3 reverse">Social</h3>
+          <a href="https://web.facebook.com/lasubeb" target="_blank" class="footer-links social"></a>
+          <a href="https://twitter.com/lagossubeb" target="_blank" class="footer-links social"></a>
+          <a href="https://www.youtube.com/user/lagossubeb/videos" target="_blank" class="footer-links social"></a>
+          <a href="https://www.instagram.com/lagos_subeb" target="_blank" class="footer-links social"></a>
+        </div>
+      <div class="column w-col w-col-3 w-col-stack">
         <h3 class="h3 reverse">Get in touch</h3>
         <div class="footer-block-text">
           2 Ikorodu Rd, Mende, Lagos State
@@ -29,6 +30,10 @@
             <br />
           </a>
         </div>
+         <div class="twitter-embed w-embed w-script">
+            <a class="twitter-timeline" data-width="300" data-height="200" href="https://twitter.com/lagossubeb?ref_src=twsrc%5Etfw">Tweets by lagossubeb</a>
+            <script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+          </div>
       </div>
     </div>
   </div>

@@ -7,15 +7,85 @@
           <div class="home-message-img-mask"><img :src="getHomepage.section1Image" alt="Hon. Dr. Alawiye-King, Executive Chairman, LASUBEB" srcset="../assets/images/lasubeb_wahab_alawiye-king-p-500.jpeg 500w, images/lasubeb_wahab_alawiye-king.jpg 767w" sizes="(max-width: 479px) 41vw, (max-width: 767px) 44vw, (max-width: 991px) 41vw, 248.0113525390625px" class="home-feature-img"></div>
         </div>
         <div class="message-div-block mesage-content">
-          <p class="home-p w-clearfix">Our Strategic Plan outlines how LASUBEB will step up to that responsibility. The plan was developed during a 3-day retreat of 
-            50 participants, including SUBEB board members, SUBEB directors and heads of unit, LGEA education secretaries, and union leaders. 
-          <br><br>Now that we have a results-focused strategic plan, the next step is disciplined implementation; that is how we will turn our good intentions into 
-          positive outcomes for our learners. LASUBEB is totally committed to following through on this plan, to ensure full realisation of 
+          <p class="home-p w-clearfix">Our Strategic Plan outlines how LASUBEB will step up to that responsibility. The plan was developed during a 3-day retreat of
+            50 participants, including SUBEB board members, SUBEB directors and heads of unit, LGEA education secretaries, and union leaders.
+          <br><br>Now that we have a results-focused strategic plan, the next step is disciplined implementation; that is how we will turn our good intentions into
+          positive outcomes for our learners. LASUBEB is totally committed to following through on this plan, to ensure full realisation of
           Governor Sanwo-Olu’s EKOEXCEL initiative and to <strong>LEAVE NO CHILD BEHIND! </strong>I invite you to join us.<br><br>‍<br><strong>Hon. Alawiye-King | Executive Chairman, Lagos Universal Basic Education Board </strong>
           <a href="/lasubeb-board" class="inline-link-reverse message"><strong data-title="learn more" class="bold-text-2"></strong></a></p>
         </div>
       </div>
     </section>
+     <div class="transformation-plan">
+       <img src=".././assets/images/IMG_20190529_175100.jpg" alt="" class="secion-img">
+      <div class="theme-caption">Education &amp; Technology</div>
+      <ul role="list" class="theme-list">
+        <li class="theme-list-item">Increase access to public education in primary and secondary schools</li>
+        <li class="theme-list-item">Make learning conducive by renovating schools</li>
+        <li class="theme-list-item">Expose teachers constantly to set skills needed to enhance professionalism and effectve performance</li>
+        <li class="theme-list-item">Enhance the growth of Lagos as a smart city through technology</li>
+        <li class="theme-list-item">Optimization of technology to give entrepreneurs and SMEs the opportunity to thrive</li>
+      </ul>
+      <a href="https://governor.lagosstate.gov.ng/" target="_blank" class="action-btn theme w-button">Learn more about LASG THEME Agenda</a>
+    </div>
+        <div class="education-plan-featured">
+      <div class="theme-caption">THE LAGOS STATE 2020 EDUCATION TRANSFORMATION PLAN</div>
+      <div class="plan-col-wrapper w-row">
+        <div class="transplan-col w-col w-col-4">
+          <div class="grid-itme-narration">Overhaul &amp; Improve the management of Public schools&#x27; infrastructure</div>
+        </div>
+        <div class="w-col w-col-4">
+          <div class="grid-itme-narration">Review and optimize the Public-School Curriculum</div>
+        </div>
+        <div class="w-col w-col-4">
+          <div class="grid-itme-narration">Improve School Governance and Administration</div>
+        </div>
+      </div>
+      <div class="plan-col-wrapper w-row">
+        <div class="transplan-col w-col w-col-4">
+          <div class="grid-itme-narration">Improve the quality of Primary Education</div>
+        </div>
+        <div class="w-col w-col-4">
+          <div class="grid-itme-narration">Improve overall Student Welfare and Capacity development</div>
+        </div>
+        <div class="w-col w-col-4">
+          <div class="grid-itme-narration">Improve the capacity and welfare of school personnel</div>
+        </div>
+      </div>
+      <div class="plan-col-wrapper w-row">
+        <div class="transplan-col w-col w-col-4">
+          <div class="grid-itme-narration">Invest in Technology as a learning aid</div>
+        </div>
+        <div class="w-col w-col-4">
+          <div class="grid-itme-narration">Develop &amp; execute a plan for special needs education</div>
+        </div>
+        <div class="w-col w-col-4">
+          <div class="grid-itme-narration">Establish &amp; leverage impactful Public-Private Partnerships</div>
+        </div>
+      </div>
+      <div class="plan-col-wrapper w-row">
+        <div class="transplan-col w-col w-col-4">
+          <div class="grid-itme-narration">Improve engagement with the private education system</div>
+        </div>
+        <div class="w-col w-col-4">
+          <div class="grid-itme-narration">Improve Data Gathering &amp; incorporate Data Analytics for Administration</div>
+        </div>
+        <div class="w-col w-col-4">
+          <div class="grid-itme-narration">Improve access to education for children in undeserved communities</div>
+        </div>
+      </div>
+      <div class="plan-col-wrapper w-row">
+        <div class="transplan-col w-col w-col-4">
+          <div class="grid-itme-narration">Establish an Education Resource Centre (ERC)</div>
+        </div>
+        <div class="w-col w-col-4">
+          <div class="grid-itme-narration">Improve the TVET education</div>
+        </div>
+        <div class="w-col w-col-4">
+          <div class="grid-itme-narration">Improve the education qualiy assurance service delivery</div>
+        </div>
+      </div>
+    </div>
      <div class="role-featured-section">
       <div class="role-wrapper w-container">
         <div class="subeb-featured-role-section w-row">
@@ -76,9 +146,9 @@
     </div>
         </div>
             </div>
-       </div> 
        </div>
-  
+       </div>
+
 <newsletter/>
 </div>
 </template>
@@ -128,19 +198,19 @@ export default {
 </script>
 
 <style scoped>
-/* styles for '...' */ 
+/* styles for '...' */
 .block-with-text {
   /* hide text if it more than N lines  */
   overflow: hidden;
   /* for set '...' in absolute position */
-  position: relative; 
+  position: relative;
   /* use this value to count block height */
   line-height: 1.2em;
   /* max-height = line-height (1.2) * lines max number (3) */
-  max-height: 3.6em; 
+  max-height: 3.6em;
   /* fix problem when last visible word doesn't adjoin right side  */
   text-align: justify;
-  
+
   /* */
   margin-right: -1em;
   padding-right: 1em;
@@ -169,4 +239,3 @@ export default {
 }
 </style>
 
-      

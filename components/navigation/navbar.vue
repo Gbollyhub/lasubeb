@@ -69,7 +69,7 @@
             <div>Programs</div>
           </div>
           <nav class="navlink-dropdown-list-container w-dropdown-list">
-            <a href="#" class="navlink dropdown w-dropdown-link">projects</a>
+            <a href="/lasubeb-projects" class="navlink dropdown w-dropdown-link">projects</a>
             <a href="#" class="navlink dropdown w-dropdown-link">INFRASTRUCTURE</a>
             <a href="#" class="navlink dropdown w-dropdown-link">recruitment</a>
             <a href="#" class="navlink dropdown w-dropdown-link">training</a>
@@ -107,7 +107,8 @@
           </div>
           <nav class="navlink-dropdown-list-container w-dropdown-list">
             <a href="/lasubeb-news" class="navlink dropdown w-dropdown-link">NEWS</a>
-            <a href="#" class="navlink dropdown w-dropdown-link">GALLERY</a>
+            <a href="/gallery" class="navlink dropdown w-dropdown-link">GALLERY</a>
+            <a href="/lasubeb-online-video-channel" target="_blank" class="navlink dropdown w-dropdown-link">VIDEOS</a>
           </nav>
         </div>
         <a href="/contact-us" class="navlink w-nav-link" style="font-size:12.15px">contact</a>
@@ -118,3 +119,4 @@
     </div>
   </div>
 </template>
+
