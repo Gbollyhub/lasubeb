@@ -10,7 +10,7 @@
           </div>
           <script type="application/json" class="w-json">
               {
-                "items": [{
+                    "items": [{
                     "width": 1080,
                     "caption": "",
                     "height": 606,

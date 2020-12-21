@@ -100,8 +100,8 @@ const createStore = () => {
             });
 
             const newNews = filterNews.sort(function(a, b) {
-                var c = new Date(a.created_at);
-                var d = new Date(b.created_at);
+                var c = new Date(a.NewsDate);
+                var d = new Date(b.NewsDate);
                 return d-c;
             });
 

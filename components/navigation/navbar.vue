@@ -73,9 +73,9 @@
             <a href="#" class="navlink dropdown w-dropdown-link">INFRASTRUCTURE</a>
             <a href="#" class="navlink dropdown w-dropdown-link">recruitment</a>
             <a href="#" class="navlink dropdown w-dropdown-link">training</a>
-            <a href="#" class="navlink dropdown w-dropdown-link">eko excel</a>
+            <a href="/lasubeb-ekoexcel" class="navlink dropdown w-dropdown-link">eko excel</a>
             <a href="#" class="navlink dropdown w-dropdown-link">homegrown feeding</a>
-            <a href="#" class="navlink dropdown w-dropdown-link">structured distance learning</a>
+            <a href="/lasubeb-structured-displance-learning" class="navlink dropdown w-dropdown-link">structured distance learning</a>
           </nav>
         </div>
         <div data-hover data-delay="0" class="navlink w-dropdown">

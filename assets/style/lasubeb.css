@@ -531,6 +531,13 @@ blockquote {
   text-transform: none;
 }
 
+.truncate{
+  width: 95%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .featured-date-block {
   padding-top: 5px;
   padding-bottom: 5px;
@@ -778,10 +785,10 @@ blockquote {
 }
 
 .page-img-mask {
+  height: 500px;
   overflow: visible;
   width: 100%;
   margin-right: auto;
-  margin-bottom: 19px;
   margin-left: auto;
   float: none;
   clear: none;
@@ -1498,10 +1505,16 @@ blockquote {
   text-decoration: none;
 }
 
+
+.news-featured-img-mask{
+  overflow: hidden;
+  height: 300px;
+}
+
 .news-featured-img {
-  width: 100%;
-  height: auto;
-  max-width: none;
+  width: 100%; /* or any custom size */
+  height: 100%;
+  object-fit: cover;
   margin-top: 2%;
   margin-bottom: 3%;
 }
@@ -2094,13 +2107,13 @@ blockquote {
 }
 
 .news-image-mask {
+  height: 300px;
   overflow: hidden;
   margin-right: 0px;
   -webkit-box-flex: 0;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  border-bottom: 1px solid #004fad;
   -o-object-fit: cover;
   object-fit: cover;
 }
@@ -2114,6 +2127,7 @@ blockquote {
   font-weight: 500;
   text-transform: none;
   white-space: pre-wrap;
+  width: 90%;
 }
 
 .news-paragraph {
@@ -2175,6 +2189,8 @@ blockquote {
 
 .news-img-list {
   height: auto;
+  width: 100%;
+  height: 100%;
   -o-object-fit: cover;
   object-fit: cover;
   -o-object-position: 50% 50%;
