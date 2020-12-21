@@ -9,7 +9,7 @@
                <div class="news-image-mask">
             <img :src="news.NewsImages" :alt="news.NewsTitle" loading="eager" class="news-img-list">
             </div>
-         
+
           <h2 class="news-headline">{{news.NewsTitle}}</h2>
           <p class="news-paragraph w-clearfix">by LASUBEB Publicity unit | {{news.NewsDate | moment }}</p>
         </a>

@@ -3,8 +3,8 @@
    <section id="feature-section" class="feature-section news">
       <h2 class="heading-2 featured"><span class="text-span">video learning channel</span> @LAGOSSUBEB</h2>
       <div class="news-container-list w-container">
-        <a href="#" class="gallery-pic-holder w-inline-block w-lightbox">
-          <img src="../../assets/images/Lasubeb_youtube_video.JPG"  width="370" alt="" class="gallery-img">
+        <a href="#" class="gallery-pic-holder w-inline-block w-lightbox" v-for="item in getVideos" :key="item.id">
+          <img :src="item.VideoPhoto"  width="370" alt="" class="gallery-img">
           <script type="application/json" class="w-json">
               {
                 "items": [{
@@ -20,55 +20,6 @@
               }
             </script>
         </a>
-        <a href="#" class="gallery-pic-holder w-inline-block w-lightbox">
-          <img src="../../assets/images/Lasubeb_youtube_video_2.JPG"  width="370" alt="" class="gallery-img">
-          <script type="application/json" class="w-json">
-              {
-                "items": [{
-                  "type": "video",
-                  "originalUrl": "https://www.youtube.com/watch?v=Z9XJiHW4QS4",
-                  "url": "https://www.youtube.com/watch?v=Z9XJiHW4QS4",
-                  "html": "<iframe class=\"embedly-embed\" src=\"//cdn.embedly.com/widgets/media.html?src=https%3A%2F%2Fwww.youtube.com%2Fembed%2FZ9XJiHW4QS4%3Ffeature%3Doembed&display_name=YouTube&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DZ9XJiHW4QS4&image=https%3A%2F%2Fi.ytimg.com%2Fvi%2FZ9XJiHW4QS4%2Fhqdefault.jpg&key=96f1f04c5f4143bcb0f2e68c87d65feb&type=text%2Fhtml&schema=youtube\" width=\"940\" height=\"528\" scrolling=\"no\" title=\"YouTube embed\" frameborder=\"0\" allow=\"autoplay; fullscreen\" allowfullscreen=\"true\"></iframe>",
-                  "thumbnailUrl": "https://i.ytimg.com/vi/Z9XJiHW4QS4/hqdefault.jpg",
-                  "width": 940,
-                  "height": 528
-                }],
-                "group": "vgallery2"
-              }
-            </script>
-        </a>
-        <a href="#" class="gallery-pic-holder w-inline-block w-lightbox"><img src="../../assets/images/Lasubeb_youtube_video_3.JPG"  width="370"  alt="" class="gallery-img">
-          <script type="application/json" class="w-json">
-              {
-                "items": [{
-                  "type": "video",
-                  "originalUrl": "https://www.youtube.com/watch?v=psUZf-Es2_c",
-                  "url": "https://www.youtube.com/watch?v=psUZf-Es2_c",
-                  "html": "<iframe class=\"embedly-embed\" src=\"//cdn.embedly.com/widgets/media.html?src=https%3A%2F%2Fwww.youtube.com%2Fembed%2FpsUZf-Es2_c%3Ffeature%3Doembed&display_name=YouTube&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DpsUZf-Es2_c&image=https%3A%2F%2Fi.ytimg.com%2Fvi%2FpsUZf-Es2_c%2Fhqdefault.jpg&key=96f1f04c5f4143bcb0f2e68c87d65feb&type=text%2Fhtml&schema=youtube\" width=\"940\" height=\"528\" scrolling=\"no\" title=\"YouTube embed\" frameborder=\"0\" allow=\"autoplay; fullscreen\" allowfullscreen=\"true\"></iframe>",
-                  "thumbnailUrl": "https://i.ytimg.com/vi/psUZf-Es2_c/hqdefault.jpg",
-                  "width": 940,
-                  "height": 528
-                }],
-                "group": "vgallery3"
-              }
-            </script>
-        </a>
-        <a href="#" class="gallery-pic-holder w-inline-block w-lightbox"><img src="../../assets/images/Lasubeb_youtube_video_4.JPG"  width="370"  alt="" class="gallery-img">
-          <script type="application/json" class="w-json">
-              {
-                "items": [{
-                  "type": "video",
-                  "originalUrl": "https://www.youtube.com/watch?v=DSs3SCBs5HM",
-                  "url": "https://www.youtube.com/watch?v=DSs3SCBs5HM",
-                  "html": "<iframe class=\"embedly-embed\" src=\"//cdn.embedly.com/widgets/media.html?src=https%3A%2F%2Fwww.youtube.com%2Fembed%2FDSs3SCBs5HM%3Ffeature%3Doembed&display_name=YouTube&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DDSs3SCBs5HM&image=https%3A%2F%2Fi.ytimg.com%2Fvi%2FDSs3SCBs5HM%2Fhqdefault.jpg&key=96f1f04c5f4143bcb0f2e68c87d65feb&type=text%2Fhtml&schema=youtube\" width=\"940\" height=\"528\" scrolling=\"no\" title=\"YouTube embed\" frameborder=\"0\" allow=\"autoplay; fullscreen\" allowfullscreen=\"true\"></iframe>",
-                  "thumbnailUrl": "https://i.ytimg.com/vi/DSs3SCBs5HM/hqdefault.jpg",
-                  "width": 940,
-                  "height": 528
-                }],
-                "group": "vgallery3"
-              }
-            </script>
-        </a>
       </div>
     </section>
   <subebPartner/>
@@ -80,11 +31,19 @@
 import newsletter from '@/components/newsletter/newsletter.vue'
 import subebPartner from '@/components/subeb-partner/subeb-partner.vue'
 import dataSection from '@/components/data-section/data-section.vue'
+import { mapGetters } from 'vuex'
+import marked from 'marked'
+import moment from 'moment'
 export default {
   components:{
     newsletter,
     subebPartner,
      dataSection
+  },
+    computed:{
+   ...mapGetters([
+     'getVideos'
+   ])
   },
   head(){
     return{

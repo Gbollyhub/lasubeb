@@ -39,38 +39,38 @@ export default {
         src: 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js',
         type: "text/javascript"
       },
-      { 
+      {
         src: '/js/hplugin1.js',
         type: "text/javascript"
       },
-      { 
+      {
         src: '/js/hplugin2.js',
         type: "text/javascript"
       },
       {
         src: 'https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.4.1.min.220afd743d.js?site=5eff351b1692982c192ff95b',
         type: "text/javascript",
-        body: true 
+        body: true
       },
       {
         src: 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js',
         type: "text/javascript",
-        body: true 
+        body: true
       },
-      { 
+      {
         src: '/js/bplugin1.js',
         type: "text/javascript",
-        body: true 
+        body: true
       },
-      { 
-        src: '/js/lasubeb.js', 
+      {
+        src: '/js/lasubeb.js',
         type: "text/javascript",
-        body: true 
+        body: true
       },
       {
         src: '/js/owl/owl.carousel.min.js',
         type: "text/javascript",
-        body: true 
+        body: true
       }
     ],
   },
@@ -88,7 +88,8 @@ export default {
   ** Plugins to load before mounting the App
   ** https://nuxtjs.org/guide/plugins
   */
-  plugins: [],
+  plugins: [
+  ],
   /*
   ** Auto import components
   ** See https://nuxtjs.org/api/configuration-components

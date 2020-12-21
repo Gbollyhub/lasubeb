@@ -12,6 +12,8 @@ const createStore = () => {
          Homepage:[],
          departments:[],
          statutory:[],
+         gallery:[],
+         videos:[]
         },
         getters: {
             getDepartment(state){
@@ -37,12 +39,18 @@ const createStore = () => {
         },
         getLgea(state){
             return state.Lgea
-        }
+        },
+        getGallery(state){
+          return state.gallery
+      },
+      getVideos(state){
+        return state.videos
+    }
         },
         mutations: {
             setDepartment(state, payload){
                 state.departments = payload
-            },  
+            },
             setStatutory(state, payload){
                 state.statutory = payload
             },
@@ -61,6 +69,12 @@ const createStore = () => {
         setLgea(state, payload){
             state.Lgea = payload
         },
+        setGallery(state, payload){
+          state.gallery = payload
+      },
+      setVideos(state, payload){
+        state.videos = payload
+    },
         },
         actions:{
           async nuxtServerInit(vuexContext, payload){
@@ -71,12 +85,14 @@ const createStore = () => {
                 const lgea = await this.$axios.$get('http://admin-cms.lasubeb.lg.gov.ng/lasubeb-lg-education-authorities')
                 const department =  await this.$axios.$get('http://admin-cms.lasubeb.lg.gov.ng/departments')
                 const statutory =  await this.$axios.$get('http://admin-cms.lasubeb.lg.gov.ng/statutory-units')
-                
+                const gallery =  await this.$axios.$get('http://admin-cms.lasubeb.lg.gov.ng/lasubeb-galleries')
+                const videos =  await this.$axios.$get('http://admin-cms.lasubeb.lg.gov.ng/lasubeb-videos')
+
                 const filterimageSlider = imageSlider.filter( function(fimageSlider) { return fimageSlider.Active == true })
                 const filterboardMembers = boardMembers.filter( function(fboardMembers) { return fboardMembers.Active == true })
                 const filterNews = news.filter( function(fnews) { return fnews.Active == true })
                 const filterlgea = lgea.filter( function(flgea) { return flgea.Active == true })
-                
+
                const newMembers = filterboardMembers.sort(function(a, b) {
                 var c = new Date(a.created_at);
                 var d = new Date(b.created_at);
@@ -95,6 +111,18 @@ const createStore = () => {
                 return c-d;
             });
 
+            const newGallery = gallery.sort(function(a, b) {
+              var c = new Date(a.created_at);
+              var d = new Date(b.created_at);
+              return d-c;
+          });
+
+          const newVideos = videos.sort(function(a, b) {
+            var c = new Date(a.created_at);
+            var d = new Date(b.created_at);
+            return d-c;
+        });
+
             vuexContext.dispatch('setDepartment', department)
             vuexContext.dispatch('setStatutory', statutory)
 
@@ -103,7 +131,18 @@ const createStore = () => {
                 vuexContext.dispatch('setNews', newNews)
                 vuexContext.dispatch('setBoardMember', newMembers)
                 vuexContext.dispatch('setLgea', newLgea)
+                vuexContext.dispatch('setGallery', newGallery)
+                vuexContext.dispatch('setVideos', newVideos)
             },
+
+            setGallery(vuexContext, payload){
+              vuexContext.commit('setGallery', payload)
+           },
+
+           setVideos(vuexContext, payload){
+            vuexContext.commit('setVideos', payload)
+         },
+
 
             setDepartment(vuexContext, payload){
                 vuexContext.commit('setDepartment', payload)
