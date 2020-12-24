@@ -81,7 +81,7 @@
         <div data-hover data-delay="0" class="navlink w-dropdown">
           <div class="navlink dropdown-toggle w-dropdown-toggle">
             <div class="w-icon-dropdown-toggle"></div>
-            <div>emis</div>
+          <div>EDUCATION DATA</div>
           </div>
           <nav class="navlink-dropdown-list-container w-dropdown-list">
             <a href="#" class="navlink dropdown w-dropdown-link">education mis</a>
@@ -108,6 +108,7 @@
           <nav class="navlink-dropdown-list-container w-dropdown-list">
             <a href="/lasubeb-news" class="navlink dropdown w-dropdown-link">NEWS</a>
             <a href="/gallery" class="navlink dropdown w-dropdown-link">GALLERY</a>
+            <a href="/lasubeb-local-education-calendar" class="navlink dropdown w-dropdown-link">EVENTS</a>
             <a href="/lasubeb-online-video-channel" target="_blank" class="navlink dropdown w-dropdown-link">VIDEOS</a>
           </nav>
         </div>

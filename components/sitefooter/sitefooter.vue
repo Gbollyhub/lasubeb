@@ -27,14 +27,34 @@
           <br />Phone :
           <a href="tel:+2348185431637" class="inline-link-reverse">
             +2348185431637
-            <br />
+            <br>Email: info@lasubeb.lg.gov.ng<br>
           </a>
         </div>
          <div class="twitter-embed w-embed w-script">
             <a class="twitter-timeline" data-width="300" data-height="200" href="https://twitter.com/lagossubeb?ref_src=twsrc%5Etfw">Tweets by lagossubeb</a>
-            <script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
           </div>
       </div>
     </div>
   </div>
 </template>
+
+
+<script>
+export default {
+  head(){
+    return{
+       htmlAttrs: {
+        'data-wf-page': "5f416a15098ed154e8830c02",
+        'data-wf-site': "5eff351b1692982c192ff95b"
+              },
+          title: 'LASUBEB NEWS',
+          meta: [
+                  { hid: 'twitter', type: 'text/javascript', src: 'https://platform.twitter.com/widgets.js', async: true, defer: true },
+      { hid: 'description', name: 'description', content: 'LASUBEB NEWS' },
+      { hid: 'description', property:'og:description', content: 'LASUBEB NEWS' },
+      { hid: 'description', property:'twitter:description', content: 'LASUBEB NEWS' }
+],
+    }
+  }
+}
+</script>

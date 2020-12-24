@@ -27,6 +27,7 @@ export default {
       { rel: 'apple-touch-icon', type: 'image/x-icon', href: '/webclip.png' },
     ],
     script: [
+      { hid: 'twitter', type: 'text/javascript', src: 'https://platform.twitter.com/widgets.js', async: true, defer: true },
       {
         src: "https://www.google.com/recaptcha/api.js",
         type: "text/javascript"
