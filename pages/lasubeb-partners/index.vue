@@ -67,7 +67,7 @@ export default {
       name: '',
       email: '',
       phone: '',
-      category: 'Select a Category',
+      category: 'TechPartner',
       note:''
   }
   },
@@ -90,8 +90,8 @@ export default {
       const url = 'https://lasubeb-api.herokuapp.com/verify-form'
        const captcha = await axios.post(url, { "token": token })
        if(captcha.data.google_response.success != true){
-        this.formError = true
-         this.formSuccess = false
+        // this.formError = true
+        //  this.formSuccess = false
       this.form = false
        }
        else{
