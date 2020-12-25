@@ -10,7 +10,7 @@
     <div class="container w-container">
       <a href="/" aria-current="page" class="logo-brand w-clearfix w-nav-brand w--current">
         <img
-          src="@/assets/images/lasubeb_logo_only.png"
+          :src="getLogo.LogoUrl"
           width="86"
           alt="LAGOS STATE UNIVERSAL BASIC EDUCATION BOARD"
           class="brand-logo"
@@ -120,4 +120,21 @@
     </div>
   </div>
 </template>
+
+<script>
+import { mapGetters } from 'vuex'
+export default {
+    data(){
+    return{
+      img: "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg",
+      gradient: 'linear-gradient(180deg, hsla(0, 0%, 100%, 0) 60%, rgba(0, 45, 97, 0.88) 86%),'
+    }
+  },
+  computed:{
+    ...mapGetters([
+      'getLogo'
+    ])
+  }
+}
+</script>
 

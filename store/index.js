@@ -13,9 +13,13 @@ const createStore = () => {
          departments:[],
          statutory:[],
          gallery:[],
-         videos:[]
+         videos:[],
+         logo: ''
         },
         getters: {
+          getLogo(state){
+            return state.logo
+        },
             getDepartment(state){
                 return state.departments
             },
@@ -48,6 +52,9 @@ const createStore = () => {
     }
         },
         mutations: {
+          setLogo(state, payload){
+            state.logo = payload
+        },
             setDepartment(state, payload){
                 state.departments = payload
             },
@@ -88,6 +95,8 @@ const createStore = () => {
                 const gallery =  await this.$axios.$get('http://admin-cms.lasubeb.lg.gov.ng/lasubeb-galleries')
                 const videos =  await this.$axios.$get('http://admin-cms.lasubeb.lg.gov.ng/lasubeb-videos')
 
+                const logo =  await this.$axios.$get('http://admin.lasubeb.lg.gov.ng/lasubeb-logo')
+
                 const filterimageSlider = imageSlider.filter( function(fimageSlider) { return fimageSlider.Active == true })
                 const filterboardMembers = boardMembers.filter( function(fboardMembers) { return fboardMembers.Active == true })
                 const filterNews = news.filter( function(fnews) { return fnews.Active == true })
@@ -123,6 +132,8 @@ const createStore = () => {
             return d-c;
         });
 
+
+        vuexContext.dispatch('setLogo', logo)
             vuexContext.dispatch('setDepartment', department)
             vuexContext.dispatch('setStatutory', statutory)
 
@@ -134,6 +145,11 @@ const createStore = () => {
                 vuexContext.dispatch('setGallery', newGallery)
                 vuexContext.dispatch('setVideos', newVideos)
             },
+
+            setLogo(vuexContext, payload){
+              vuexContext.commit('setLogo', payload)
+           },
+
 
             setGallery(vuexContext, payload){
               vuexContext.commit('setGallery', payload)
