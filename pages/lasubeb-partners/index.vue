@@ -34,10 +34,10 @@
            <recaptcha @error="onError" @success="onSuccess" @expired="onExpired" />
           <button type="submit" class="app-submit">Submit</button>
         </form>
-        <div v-show="formSuccess" class="w-form-done" style="display:block">
+        <div v-show="formSuccess" class="w-form-done" style="display:block;margin-top:30px">
           <div>Thank you! Your submission has been received!</div>
         </div>
-        <div v-show="formError" class="w-form-fail" style="display:block">
+        <div v-show="formError" class="w-form-fail" style="display:block;margin-top:30px">
           <div>Oops! Something went wrong while submitting the form.</div>
         </div>
       </div>
@@ -67,7 +67,7 @@ export default {
       name: '',
       email: '',
       phone: '',
-      category: '',
+      category: 'Select a Category',
       note:''
   }
   },
@@ -91,6 +91,7 @@ export default {
        const captcha = await axios.post(url, { "token": token })
        if(captcha.data.google_response.success != true){
         this.formError = true
+         this.formSuccess = false
       this.form = false
        }
        else{
@@ -103,6 +104,7 @@ export default {
      })
          this.form = false
     this.formSuccess = true
+     this.formError = false
        }
     },
     onExpired() {
@@ -126,3 +128,15 @@ export default {
 }
 </script>
 
+<style scoped>
+.app-submit{
+  padding: 9px 15px;
+    background-color: #3898EC;
+    color: white;
+    border: 0;
+    line-height: inherit;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 0
+}
+</style>
