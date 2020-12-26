@@ -9,10 +9,10 @@
               {
                 "items": [{
                   "type": "video",
-                  "originalUrl": "https://www.youtube.com/watch?v=GrLogpJ31Y0",
-                  "url": "https://www.youtube.com/watch?v=GrLogpJ31Y0",
+                  "originalUrl": "{{ item.VideoUrl }}",
+                  "url": "{{ item.VideoUrl }}",
                   "html": "<iframe class=\"embedly-embed\" src=\"//cdn.embedly.com/widgets/media.html?src=https%3A%2F%2Fwww.youtube.com%2Fembed%2FGrLogpJ31Y0%3Ffeature%3Doembed&display_name=YouTube&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DGrLogpJ31Y0&image=https%3A%2F%2Fi.ytimg.com%2Fvi%2FGrLogpJ31Y0%2Fhqdefault.jpg&key=96f1f04c5f4143bcb0f2e68c87d65feb&type=text%2Fhtml&schema=youtube\" width=\"940\" height=\"528\" scrolling=\"no\" title=\"YouTube embed\" frameborder=\"0\" allow=\"autoplay; fullscreen\" allowfullscreen=\"true\"></iframe>",
-                  "thumbnailUrl": "https://i.ytimg.com/vi/GrLogpJ31Y0/hqdefault.jpg",
+                  "thumbnailUrl": "{{item.VideoPhoto}}",
                   "width": 940,
                   "height": 528
                 }],

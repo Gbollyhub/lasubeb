@@ -14,12 +14,12 @@
         </nav>
       </div>
       <div class="events-container-list w-container">
-        <a data-title="Lagos State Delegates understudy Edo State Education sector transformation" href="https://en.unesco.org/commemorations/worldlogicday" target="_blank" class="events-card-block w-inline-block">
+        <!-- <a data-title="Lagos State Delegates understudy Edo State Education sector transformation" href="https://en.unesco.org/commemorations/worldlogicday" target="_blank" class="events-card-block w-inline-block">
           <div class="news-image-mask"><img src="../../assets/images//lasubeb_worldlogicday.jpg" alt="Lagos Delegates understudy Edo State Education Sector Transformation" loading="eager" class="news-img-list"></div>
           <h2 class="events-title">GOVERNOR&#x27;S DAY</h2>
           <p class="event-description w-clearfix">The ability to think is one of the most defining features of humankind. In different cultures, the definition of humanity is associated with concepts such as consciousness, knowledge and reason.</p>
           <p class="event-date w-clearfix">14TH JAN - 15TH JAN</p>
-        </a>
+        </a> -->
       </div>
     </section>
 <subebPartner/>

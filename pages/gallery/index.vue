@@ -16,21 +16,10 @@
                     "height": 606,
                     "fileName": "131887779_191151789345347_3332186044764685104_n.jpg",
                     "origFileName": "131887779_191151789345347_3332186044764685104_n.jpg",
-                    "url": item.PostPhoto1,
+                    "url":    "{{ item.PostPhoto1 }}",
                     "_id": "5fde3f86cb9c9858ded1a421",
                     "type": "image",
                     "fileSize": 68355
-                  },
-                  {
-                    "width": 1080,
-                    "caption": "Hello, dear parents in Lagos State.  It is another learning weekend special needs pupils and pupils in the lower primary classes (1-3) in Lagos state.",
-                    "height": 606,
-                    "fileName": "131888782_1649094211918766_5458983530660768241_n.jpg",
-                    "origFileName": "131888782_1649094211918766_5458983530660768241_n.jpg",
-                    "url": "../../assets/images/131888782_1649094211918766_5458983530660768241_n.jpg",
-                    "_id": "5fde3f977bad8cb213e4c126",
-                    "type": "image",
-                    "fileSize": 75412
                   }
                 ],
                 "group": "gathery1"
