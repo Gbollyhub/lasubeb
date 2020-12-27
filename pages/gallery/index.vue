@@ -16,7 +16,7 @@
                     "height": 606,
                     "fileName": "131887779_191151789345347_3332186044764685104_n.jpg",
                     "origFileName": "131887779_191151789345347_3332186044764685104_n.jpg",
-                    "url":    "{{ item.PostPhoto1 }}",
+                    "url":   "{{ item.PostPhoto1 }}",
                     "_id": "5fde3f86cb9c9858ded1a421",
                     "type": "image",
                     "fileSize": 68355
