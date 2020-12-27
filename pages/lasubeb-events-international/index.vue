@@ -8,47 +8,17 @@
           <div class="events-type-text-block">Show events by</div>
         </div>
         <nav class="events-dropdown-list w-dropdown-list">
-          <a href="lasubeb-events-international" aria-current="page" class="events-type w-dropdown-link w--current">International Events</a>
-          <a href="#" class="events-type w-dropdown-link">Lagos State School Calendar</a>
-          <a href="/lasubeb-local-education-calendar" class="events-type w-dropdown-link">Local Educational Events</a>
+          <a href="#" aria-current="page" class="events-type w-dropdown-link" @click="filterInt">International Events</a>
+          <a href="#" class="events-type w-dropdown-link">Lagos State School Calendar </a>
+          <a href="#" class="events-type w-dropdown-link" @click="filterLocal">Local Educational Events</a>
         </nav>
       </div>
       <div class="events-container-list w-container">
-        <a data-title="Lagos State Delegates understudy Edo State Education sector transformation" href="https://en.unesco.org/commemorations/worldlogicday" target="_blank" class="events-card-block w-inline-block">
-          <div class="news-image-mask"><img src="../../assets/images/lasubeb_worldlogicday.jpg" alt="Lagos Delegates understudy Edo State Education Sector Transformation" loading="eager" class="news-img-list"></div>
-          <h2 class="events-title">world logic day</h2>
-          <p class="event-description w-clearfix">The ability to think is one of the most defining features of humankind. In different cultures, the definition of humanity is associated with concepts such as consciousness, knowledge and reason.</p>
-          <p class="event-date w-clearfix">14TH JAN.</p>
-        </a>
-        <a data-title="Lagos State Delegates understudy Edo State Education sector transformation" href="https://en.unesco.org/commemorations/educationday" target="_blank" class="events-card-block w-inline-block">
-          <div class="news-image-mask"><img src="../../assets/images/lasubeb_eventday_2y.jpg" alt="Lagos Delegates understudy Edo State Education Sector Transformation" loading="eager" class="news-img-list"></div>
-          <h2 class="events-title">int&#x27;l day of education</h2>
-          <p class="event-description w-clearfix">The ability to think is one of the most defining features of humankind. In different cultures, the definition of humanity is associated with concepts such as consciousness, knowledge and reason.</p>
-          <p class="event-date w-clearfix">24TH JAN.</p>
-        </a>
-        <a data-title="Lagos State Delegates understudy Edo State Education sector transformation" href="lasubeb-news-detail.html" class="events-card-block w-inline-block">
-          <div class="news-image-mask"><img src="../../assets/images/lasubeb_eventday_3.jpg" alt="Lagos Delegates understudy Edo State Education Sector Transformation" loading="eager" class="news-img-list"></div>
-          <h2 class="events-title">world day for african &amp; afrodescedant culture</h2>
-          <p class="event-description w-clearfix">The ability to think is one of the most defining features of humankind. In different cultures, the definition of humanity is associated with concepts such as consciousness, knowledge and reason.</p>
-          <p class="event-date w-clearfix">24TH JAN.</p>
-        </a>
-        <a data-title="Lagos State Delegates understudy Edo State Education sector transformation" href="lasubeb-news-detail.html" class="events-card-block w-inline-block">
-          <div class="news-image-mask"><img src="../../assets/images/lasubeb_eventday_5.jpg" alt="Lagos Delegates understudy Edo State Education Sector Transformation" loading="eager" class="news-img-list"></div>
-          <h2 class="events-title">INTERNATIONAL DAY OF WOMEN &amp; GIRLS IN SCIENCE</h2>
-          <p class="event-description w-clearfix">The ability to think is one of the most defining features of humankind. In different cultures, the definition of humanity is associated with concepts such as consciousness, knowledge and reason.</p>
-          <p class="event-date w-clearfix">11TH FEB.</p>
-        </a>
-        <a data-title="Lagos State Delegates understudy Edo State Education sector transformation" href="lasubeb-news-detail.html" class="events-card-block w-inline-block">
-          <div class="news-image-mask"><img src="../../assets/images/lasubeb_eventday_4.jpg" alt="Lagos Delegates understudy Edo State Education Sector Transformation" loading="eager" class="news-img-list"></div>
-          <h2 class="events-title">INT&#x27;L MOTHER LANGUAGE DAY</h2>
-          <p class="event-description w-clearfix">The ability to think is one of the most defining features of humankind. In different cultures, the definition of humanity is associated with concepts such as consciousness, knowledge and reason.</p>
-          <p class="event-date w-clearfix">21ST FEB.</p>
-        </a>
-        <a data-title="Lagos State Delegates understudy Edo State Education sector transformation" href="lasubeb-news-detail.html" class="events-card-block w-inline-block">
-          <div class="news-image-mask"><img src="../../assets/images/lasubeb_eventday_6.jpg" alt="Lagos Delegates understudy Edo State Education Sector Transformation" loading="eager" class="news-img-list"></div>
-          <h2 class="events-title">INTERNATIONAL WOMEN&#x27;S DAY</h2>
-          <p class="event-description w-clearfix">The ability to think is one of the most defining features of humankind. In different cultures, the definition of humanity is associated with concepts such as consciousness, knowledge and reason.</p>
-          <p class="event-date w-clearfix">8TH MAR.</p>
+        <a v-for="item in getEvents" :key="item.id" :href="item.EventUrl" target="_blank" class="events-card-block w-inline-block">
+          <div class="news-image-mask"><img :src="item.EventPhotoUrl" alt="Lagos Delegates understudy Edo State Education Sector Transformation" loading="eager" class="news-img-list"></div>
+          <h2 class="events-title">{{ item.EventTitle }}</h2>
+          <p class="event-description w-clearfix">{{ item.EventDescription }}</p>
+          <p class="event-date w-clearfix">{{ item.EventDate }}.</p>
         </a>
       </div>
     </section>
@@ -59,10 +29,40 @@
 <script>
 import newsletter from '@/components/newsletter/newsletter.vue'
 import subebPartner from '@/components/subeb-partner/subeb-partner.vue'
+import { mapGetters } from 'vuex'
 export default {
   components:{
     newsletter,
     subebPartner
+  },
+  data(){
+    return{
+
+    }
+  },
+  created(){
+    // this.events = this.getEvents
+  },
+      computed:{
+   ...mapGetters([
+     'getEvents'
+   ]),
+  },
+  methods:{
+  async filterInt(){
+      const events =  await this.$axios.$get('http://admin.lasubeb.lg.gov.ng/lasubeb-events')
+        this.$store.state.events = events
+      const filterEvents = this.getEvents.filter( function(fevents) { return fevents.TypeOfEvent == 'InternationalEvent'})
+      this.$store.state.events = filterEvents
+      console.log('filter',filterEvents)
+   },
+   async filterLocal(){
+          const events =  await this.$axios.$get('http://admin.lasubeb.lg.gov.ng/lasubeb-events')
+          this.$store.state.events = events
+      const filterEvents = this.getEvents.filter( function(fevents) { return fevents.TypeOfEvent == 'LocalEvent'})
+       this.$store.state.events = filterEvents
+   }
+
   },
   head(){
     return{

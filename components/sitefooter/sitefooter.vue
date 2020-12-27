@@ -10,7 +10,7 @@
         <a href="/lasubeb-board" class="footer-links">THE BOARD</a>
         <a href="/lasubeb-news" class="footer-links">NEWS</a>
         <a  href="/lasubeb-department-statutory-units-key-functions" class="footer-links">DEPARTMENTS</a>
-        <a href="#" class="footer-links">EMIS</a>
+        <a href="/education-data" class="footer-links">EDUCATION DATA</a>
         <a href="#" class="footer-links">RECRUITMENT PORTAL</a>
       </div>
        <div class="w-col w-col-3 w-col-stack">

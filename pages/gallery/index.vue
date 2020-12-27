@@ -10,19 +10,64 @@
           </div>
           <script type="application/json" class="w-json">
               {
-                    "items": [{
+                    "items": [
+                    {
                     "width": 1080,
                     "caption": "",
                     "height": 606,
                     "fileName": "131887779_191151789345347_3332186044764685104_n.jpg",
                     "origFileName": "131887779_191151789345347_3332186044764685104_n.jpg",
                     "url":   "{{ item.PostPhoto1 }}",
-                    "_id": "5fde3f86cb9c9858ded1a421",
+                    "_id":  "{{item.id}}",
+                    "type": "image",
+                    "fileSize": 68355
+                  },
+                  {
+                    "width": 1080,
+                    "caption": "",
+                    "height": 606,
+                    "fileName": "131887779_191151789345347_3332186044764685104_n.jpg",
+                    "origFileName": "131887779_191151789345347_3332186044764685104_n.jpg",
+                    "url":   "{{ item.PostPhoto2 }}",
+                    "_id": "{{item.id}}",
+                    "type": "image",
+                    "fileSize": 68355
+                  },
+                  {
+                    "width": 1080,
+                    "caption": "",
+                    "height": 606,
+                    "fileName": "131887779_191151789345347_3332186044764685104_n.jpg",
+                    "origFileName": "131887779_191151789345347_3332186044764685104_n.jpg",
+                    "url":   "{{ item.PostPhoto3 }}",
+                    "_id": "{{item.id}}",
+                    "type": "image",
+                    "fileSize": 68355
+                  },
+                  {
+                    "width": 1080,
+                    "caption": "",
+                    "height": 606,
+                    "fileName": "131887779_191151789345347_3332186044764685104_n.jpg",
+                    "origFileName": "131887779_191151789345347_3332186044764685104_n.jpg",
+                    "url":   "{{ item.PostPhoto4 }}",
+                    "_id":  "{{item.id}}",
+                    "type": "image",
+                    "fileSize": 68355
+                  },
+                  {
+                    "width": 1080,
+                    "caption": "",
+                    "height": 606,
+                    "fileName": "131887779_191151789345347_3332186044764685104_n.jpg",
+                    "origFileName": "131887779_191151789345347_3332186044764685104_n.jpg",
+                    "url":   "{{ item.PostPhoto5 }}",
+                    "_id":  "{{item.id}}",
                     "type": "image",
                     "fileSize": 68355
                   }
                 ],
-                "group": "gathery1"
+                "group": {{ item.id }}
               }
             </script>
         </a>

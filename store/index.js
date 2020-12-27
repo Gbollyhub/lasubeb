@@ -14,9 +14,17 @@ const createStore = () => {
          statutory:[],
          gallery:[],
          videos:[],
+         events:[],
+         projects:[],
          logo: ''
         },
         getters: {
+          getEvents(state){
+            return state.events
+        },
+        getProjects(state){
+          return state.projects
+      },
           getLogo(state){
             return state.logo
         },
@@ -52,6 +60,12 @@ const createStore = () => {
     }
         },
         mutations: {
+          setEvents(state, payload){
+            state.events = payload
+        },
+        setProjects(state, payload){
+          state.projects = payload
+      },
           setLogo(state, payload){
             state.logo = payload
         },
@@ -96,6 +110,8 @@ const createStore = () => {
                 const videos =  await this.$axios.$get('http://admin-cms.lasubeb.lg.gov.ng/lasubeb-videos')
 
                 const logo =  await this.$axios.$get('http://admin.lasubeb.lg.gov.ng/lasubeb-logo')
+                const events =  await this.$axios.$get('http://admin.lasubeb.lg.gov.ng/lasubeb-events')
+                const projects =  await this.$axios.$get('http://admin.lasubeb.lg.gov.ng/lasubeb-projects')
 
                 const filterimageSlider = imageSlider.filter( function(fimageSlider) { return fimageSlider.Active == true })
                 const filterboardMembers = boardMembers.filter( function(fboardMembers) { return fboardMembers.Active == true })
@@ -126,13 +142,27 @@ const createStore = () => {
               return d-c;
           });
 
+          const newEvents = events.sort(function(a, b) {
+            var c = new Date(a.created_at);
+            var d = new Date(b.created_at);
+            return d-c;
+        });
+
+        const newProjects = projects.sort(function(a, b) {
+          var c = new Date(a.created_at);
+          var d = new Date(b.created_at);
+          return d-c;
+      });
+
           const newVideos = videos.sort(function(a, b) {
             var c = new Date(a.created_at);
             var d = new Date(b.created_at);
             return d-c;
         });
 
-
+        vuexContext.dispatch('setEvents', newEvents)
+        vuexContext.dispatch('setProjects', newProjects)
+        vuexContext.dispatch('setLogo', logo)
         vuexContext.dispatch('setLogo', logo)
             vuexContext.dispatch('setDepartment', department)
             vuexContext.dispatch('setStatutory', statutory)
@@ -145,6 +175,19 @@ const createStore = () => {
                 vuexContext.dispatch('setGallery', newGallery)
                 vuexContext.dispatch('setVideos', newVideos)
             },
+
+
+            setEvents(vuexContext, payload){
+              vuexContext.commit('setEvents', payload)
+           },
+
+           setProjects(vuexContext, payload){
+            vuexContext.commit('setProjects', payload)
+         },
+
+           setLogo(vuexContext, payload){
+            vuexContext.commit('setLogo', payload)
+         },
 
             setLogo(vuexContext, payload){
               vuexContext.commit('setLogo', payload)
