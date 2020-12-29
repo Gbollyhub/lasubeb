@@ -8,6 +8,7 @@
           <div class="events-type-text-block">Show events by</div>
         </div>
         <nav class="events-dropdown-list w-dropdown-list">
+          <a href="#" aria-current="page" class="events-type w-dropdown-link" @click="filterAll">All Events</a>
           <a href="#" aria-current="page" class="events-type w-dropdown-link" @click="filterInt">International Events</a>
           <a href="#" class="events-type w-dropdown-link">Lagos State School Calendar </a>
           <a href="#" class="events-type w-dropdown-link" @click="filterLocal">Local Educational Events</a>
@@ -45,22 +46,24 @@ export default {
   },
       computed:{
    ...mapGetters([
-     'getEvents'
+     'getEvents',
+     'getFilterEvent',
+     'getIntEvents',
+     'getLocalEvents'
    ]),
   },
   methods:{
-  async filterInt(){
-      const events =  await this.$axios.$get('http://admin.lasubeb.lg.gov.ng/lasubeb-events')
-        this.$store.state.events = events
-      const filterEvents = this.getEvents.filter( function(fevents) { return fevents.TypeOfEvent == 'InternationalEvent'})
-      this.$store.state.events = filterEvents
-      console.log('filter',filterEvents)
+      filterAll(){
+         const project = this.getFilterEvent
+      this.$store.state.events = project
    },
-   async filterLocal(){
-          const events =  await this.$axios.$get('http://admin.lasubeb.lg.gov.ng/lasubeb-events')
-          this.$store.state.events = events
-      const filterEvents = this.getEvents.filter( function(fevents) { return fevents.TypeOfEvent == 'LocalEvent'})
-       this.$store.state.events = filterEvents
+   filterInt(){
+         const project = this.getIntEvents
+      this.$store.state.events = project
+   },
+    filterLocal(){
+             const project = this.getLocalEvents
+      this.$store.state.events = project
    }
 
   },

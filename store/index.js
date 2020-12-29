@@ -14,17 +14,54 @@ const createStore = () => {
          statutory:[],
          gallery:[],
          videos:[],
+         filterevent:[],
          events:[],
+         intEvents: [],
+         localEvents: [],
+         filterproject:[],
          projects:[],
+         compProjects:[],
+         ongProjects:[],
+         newProjects:[],
+         rehabProjects:[],
+         schoolProjects:[],
+
          logo: ''
         },
         getters: {
+          getFilterEvent(state){
+          return state.filterevent
+          },
+          getFilterProject(state){
+            return state.filterproject
+            },
           getEvents(state){
             return state.events
         },
+        getIntEvents(state){
+          return state.intEvents
+      },
+      getLocalEvents(state){
+        return state.localEvents
+    },
         getProjects(state){
           return state.projects
       },
+      getcompProjects(state){
+        return state.compProjects
+    },
+    getongProjects(state){
+      return state.ongProjects
+  },
+  getnewProjects(state){
+    return state.newProjects
+},
+getrehabProjects(state){
+  return state.rehabProjects
+},
+getschoolProjects(state){
+  return state.schoolProjects
+},
           getLogo(state){
             return state.logo
         },
@@ -61,11 +98,34 @@ const createStore = () => {
         },
         mutations: {
           setEvents(state, payload){
-            state.events = payload
+            state.events = payload;
+            state.filterevent = payload
         },
-        setProjects(state, payload){
-          state.projects = payload
+        setIntEvents(state, payload){
+          state.intEvents = payload
       },
+      setLocalEvents(state, payload){
+        state.localEvents = payload
+    },
+        setProjects(state, payload){
+          state.projects = payload;
+          state.filterproject = payload;
+      },
+      setComProjects(state, payload){
+        state.compProjects = payload
+    },
+    setOngProjects(state, payload){
+      state.ongProjects = payload
+  },
+  setNewProjects(state, payload){
+    state.newProjects = payload
+},
+setRehabProjects(state, payload){
+  state.rehabProjects = payload
+},
+setSchoolProjects(state, payload){
+  state.schoolProjects = payload
+},
           setLogo(state, payload){
             state.logo = payload
         },
@@ -118,6 +178,9 @@ const createStore = () => {
                 const filterNews = news.filter( function(fnews) { return fnews.Active == true })
                 const filterlgea = lgea.filter( function(flgea) { return flgea.Active == true })
 
+
+
+
                const newMembers = filterboardMembers.sort(function(a, b) {
                 var c = new Date(a.created_at);
                 var d = new Date(b.created_at);
@@ -154,6 +217,17 @@ const createStore = () => {
           return d-c;
       });
 
+
+
+      const filterIntEvents = newEvents.filter( function(fevents) { return fevents.TypeOfEvent == 'InternationalEvent'})
+      const filterLocalEvents = newEvents.filter( function(fevents) { return fevents.TypeOfEvent == 'LocalEvent'})
+
+      const filterCompleted = newProjects.filter( function(fevents) { return fevents.Status == 'Completed'})
+      const filterOngoing = newProjects.filter( function(fevents) { return fevents.Status == 'Ongoing'})
+      const filterNew = newProjects.filter( function(fevents) { return fevents.Status == 'New'})
+      const filterRehabilitation = newProjects.filter( function(fevents) { return fevents.Status == 'Rehabilitation'})
+      const filterSchoolSupplies = newProjects.filter( function(fevents) { return fevents.Status == 'SchoolSupplies'})
+
           const newVideos = videos.sort(function(a, b) {
             var c = new Date(a.created_at);
             var d = new Date(b.created_at);
@@ -161,7 +235,18 @@ const createStore = () => {
         });
 
         vuexContext.dispatch('setEvents', newEvents)
+        vuexContext.dispatch('setIntEvents', filterIntEvents)
+        vuexContext.dispatch('setLocalEvents', filterLocalEvents)
+
+
         vuexContext.dispatch('setProjects', newProjects)
+        vuexContext.dispatch('setComProjects', filterCompleted)
+        vuexContext.dispatch('setOngProjects', filterOngoing)
+        vuexContext.dispatch('setNewProjects', filterNew)
+        vuexContext.dispatch('setRehabProjects', filterRehabilitation)
+        vuexContext.dispatch('setSchoolProjects', filterSchoolSupplies)
+
+
         vuexContext.dispatch('setLogo', logo)
         vuexContext.dispatch('setLogo', logo)
             vuexContext.dispatch('setDepartment', department)
@@ -185,14 +270,35 @@ const createStore = () => {
             vuexContext.commit('setProjects', payload)
          },
 
-           setLogo(vuexContext, payload){
-            vuexContext.commit('setLogo', payload)
+
+         setIntEvents(vuexContext, payload){
+          vuexContext.commit('setIntEvents', payload)
          },
+            setLocalEvents(vuexContext, payload){
+              vuexContext.commit('setLocalEvents', payload)
+          },
+
+
+           setComProjects(vuexContext, payload){
+            vuexContext.commit('setComProjects', payload)
+          },
+          setOngProjects(vuexContext, payload){
+            vuexContext.commit('setOngProjects', payload)
+          },
+          setNewProjects(vuexContext, payload){
+            vuexContext.commit('setNewProjects', payload)
+          },
+          setRehabProjects(vuexContext, payload){
+            vuexContext.commit('setRehabProjects', payload)
+          },
+          setSchoolProjects(vuexContext, payload){
+            vuexContext.commit('setSchoolProjects', payload)
+          },
+
 
             setLogo(vuexContext, payload){
               vuexContext.commit('setLogo', payload)
            },
-
 
             setGallery(vuexContext, payload){
               vuexContext.commit('setGallery', payload)
@@ -200,8 +306,7 @@ const createStore = () => {
 
            setVideos(vuexContext, payload){
             vuexContext.commit('setVideos', payload)
-         },
-
+           },
 
             setDepartment(vuexContext, payload){
                 vuexContext.commit('setDepartment', payload)

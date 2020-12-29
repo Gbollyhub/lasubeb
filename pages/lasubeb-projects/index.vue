@@ -8,14 +8,15 @@
           <div class="events-type-text-block">Display projects by</div>
         </div>
         <nav class="events-dropdown-list w-dropdown-list">
-          <a href="lasubeb-projects-international.html" class="events-type w-dropdown-link" @click="filterCompleted">Completed projects</a>
+            <a href="#" class="events-type w-dropdown-link" @click="filterAll" >All</a>
+          <a href="#" class="events-type w-dropdown-link" @click="filterCompleted">Completed projects</a>
           <a href="#" class="events-type w-dropdown-link" @click="filterOngoing">On-going projects</a>
           <a href="#" class="events-type w-dropdown-link" @click="filterNew">New Construction</a>
-          <a href="#" class="w-dropdown-link" @click="filterRehabilitation">Renovation &amp; Rehabilitation </a>
-          <a href="#" class="w-dropdown-link" @click="filterSchool">School Supplies</a>
+          <a href="#" class="events-type w-dropdown-link" @click="filterRehabilitation">Renovation &amp; Rehabilitation </a>
+          <a href="#" class="events-type w-dropdown-link" @click="filterSchool">School Supplies</a>
         </nav>
       </div>
-      <div class="project-container-list w-container">
+      <div class="project-container-list w-container" v-if="getProjects.length > 0">
         <a v-for="item in getProjects" :key="item.id" data-title="Lagos State Delegates understudy Edo State Education sector transformation" href="#" target="_blank" class="project-card-block w-inline-block">
           <div class="news-image-mask"><img :src="item.ProjectPhotoUrl" :alt="item.ProjectTitle" loading="eager" class="news-img-list"></div>
           <h2 class="events-title">{{ item.ProjectTitle }}</h2>
@@ -24,6 +25,9 @@
           <div class="project-details">VALUE: {{ item.Value }}</div>
           <div class="project-details">STATUS: {{ item.Status }} </div>
         </a>
+      </div>
+      <div v-else style="padding:5px; height:300px;text-align:center">
+
       </div>
     </section>
   <subebPartner/>
@@ -44,40 +48,40 @@ export default {
   },
     computed:{
    ...mapGetters([
-     'getProjects'
+     'getFilterProject',
+     'getProjects',
+     'getcompProjects',
+     'getnewProjects',
+     'getrehabProjects',
+     'getschoolProjects',
+     'getongProjects'
+
    ])
   },
     methods:{
-  async filterCompleted(){
-      const events =  await this.$axios.$get('http://admin.lasubeb.lg.gov.ng/lasubeb-projects')
-        this.$store.state.projects = events
-      const filterEvents = this.getProjects.filter( function(fevents) { return fevents.Status == 'Completed'})
-      this.$store.state.projects = filterEvents
-      console.log('filter',filterEvents)
+      filterAll(){
+    const project = this.getFilterProject
+      this.$store.state.projects = project
    },
-   async filterOngoing(){
-          const events =  await this.$axios.$get('http://admin.lasubeb.lg.gov.ng/lasubeb-projects')
-          this.$store.state.projects = events
-      const filterEvents = this.getProjects.filter( function(fevents) { return fevents.Status == 'Ongoing'})
-       this.$store.state.projects = filterEvents
+    filterCompleted(){
+    const project = this.getcompProjects
+      this.$store.state.projects = project
    },
-    async filterNew(){
-          const events =  await this.$axios.$get('http://admin.lasubeb.lg.gov.ng/lasubeb-projects')
-          this.$store.state.projects = events
-      const filterEvents = this.getProjects.filter( function(fevents) { return fevents.Status == 'New'})
-       this.$store.state.projects = filterEvents
+    filterOngoing(){
+    const project = this.getongProjects
+      this.$store.state.projects = project
    },
-    async filterRehabilitation(){
-          const events =  await this.$axios.$get('http://admin.lasubeb.lg.gov.ng/lasubeb-projects')
-          this.$store.state.projects = events
-      const filterEvents = this.getProjects.filter( function(fevents) { return fevents.Status == 'Rehabilitation'})
-       this.$store.state.projects = filterEvents
+     filterNew(){
+            const project = this.getnewProjects
+      this.$store.state.projects = project
    },
-    async filterSchool(){
-          const events =  await this.$axios.$get('http://admin.lasubeb.lg.gov.ng/lasubeb-projects')
-          this.$store.state.projects = events
-      const filterEvents = this.getProjects.filter( function(fevents) { return fevents.Status == 'SchoolSupplies'})
-       this.$store.state.projects = filterEvents
+     filterRehabilitation(){
+            const project = this.getrehabProjects
+      this.$store.state.projects = project
+   },
+     filterSchool(){
+             const project = this.getschoolProjects
+      this.$store.state.projects = project
    },
 
   },
