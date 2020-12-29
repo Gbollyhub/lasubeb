@@ -14,8 +14,8 @@
           <div class="board-position">{{member.Position}}</div>
           <p class="board-paragraph block-with-text w-clearfix">{{ member.Biography}} </p>
            <p style="margin-top:-22px;" class="board-paragraph w-clearfix">
-       <a @click="addIdToStore(member.id)" :href="`/lasubeb-board/${member.MemberName}/${member.id}`" class="inline-link-board"></a>      
-             </p> 
+       <a @click="addIdToStore(member.id)" :href="`/lasubeb-board/${member.MemberName}/${member.id}`" class="inline-link-board"></a>
+             </p>
         </div>
       </div>
     </section>
@@ -58,7 +58,7 @@ export default {
         'data-wf-page': "5f1417f9ca411ab1744b8310",
         'data-wf-site': "5eff351b1692982c192ff95b"
               },
-          title: 'LASUBEB BOARD',
+          title: 'LASUBEB BOARD COMPOSITION',
           meta: [
       { hid: 'description', name: 'description', content: 'The Board under the Chairmanship of Hon. Wahab Alawiye-King was appointed by the Lagos State Governor, His Excellency, Mr. Babajide Olushola Sanwo-Olu on 11th September, 2019' },
       { hid: 'description', property:'og:description', content: 'The Board under the Chairmanship of Hon. Wahab Alawiye-King was appointed by the Lagos State Governor, His Excellency, Mr. Babajide Olushola Sanwo-Olu on 11th September, 2019' },
@@ -87,8 +87,8 @@ max-width: 100%;
   .lasubeb-row::after {
       content: "";
     display: table;
-    clear: both;  
-    } 
+    clear: both;
+    }
   .lasubeb-col{
     float: left;
   width: 33.33%;
@@ -101,19 +101,19 @@ max-width: 100%;
 display: block;
   }
 
-/* styles for '...' */ 
+/* styles for '...' */
 .block-with-text {
   /* hide text if it more than N lines  */
   overflow: hidden;
   /* for set '...' in absolute position */
-  position: relative; 
+  position: relative;
   /* use this value to count block height */
   line-height: 1.2em;
   /* max-height = line-height (1.2) * lines max number (3) */
-  max-height: 3.6em; 
+  max-height: 3.6em;
   /* fix problem when last visible word doesn't adjoin right side  */
   text-align: justify;
-  
+
   /* */
   margin-right: -1em;
   padding-right: 1em;

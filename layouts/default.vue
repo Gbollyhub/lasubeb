@@ -19,14 +19,6 @@ export default {
     newsletter,
     sitefooter
   },
-  head(){
-    return{
-          title: 'LASUBEB:: LAGOS STATE UNIVERSAL BASIC EDUCATION BOARD',
-          meta: [
-      { hid: 'description', name: 'description', content: 'The Lagos State Universal Basic Education is an agency under Lagos state Ministry of Education setup according to Law to co-ordinate, manage, implement the Universal Basic Education program of the Lagos State in conjunction with the Federal Government of Nigeria.' }
-    ],
-    }
-  }
 }
 </script>
 

@@ -43,16 +43,8 @@
 export default {
   head(){
     return{
-       htmlAttrs: {
-        'data-wf-page': "5f416a15098ed154e8830c02",
-        'data-wf-site': "5eff351b1692982c192ff95b"
-              },
-          title: 'LASUBEB NEWS',
           meta: [
                   { hid: 'twitter', type: 'text/javascript', src: 'https://platform.twitter.com/widgets.js', async: true, defer: true },
-      { hid: 'description', name: 'description', content: 'LASUBEB NEWS' },
-      { hid: 'description', property:'og:description', content: 'LASUBEB NEWS' },
-      { hid: 'description', property:'twitter:description', content: 'LASUBEB NEWS' }
 ],
     }
   }
