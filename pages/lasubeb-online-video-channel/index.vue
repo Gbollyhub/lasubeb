@@ -3,8 +3,9 @@
    <section id="feature-section" class="feature-section news">
       <h2 class="heading-2 featured"><span class="text-span">video learning channel</span> @LAGOSSUBEB</h2>
       <div class="news-container-list w-container">
-        <a href="#" class="gallery-pic-holder w-inline-block w-lightbox" v-for="item in getVideos" :key="item.id">
-          <img :src="item.VideoPhoto"  width="370" alt="" class="gallery-img">
+         <a href="#" class="gallery-pic-holder w-inline-block w-lightbox" v-for="item in getVideos" :key="item.id">
+          <div class="video-title" style="text-transform:uppsercase;">{{ item.VideoTitle }}</div>
+ <img :src="item.VideoPhoto"  width="370" alt="" class="gallery-img">
           <script type="application/json" class="w-json">
               {
                 "items": [{
@@ -20,6 +21,7 @@
               }
             </script>
         </a>
+
       </div>
     </section>
   <subebPartner/>
