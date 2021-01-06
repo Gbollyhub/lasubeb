@@ -19,7 +19,7 @@
           <div class="news-image-mask"><img :src="item.EventPhotoUrl" alt="Lagos Delegates understudy Edo State Education Sector Transformation" loading="eager" class="news-img-list"></div>
           <h2 class="events-title">{{ item.EventTitle }}</h2>
           <p class="event-description w-clearfix">{{ item.EventDescription }}</p>
-          <p class="event-date w-clearfix">{{ item.EventsDate }}.</p>
+          <p class="event-date w-clearfix">{{ item.EventsDate | moment }}.</p>
         </a>
       </div>
     </section>
@@ -31,6 +31,8 @@
 import newsletter from '@/components/newsletter/newsletter.vue'
 import subebPartner from '@/components/subeb-partner/subeb-partner.vue'
 import { mapGetters } from 'vuex'
+import moment from 'moment'
+
 export default {
   components:{
     newsletter,
@@ -40,6 +42,11 @@ export default {
     return{
 
     }
+  },
+       filters:{
+   moment: function(date){
+      return moment(date).format('MMMM Do');
+   }
   },
   created(){
     // this.events = this.getEvents

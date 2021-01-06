@@ -17,7 +17,7 @@
         </nav>
       </div>
       <div class="project-container-list w-container" v-if="getProjects.length > 0">
-        <a v-for="item in getProjects" :key="item.id" data-title="Lagos State Delegates understudy Edo State Education sector transformation" href="#" target="_blank" class="project-card-block w-inline-block">
+        <a :href="`/lasubeb-projects/${item.id}`" v-for="item in getProjects" :key="item.id" data-title="Lagos State Delegates understudy Edo State Education sector transformation" target="_blank" class="project-card-block w-inline-block">
           <div class="news-image-mask"><img :src="item.ProjectPhotoUrl" :alt="item.ProjectTitle" loading="eager" class="news-img-list"></div>
           <h2 class="events-title">{{ item.ProjectTitle }}</h2>
           <p class="project-description w-clearfix">{{ item.ProjectDescription }}</p>
