@@ -1,18 +1,18 @@
 <template>
-<div data-w-id="61eb59ef-3efb-8e23-10aa-9a7cd933685f" class="page-wrapper">
-         <section id="feature-section" class="feature-section">
+  <div data-w-id="61eb59ef-3efb-8e23-10aa-9a7cd933685f" class="page-wrapper">
+    <section id="feature-section" class="feature-section">
       <h2 class="heading-2 featured"><span class="text-span">lASUBEB PROJECTS</span></h2>
       <div class="content-news-block w-row">
         <div class="news-detail-col fullcontent w-col w-col-8 w-col-stack">
-          <h2 class="news-headline-detail w-clearfix">{{ project.ProjectTitle }} <span class="inline-span-status"></span></h2>
-          <div class="news-image-mask">
+          <h2 class="news-headline-detail w-clearfix">{{ project.ProjectTitle }}  <span class="inline-span-status"> {{ project.Status }}</span></h2>
+          <div class="news-image-mask2">
             <div data-animation="slide" data-easing="ease-in-out-expo" data-duration="500" data-infinite="1" class="project-display-slider w-slider">
               <div class="project-display-mask w-slider-mask">
-                <div class="project-display-slide w-slide"><img :src="project.ProjectPhotoUrl1" alt="Lagos Delegates understudy Edo State Education Sector Transformation" width="916" loading="eager" class="news-img"></div>
-                <div v-if="project.ProjectPhotoUrl12.length > 1" class="project-display-slide w-slide"><img :src="project.ProjectPhotoUrl12" alt="Lagos Delegates understudy Edo State Education Sector Transformation" width="916" loading="eager" class="news-img"></div>
-                <div v-if="project.ProjectPhotoUrl13.length > 1" class="project-display-slide w-slide"><img :src="project.ProjectPhotoUrl13" alt="Lagos Delegates understudy Edo State Education Sector Transformation" width="916" loading="eager" class="news-img"></div>
-                <div v-if="project.ProjectPhotoUrl14.length > 1" class="project-display-slide w-slide"><img :src="project.ProjectPhotoUrl14" alt="Lagos Delegates understudy Edo State Education Sector Transformation" width="916" loading="eager" class="news-img"></div>
-                <div v-if="project.ProjectPhotoUrl15.length > 1" class="project-display-slide w-slide"><img :src="project.ProjectPhotoUrl15" alt="Lagos Delegates understudy Edo State Education Sector Transformation" width="916" loading="eager" class="news-img"></div>
+                <div class="project-display-slide w-slide"><img :src="project.ProjectPhotoUrl" alt="Lagos Delegates understudy Edo State Education Sector Transformation" width="916" loading="eager" class="news-img"></div>
+                <div v-if=" project.ProjectPhotoUrl2 != null" class="project-display-slide w-slide"><img :src="project.ProjectPhotoUrl2" alt="Lagos Delegates understudy Edo State Education Sector Transformation" width="916" loading="eager" class="news-img"></div>
+                <div v-if=" project.ProjectPhotoUrl3 != null" class="project-display-slide w-slide"><img :src="project.ProjectPhotoUrl3" alt="Lagos Delegates understudy Edo State Education Sector Transformation" width="916" loading="eager" class="news-img"></div>
+                  <div v-if=" project.ProjectPhotoUrl4 != null" class="project-display-slide w-slide"><img :src="project.ProjectPhotoUrl4" alt="Lagos Delegates understudy Edo State Education Sector Transformation" width="916" loading="eager" class="news-img"></div>
+                    <div v-if=" project.ProjectPhotoUrl5 != null" class="project-display-slide w-slide"><img :src="project.ProjectPhotoUrl5" alt="Lagos Delegates understudy Edo State Education Sector Transformation" width="916" loading="eager" class="news-img"></div>
               </div>
               <div class="left-arrow w-slider-arrow-left">
                 <div class="w-icon-slider-left"></div>
@@ -23,7 +23,7 @@
               <div class="w-slider-nav w-slider-nav-invert w-round w-num"></div>
             </div>
             <p class="news-info-details w-clearfix">by LASUBEB Project unit | {{ project.created_at | moment}}</p>
-            <p class="p-detail-news">{{ project.ProjectDescription }}</p>
+            <p class="p-detail-news">{{ project.ProjectDescription}}</p>
           </div>
         </div>
         <div class="news-detail-col side-col w-col w-col-4 w-col-stack">
@@ -118,7 +118,7 @@ a {
 
 p {
 width: auto;
-    color: #fff;
+    color: #818181;
     font-size: 0.9em !important;
     line-height: 2.3em !important;
     font-weight: 300;

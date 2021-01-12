@@ -1519,6 +1519,12 @@ blockquote {
   margin-bottom: 3%;
 }
 
+.news-featured-img-mask{
+  overflow: hidden;
+  height: 300px;
+}
+
+
 .board-composiiton-p {
   padding-top: 30px;
   color: #818181;
@@ -2114,6 +2120,20 @@ blockquote {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+
+.news-image-mask2 {
+  overflow: hidden;
+  margin-right: 0px;
+  margin-bottom: 16px;
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  border-bottom: 1px solid #004fad;
   -o-object-fit: cover;
   object-fit: cover;
 }
