@@ -2,6 +2,7 @@
 <div data-w-id="92f17798-653a-6297-2bb4-1f15d6f24763" class="page-wrapper">
 
     <section id="cards-section" class="vision-mission-section">
+      <search/>
       <h2 class="heading-3">Our <span class="text-span">Vision</span>, <span class="text-span">Mission</span> and <span class="text-span">Core Values</span></h2>
       <p class="paragraph-4">Our Vision, Mission, and Core Values frame the fundamental purpose and organising principles of the Lagos State Universal Basic Education Board. Our Vision provides a compelling image of our fondest hopes and dreams for our students. Our Mission expresses why we exist as a school system. Our Core Values articulate the timeless ideals that guide our decision-making, our day-to-day actions, and our relationship with each other</p>
       <div class="centered-container w-container">
@@ -29,11 +30,13 @@
 import newsletter from '@/components/newsletter/newsletter.vue'
 import subebPartner from '@/components/subeb-partner/subeb-partner.vue'
 import dataSection from '@/components/data-section/data-section.vue'
+import search from '~/components/search/search.vue'
 export default {
   components:{
     newsletter,
     subebPartner,
-    dataSection
+    dataSection,
+    search
   },
   head(){
     return{
@@ -52,4 +55,3 @@ export default {
 }
 </script>
 
-      

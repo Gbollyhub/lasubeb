@@ -1,6 +1,7 @@
 <template>
 <div data-w-id="61eb59ef-3efb-8e23-10aa-9a7cd933685f" class="page-wrapper">
     <section id="feature-section" class="feature-section">
+      <search/>
       <h2 class="heading-2 featured"><span class="text-span">LOCAL GOVERNMENT</span> EDUCATION AUTHORITY (LGEA)</h2>
       <div class="page-content-block">
         <p class="paragraph-2">LASUBEB as a government agency is duly constituted by law and efficiently run with the following departments, statutory units and experienced personnel.</p>
@@ -36,11 +37,13 @@ import newsletter from '@/components/newsletter/newsletter.vue'
 import subebPartner from '@/components/subeb-partner/subeb-partner.vue'
 import dataSection from '@/components/data-section/data-section.vue'
 import { mapGetters } from 'vuex'
+import Search from '~/components/search/search.vue'
 export default {
   components:{
     newsletter,
     subebPartner,
-    dataSection
+    dataSection,
+    Search
   },
   computed:{
     ...mapGetters([
@@ -65,4 +68,3 @@ export default {
 }
 </script>
 
-      

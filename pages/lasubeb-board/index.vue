@@ -1,6 +1,7 @@
 <template>
   <div data-w-id="937d40df-8ce4-010b-69f5-b421e2944efd" class="page-wrapper">
     <section id="feature-section" class="feature-section">
+      <search/>
       <div class="board-intro-container w-container">
         <h2 class="heading-2 featured"><span class="text-span">THE BOARD</span> COMPOSITION</h2>
         <p class="board-composiiton-p">The Board under the Chairmanship of Hon. Wahab Alawiye-King was appointed by the Lagos State Governor, His Excellency, Mr. Babajide Olushola Sanwo-Olu on 11th September, 2019</p>
@@ -30,11 +31,13 @@ import subebPartner from '@/components/subeb-partner/subeb-partner.vue'
 import dataSection from '@/components/data-section/data-section.vue'
 import { mapGetters } from 'vuex'
 import marked from 'marked'
+import Search from '~/components/search/search.vue'
 export default {
   components:{
     newsletter,
     subebPartner,
-    dataSection
+    dataSection,
+    Search
   },
   data(){
   return{

@@ -1,6 +1,7 @@
 <template>
   <div>
 <section id="feature-section" data-w-id="5140f89c-d73a-5b04-4de6-765fd78f9495" class="feature-section">
+  <search/>
     <div class="flex-container w-container">
       <h2 class="heading-2 featured"><span class="text-span">strategic priorities</span></h2>
       <div class="page-img-mask"><img src="../../assets/images/kids.jpg" alt="LASUBEB Pillars" class="feature-image-priorities"></div>
@@ -29,11 +30,13 @@
 import newsletter from '@/components/newsletter/newsletter.vue'
 import subebPartner from '@/components/subeb-partner/subeb-partner.vue'
 import dataSection from '@/components/data-section/data-section.vue'
+import Search from '~/components/search/search.vue'
 export default {
   components:{
     newsletter,
     subebPartner,
-    dataSection
+    dataSection,
+    Search
   },
   head(){
     return{
@@ -52,4 +55,3 @@ export default {
 }
 </script>
 
-      

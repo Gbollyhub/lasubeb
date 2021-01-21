@@ -1,6 +1,7 @@
 <template>
   <div>
 <section id="feature-section" data-w-id="5140f89c-d73a-5b04-4de6-765fd78f9495" class="feature-section">
+  <search/>
     <div class="flex-container w-container">
       <h2 class="heading-2 featured"><span class="text-span">OUR FOUR PILLARS</span></h2>
       <div class="page-img-mask"><img src="../../assets/images/classroom.jpg" alt="LASUBEB Pillars" class="feature-image-pillars"></div>
@@ -66,4 +67,3 @@ export default {
 }
 </script>
 
-      

@@ -1,16 +1,17 @@
 <template>
   <div data-w-id="89adaaaa-2335-f8b3-5bc9-bf6f952a2fc5" class="page-wrapper">
         <section id="feature-section" class="feature-section">
+          <search/>
       <h2 class="heading-2 featured"><span class="text-span">ABOUT LASUBEB</span> &amp; STATUTORY ROLES</h2>
       <div class="statutory-container w-container">
         <div class="statutory-div-block">
           <div class="page-img-mask"><img src="../../assets/images/lasubeb_about.jpg" alt="Hon. Dr. Alawiye-King, Executive Chairman, LASUBEB" srcset="../../assets/images/lasubeb_about-p-800.jpeg 800w, ../../assets/images/lasubeb_about.jpg 1323w" sizes="(max-width: 479px) 63vw, (max-width: 767px) 70vw, (max-width: 991px) 33vw, 35vw" class="feature-image"></div>
         </div>
         <div class="statutory-div-block">
-          <p class="paragraph-2-copy"> 
+          <p class="paragraph-2-copy">
            The Lagos Compulsory Free Universal Basic Education Law, 2005  sets out a policy to provide free, compulsory, universal basic education for every child of primary and secondary school age and requires parents and guardians to ensure that children of school age in their care attend school. Basic education is defined as early childhood care and education and nine years of formal schooling.
 <br><br>
-The Lagos SUBEB law also establishes a local Government Primary & Junior Secondary Education Authority in each local government area of the State and stipulates that this sibject to the control of Lagos SUBEB. 
+The Lagos SUBEB law also establishes a local Government Primary & Junior Secondary Education Authority in each local government area of the State and stipulates that this sibject to the control of Lagos SUBEB.
 <br><br>
 The Lagos SUBEB Law is a direct result of the enactment of the UBE Act which requires the establishment of SUBEBs by states. The Lagos SUBEB reiterates the principles as set out in the UBE Act especially the committment to free, compulsory, universal basic education and the establishment of offences under the Lagos SUBEB Law, its definition of universal basic education, the procedures for the financing of education and the establishment of LGEAs.
 <br><br>
@@ -45,10 +46,12 @@ Both the UBEC Act and the Lagos SUBEB Law stipulates that services provided in p
 <script>
 import newsletter from '@/components/newsletter/newsletter.vue'
 import subebPartner from '@/components/subeb-partner/subeb-partner.vue'
+import Search from '~/components/search/search.vue'
 export default {
   components:{
     newsletter,
-    subebPartner
+    subebPartner,
+    Search
   },
   head(){
     return{
@@ -67,4 +70,3 @@ export default {
 }
 </script>
 
-      

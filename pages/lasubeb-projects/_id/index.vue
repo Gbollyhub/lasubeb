@@ -1,6 +1,7 @@
 <template>
   <div data-w-id="61eb59ef-3efb-8e23-10aa-9a7cd933685f" class="page-wrapper">
     <section id="feature-section" class="feature-section">
+      <search/>
       <h2 class="heading-2 featured"><span class="text-span">lASUBEB PROJECTS</span></h2>
       <div class="content-news-block w-row">
         <div class="news-detail-col fullcontent w-col w-col-8 w-col-stack">
@@ -56,12 +57,14 @@ import { mapGetters } from 'vuex'
 import axios from 'axios'
 import marked from 'marked'
 import moment from 'moment'
+import Search from '~/components/search/search.vue'
 
 export default {
   components:{
     newsletter,
     subebPartner,
-    dataSection
+    dataSection,
+    Search
 
   },
   filters: {

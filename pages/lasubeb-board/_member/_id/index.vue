@@ -1,6 +1,7 @@
 <template>
 <div data-w-id="61eb59ef-3efb-8e23-10aa-9a7cd933685f" class="page-wrapper">
           <section id="feature-section" class="feature-section board-detail">
+            <search/>
       <h2 class="heading-2 board-profile-detailed"><span class="text-span">THE BOARD</span> COMPOSITION | {{boardMember.MemberName}}</h2>
     </section>
     <div class="board-detail-container w-container">
@@ -37,12 +38,14 @@ import dataSection from '@/components/data-section/data-section.vue'
 import { mapGetters } from 'vuex'
 import axios from 'axios'
 import marked from 'marked'
+import Search from '~/components/search/search.vue'
 export default {
   components:{
     newsletter,
     subebPartner,
-    dataSection
-    
+    dataSection,
+    Search
+
   },
   filters: {
     marked: marked
@@ -68,7 +71,7 @@ export default {
    ...mapGetters([
       'getAdminUrl',
       'getBoardMembers'
-      
+
    ])
   },
   methods: {
@@ -114,4 +117,3 @@ width: auto;
 }
 </style>
 
-      

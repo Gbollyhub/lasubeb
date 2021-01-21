@@ -1,6 +1,7 @@
 <template>
   <div data-w-id="61eb59ef-3efb-8e23-10aa-9a7cd933685f" class="page-wrapper">
   <section id="feature-section" data-w-id="5140f89c-d73a-5b04-4de6-765fd78f9495" class="feature-section">
+    <search/>
     <div class="flex-container w-container">
       <h2 class="heading-2 featured"><span class="text-span">LASUBEB STRUCTURED DISTANCE LEARNING</span></h2>
       <div class="page-img-mask"><img src="../../assets/images/131389103_843520073113600_1684920917873964544_n.jpg" alt="LASUBEB Remote learning platform" height="" class="feature-image-pillars"></div>
@@ -34,10 +35,12 @@
 <script>
 import newsletter from '@/components/newsletter/newsletter.vue'
 import subebPartner from '@/components/subeb-partner/subeb-partner.vue'
+import Search from '~/components/search/search.vue'
 export default {
   components:{
     newsletter,
-    subebPartner
+    subebPartner,
+    Search
   },
   head(){
     return{

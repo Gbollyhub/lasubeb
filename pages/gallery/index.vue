@@ -1,6 +1,7 @@
 <template>
   <div data-w-id="61eb59ef-3efb-8e23-10aa-9a7cd933685f" class="page-wrapper">
          <section id="feature-section" class="feature-section news">
+           <search/>
       <h2 class="heading-2 featured"><span class="text-span">GALLERY</span> @LAGOS_SUBEB</h2>
       <div class="news-container-list w-container">
         <a href="#" class="gallery-pic-holder w-inline-block w-lightbox" v-for=" item in getGallery" :key="item.id">
@@ -86,10 +87,12 @@ import subebPartner from '@/components/subeb-partner/subeb-partner.vue'
 import { mapGetters } from 'vuex'
 import marked from 'marked'
 import moment from 'moment'
+import Search from '~/components/search/search.vue'
 export default {
   components:{
     newsletter,
-    subebPartner
+    subebPartner,
+    Search
   },
       computed:{
    ...mapGetters([

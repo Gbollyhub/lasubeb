@@ -1,6 +1,7 @@
 <template>
   <div data-w-id="61eb59ef-3efb-8e23-10aa-9a7cd933685f" class="page-wrapper">
     <section id="feature-section" class="feature-section news">
+      <search/>
       <h2 class="heading-2 featured"><span class="text-span">latest NEWS</span> LASUBEB</h2>
       <div class="news-container-list w-container">
             <a v-for="news in getNews" :key="news.id" :data-title="news.NewsTitle" :href="`/lasubeb-news/${news.NewsTitle}/${news.id}`" class="news-list-div-block w-inline-block">
@@ -30,11 +31,13 @@ import dataSection from '@/components/data-section/data-section.vue'
 import { mapGetters } from 'vuex'
 import marked from 'marked'
 import moment from 'moment'
+import Search from '~/components/search/search.vue'
 export default {
   components:{
     newsletter,
     subebPartner,
-    dataSection
+    dataSection,
+    Search
   },
   filters:{
    moment: function(date){

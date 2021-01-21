@@ -1,6 +1,7 @@
 <template>
   <div data-w-id="61eb59ef-3efb-8e23-10aa-9a7cd933685f" class="page-wrapper">
        <section id="feature-section" class="feature-section news">
+         <search/>
       <h2 class="heading-2 featured"><span class="text-span">EDUCATION QUARTERLY REPORT</span> - LASUBEB</h2>
       <div class="education-data-container w-container"></div>
     </section>
@@ -13,11 +14,13 @@
 import newsletter from '@/components/newsletter/newsletter.vue'
 import subebPartner from '@/components/subeb-partner/subeb-partner.vue'
 import dataSection from '@/components/data-section/data-section.vue'
+import Search from '~/components/search/search.vue'
 export default {
   components:{
     newsletter,
     subebPartner,
-     dataSection
+     dataSection,
+    Search
   },
   head(){
     return{

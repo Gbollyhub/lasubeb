@@ -1,6 +1,7 @@
 <template>
 <div data-w-id="661b91c8-2114-6795-2e17-1bba3da77fd7" class="page-wrapper">
   <section id="feature-section" class="feature-section">
+    <search/>
       <h2 class="heading-2 featured"><span class="text-span">Message</span> from LASUBEB chairman</h2>
       <div class="message-container w-container">
         <div class="message-div-block w-clearfix">
@@ -158,9 +159,11 @@ import sitefooter from '@/components/sitefooter/sitefooter.vue'
 import { mapGetters } from 'vuex'
 import moment from 'moment'
 import marked from 'marked'
+import Search from '~/components/search/search.vue'
 export default {
   components:{
-    newsletter
+    newsletter,
+    Search
   },
     data(){
     return{

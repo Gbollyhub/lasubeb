@@ -1,8 +1,9 @@
 <template>
   <div data-w-id="128243f3-7cbd-ad35-e990-3c0d89260f56" class="page-wrapper">
     <section id="feature-section" class="feature-section">
+    <search/>
       <h2 class="heading-2 featured"><span class="text-span">DEPARTMENTS &amp; STATUTORY UNITS</span> &amp; KEY FUNCTIONS </h2>
-   
+
       <div class="page-content-block">
         <p class="paragraph-2">LASUBEB as a government agency is duly constituted by law and efficiently run with the following departments, statutory units and experienced personnel.</p>
       </div>
@@ -49,7 +50,7 @@
                     <div class="unit-title-line">Key functions</div>
                  <ul role="list" class="list-holder">
                       <div class="list-item" v-html="marked(item.KeyFunctions)"></div>
-                    </ul>          
+                    </ul>
                     <div class="unit-title-line">Units</div>
                     <ul role="list" class="list-holder">
                     <div v-if="item.Units" class="list-item" v-html="marked(item.Units)"></div>
@@ -59,8 +60,8 @@
               </div>
             </nav>
           </div>
-          
-        
+
+
 
           <div  v-for="(item,index) in getStatutory" :key="index" data-hover="" data-delay="0" id="procurement" data-w-id="0c5118c5-59eb-a56f-b15f-d37c47bb84f5" class="dept-units-accordion w-dropdown">
             <div class="dept-unit-accordion-toggle w-dropdown-toggle">
@@ -104,11 +105,13 @@ import dataSection from '@/components/data-section/data-section.vue'
 import { mapGetters } from 'vuex'
 import marked from 'marked'
 import axios from 'axios'
+import Search from '~/components/search/search.vue'
 export default {
   components:{
     newsletter,
     subebPartner,
-    dataSection
+    dataSection,
+    Search
   },
     filters: {
     marked: marked
@@ -125,7 +128,7 @@ export default {
       return marked(input);
     }
   },
-  
+
   head(){
     return{
         htmlAttrs: {
