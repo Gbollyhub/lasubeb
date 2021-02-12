@@ -44,11 +44,13 @@
 import newsletter from '@/components/newsletter/newsletter.vue'
 import subebPartner from '@/components/subeb-partner/subeb-partner.vue'
 import dataSection from '@/components/data-section/data-section.vue'
+import Search from '~/components/search/search.vue'
 export default {
   components:{
     newsletter,
     subebPartner,
-    dataSection
+    dataSection,
+    Search
   },
   head(){
     return{

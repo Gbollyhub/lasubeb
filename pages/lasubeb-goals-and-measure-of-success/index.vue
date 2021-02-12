@@ -1,6 +1,7 @@
 <template>
  <div data-w-id="50683659-4b5e-f6f1-6789-51e146ebb6f4" class="page-wrapper">
     <section id="feature-section" class="feature-section">
+      <search/>
       <h2 class="heading-2 featured"><span class="text-span">Goals and Measures</span> of Learner Success</h2>
       <div class="goals-container w-container">
         <div class="statutory-div-block">
@@ -64,11 +65,13 @@
 import newsletter from '@/components/newsletter/newsletter.vue'
 import subebPartner from '@/components/subeb-partner/subeb-partner.vue'
 import dataSection from '@/components/data-section/data-section.vue'
+import Search from '~/components/search/search.vue'
 export default {
   components:{
     newsletter,
     subebPartner,
-    dataSection
+    dataSection,
+    Search
   },
   head(){
     return{
@@ -87,4 +90,3 @@ export default {
 }
 </script>
 
-      

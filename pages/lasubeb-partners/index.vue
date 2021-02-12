@@ -1,6 +1,7 @@
 <template>
   <div data-w-id="61eb59ef-3efb-8e23-10aa-9a7cd933685f" class="page-wrapper">
          <section id="feature-section" class="feature-section news">
+           <search/>
       <h2 class="heading-2 featured"><span class="text-span">become </span>a lasubeb partner</h2>
       <div class="paragraph-2 center">We are open to working with new partners with ideas, solutions to achieve our objectives. <br>Kindly fill the form below and we&#x27;ll get back to you as soon as possible</div>
       <div class="partner-register w-form">
@@ -53,11 +54,13 @@ import dataSection from '@/components/data-section/data-section.vue'
 import { mapGetters } from 'vuex'
 import marked from 'marked'
 import axios from 'axios'
+import Search from '~/components/search/search.vue'
 export default {
  components:{
     newsletter,
     subebPartner,
-    dataSection
+    dataSection,
+  Search
   },
   data(){
   return{

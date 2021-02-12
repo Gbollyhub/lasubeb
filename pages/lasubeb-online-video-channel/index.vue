@@ -1,6 +1,7 @@
 <template>
   <div data-w-id="61eb59ef-3efb-8e23-10aa-9a7cd933685f" class="page-wrapper">
    <section id="feature-section" class="feature-section news">
+     <search/>
       <h2 class="heading-2 featured"><span class="text-span">video learning channel</span> @LAGOSSUBEB</h2>
       <div class="news-container-list w-container">
          <a href="#" class="gallery-pic-holder w-inline-block w-lightbox" v-for="item in getVideos" :key="item.id">
@@ -36,11 +37,13 @@ import dataSection from '@/components/data-section/data-section.vue'
 import { mapGetters } from 'vuex'
 import marked from 'marked'
 import moment from 'moment'
+import Search from '~/components/search/search.vue'
 export default {
   components:{
     newsletter,
     subebPartner,
-     dataSection
+     dataSection,
+    Search
   },
     computed:{
    ...mapGetters([
