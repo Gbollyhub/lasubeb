@@ -8,7 +8,7 @@
           <div class="home-message-img-mask"><img :src="getHomepage.section1Image" alt="Hon. Dr. Alawiye-King, Executive Chairman, LASUBEB"  class="home-feature-img"></div>
         </div>
         <div class="message-div-block mesage-content">
-           <p v-html="marked(getHomepage.ChairmanFullMessage)"></p>
+           <div class="p-detail-news" v-html="marked(getHomepage.ChairmanFullMessage)"></div>
           <p class="home-p w-clearfix"><strong>Hon. Alawiye-King | Executive Chairman, Lagos Universal Basic Education Board </strong>
          </p>
         </div>
