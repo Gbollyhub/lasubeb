@@ -2,14 +2,14 @@
 <div data-w-id="661b91c8-2114-6795-2e17-1bba3da77fd7" class="page-wrapper">
   <section id="feature-section" class="feature-section">
     <search/>
-      <h2 class="heading-2 featured"><span class="text-span">Message</span> from LASUBEB chairman</h2>
+      <h2 class="heading-2 featured"><span class="text-span">Message</span> Hon. Alawiye-King | Executive Chairman LASUBEB</h2>
       <div class="message-container w-container">
         <div class="message-div-block w-clearfix">
           <div class="home-message-img-mask"><img :src="getHomepage.section1Image" alt="Hon. Dr. Alawiye-King, Executive Chairman, LASUBEB" srcset="../assets/images/lasubeb_wahab_alawiye-king-p-500.jpeg 500w, images/lasubeb_wahab_alawiye-king.jpg 767w" sizes="(max-width: 479px) 41vw, (max-width: 767px) 44vw, (max-width: 991px) 41vw, 248.0113525390625px" class="home-feature-img"></div>
         </div>
         <div class="message-div-block mesage-content">
           <div class="p-detail-news" v-html="marked(getHomepage.ChairmanMessage)"></div>
-          <p class="home-p w-clearfix"><strong>Hon. Alawiye-King | Executive Chairman, Lagos Universal Basic Education Board </strong>
+          <p style="float:right;font-size:14px" class="home-p w-clearfix"><strong style="margin-right:20px">Read More </strong>
           <a href="/chairman-speech" class="inline-link-reverse message"><strong data-title="learn more" class="bold-text-2"></strong></a></p>
         </div>
       </div>
@@ -116,7 +116,7 @@
                 <div class="accordion-content">Co-ordinate and supervise teaching and learning in Public Primary Schools and Junior Secondary Schools in the State.</div>
               </nav>
             </div><a data-title="More" href="/about-lasubeb-and-statutory-roles" class="inline-link-reverse message card"></a></div>
-          <div class="role-feature-col pic w-col w-col-5 w-col-stack"></div>
+          <div :style="{ backgroundImage: 'url(' + getHomepage.Section3ImageUrl + ')' }" class="role-feature-col pic w-col w-col-5 w-col-stack"></div>
         </div>
       </div>
     </div>
