@@ -8,12 +8,9 @@
           <div class="home-message-img-mask"><img :src="getHomepage.section1Image" alt="Hon. Dr. Alawiye-King, Executive Chairman, LASUBEB" srcset="../assets/images/lasubeb_wahab_alawiye-king-p-500.jpeg 500w, images/lasubeb_wahab_alawiye-king.jpg 767w" sizes="(max-width: 479px) 41vw, (max-width: 767px) 44vw, (max-width: 991px) 41vw, 248.0113525390625px" class="home-feature-img"></div>
         </div>
         <div class="message-div-block mesage-content">
-          <p class="home-p w-clearfix">Our Strategic Plan outlines how LASUBEB will step up to that responsibility. The plan was developed during a 3-day retreat of
-            50 participants, including SUBEB board members, SUBEB directors and heads of unit, LGEA education secretaries, and union leaders.
-          <br><br>Now that we have a results-focused strategic plan, the next step is disciplined implementation; that is how we will turn our good intentions into
-          positive outcomes for our learners. LASUBEB is totally committed to following through on this plan, to ensure full realisation of
-          Governor Sanwo-Olu’s EKOEXCEL initiative and to <strong>LEAVE NO CHILD BEHIND! </strong>I invite you to join us.<br><br>‍<br><strong>Hon. Alawiye-King | Executive Chairman, Lagos Universal Basic Education Board </strong>
-          <a href="/lasubeb-board" class="inline-link-reverse message"><strong data-title="learn more" class="bold-text-2"></strong></a></p>
+           <p v-html="marked(getHomepage.ChairmanMessage)"></p>
+          <p class="home-p w-clearfix"><strong>Hon. Alawiye-King | Executive Chairman, Lagos Universal Basic Education Board </strong>
+          <a href="/chairman-speech" class="inline-link-reverse message"><strong data-title="learn more" class="bold-text-2"></strong></a></p>
         </div>
       </div>
     </section>
@@ -185,6 +182,11 @@ export default {
        'getNews'
     ])
   },
+  methods:{
+    marked: function(input) {
+      return marked(input);
+    }
+  },
   head(){
     return{
        htmlAttrs: {
@@ -201,6 +203,15 @@ export default {
 </script>
 
 <style scoped>
+p {
+margin-bottom: 33px;
+    padding-left: 26px;
+    font-family: Ubuntu,Helvetica,sans-serif;
+    color: #818181;
+    font-size: 12px;
+    line-height: 1.8em;
+    text-align: justify;
+}
 /* styles for '...' */
 .block-with-text {
   /* hide text if it more than N lines  */
