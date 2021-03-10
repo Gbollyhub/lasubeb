@@ -748,7 +748,7 @@ blockquote {
   height: 100%;
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(1%, rgba(1, 18, 39, 0.95)), color-stop(59%, hsla(0, 0%, 100%, 0)), color-stop(80%, rgba(0, 45, 97, 0.88))), url('../images/lasubeb_sanwoolu_web.jpg');
   background-image: linear-gradient(180deg, rgba(1, 18, 39, 0.95) 1%, hsla(0, 0%, 100%, 0) 59%, rgba(0, 45, 97, 0.88) 80%), url('../images/lasubeb_sanwoolu_web.jpg');
-  background-position: 0px 0px, 50% 50%;
+  background-position: top;
   background-size: auto, cover;
   background-repeat: repeat, no-repeat;
   background-attachment: scroll, scroll;
@@ -758,7 +758,7 @@ blockquote {
   height: 100%;
   background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(1, 18, 39, 0.95)), color-stop(53%, hsla(0, 0%, 100%, 0)), color-stop(87%, #002c61)), url('../images/lasubeb_hero2.jpg');
   background-image: linear-gradient(180deg, rgba(1, 18, 39, 0.95), hsla(0, 0%, 100%, 0) 53%, #002c61 87%), url('../images/lasubeb_hero2.jpg');
-  background-position: 0px 0px, 50% 50%;
+  background-position: top;
   background-size: auto, cover;
   background-repeat: repeat, no-repeat;
   background-attachment: scroll, scroll;
@@ -768,7 +768,7 @@ blockquote {
   height: 100%;
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(53%, hsla(0, 0%, 100%, 0)), color-stop(87%, #002c61)), url('../images/lasubeb_hero3.jpg');
   background-image: linear-gradient(180deg, hsla(0, 0%, 100%, 0) 53%, #002c61 87%), url('../images/lasubeb_hero3.jpg');
-  background-position: 0px 0px, 50% 50%;
+  background-position: top;
   background-size: auto, cover;
   background-repeat: repeat, no-repeat;
   background-attachment: scroll, scroll;
