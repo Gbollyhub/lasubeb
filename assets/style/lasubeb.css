@@ -2927,8 +2927,71 @@ blockquote {
   font-size: 1.2em;
   font-style: italic;
 }
+.emis-data-dropdown-list {
+  position: relative;
+}
+
+.emis-data-dropdown-list.w--open {
+  background-color: #f0f0f0;
+}
+
+.emis-data-toggle {
+  width: 100%;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #fff;
+}
+
+.emis-data-dropdown {
+  width: 330px;
+  margin-top: 35px;
+  border-style: solid;
+  border-width: 3px;
+  border-color: #e9e9e6;
+  background-color: #e2e2e2;
+}
+
+.data-accordion {
+  width: 100%;
+  margin-bottom: 40px;
+  padding-left: 16px;
+  border-top: 1px none #000;
+  border-bottom: 1px solid #004fad;
+  font-family: Lato, sans-serif;
+  color: #004fad;
+  font-size: 1em;
+  font-weight: 400;
+}
+
+.emis-data-detail {
+  position: static;
+}
+
+.emis-data-detail.w--open {
+  background-color: transparent;
+}
+
+.data-narrative-block {
+  display: block;
+  padding-top: 17px;
+  padding-bottom: 17px;
+  color: #494747;
+  text-decoration: none;
+}
+
+.file-download-icon {
+  display: inline-block;
+  padding-right: 10px;
+  padding-left: 10px;
+  font-family: Ionicons, sans-serif;
+  font-size: 2.3em;
+  line-height: 1.1em;
+}
 
 @media screen and (max-width: 991px) {
+  .emis-data-dropdown {
+    width: 100%;
+  }
   .hero-slider {
     height: 400px;
   }

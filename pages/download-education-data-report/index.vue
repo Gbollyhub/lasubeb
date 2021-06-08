@@ -1,9 +1,28 @@
 <template>
   <div data-w-id="61eb59ef-3efb-8e23-10aa-9a7cd933685f" class="page-wrapper">
        <section id="feature-section" class="feature-section news">
-         <search/>
-      <h2 class="heading-2 featured"><span class="text-span">EDUCATION QUARTERLY REPORT</span> - LASUBEB</h2>
+      <h2 class="heading-2 featured"><span class="text-span">EDUCATION DATA</span> - LASUBEB</h2>
+      <div class="paragraph-2 center">Get informed access to LASUBEB EMIS education data of Lagos State.</div>
       <div class="education-data-container w-container"></div>
+      <div data-hover="" data-delay="0" class="emis-data-dropdown w-dropdown">
+        <div class="emis-data-toggle w-dropdown-toggle">
+          <div class="w-icon-dropdown-toggle"></div>
+          <div class="events-type-text-block">EMIS Download list</div>
+        </div>
+        <nav class="emis-data-dropdown-list w-dropdown-list">
+          <a @click="filterPost(0)" href="#" class="events-type w-dropdown-link">All</a>
+          <a @click="filterPost(item.id)" href="#" class="events-type w-dropdown-link" v-for="item in savePosts" :key="item.id">{{item.Year}}</a>
+        </nav>
+      </div>
+      <div v-for="item in posts" :key="item.id" data-hover="" data-delay="0" id="school-support-services" data-w-id="c4ed7f41-ecf5-0801-d027-e0b9094dc4fa" class="data-accordion w-dropdown">
+        <div class="data-accordion-toggle w-dropdown-toggle" >
+          <div class="dept-unit-icon w-icon-dropdown-toggle"></div>
+          <div class="accordion-text-block w-clearfix">{{item.Year}}<span class="academic-dat-inline-span"></span></div>
+        </div>
+        <nav class="emis-data-detail w-dropdown-list" v-for="result in item.EmisData" :key="result.id">
+          <a download :href="result.downloadUrl" class="data-narrative-block"><span class="file-download-icon"></span> Download {{result.title}}</a>
+        </nav>
+      </div>
     </section>
   <subebPartner/>
   <dataSection/>
@@ -15,6 +34,7 @@ import newsletter from '@/components/newsletter/newsletter.vue'
 import subebPartner from '@/components/subeb-partner/subeb-partner.vue'
 import dataSection from '@/components/data-section/data-section.vue'
 import Search from '~/components/search/search.vue'
+import axios from 'axios'
 export default {
   components:{
     newsletter,
@@ -22,6 +42,26 @@ export default {
      dataSection,
     Search
   },
+   async asyncData({ params }) {
+    const  data  = await axios.get('http://admin-cms.lasubeb.lg.gov.ng/emis-data')
+    return {
+      posts: data.data,
+      savePosts: data.data
+      }
+   },
+   methods:{
+   filterPost(id){
+     if(id == 0){
+      return this.posts = this.savePosts
+     }
+     const allpost = this.savePosts
+    const newpost = allpost.filter(x => {
+      return x.id == id
+    })
+
+    this.posts = newpost
+   }
+   },
   head(){
     return{
         htmlAttrs: {

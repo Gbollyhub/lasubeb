@@ -20,7 +20,7 @@
           <div class="news-image-mask"><img :src="item.EventPhotoUrl" alt="Lagos Delegates understudy Edo State Education Sector Transformation" loading="eager" class="news-img-list"></div>
           <h2 class="events-title">{{ item.EventTitle }}</h2>
           <p class="event-description w-clearfix">{{ item.EventDescription }}</p>
-          <p class="event-date w-clearfix">{{ item.EventsDate | moment }}.</p>
+          <p class="event-date w-clearfix">{{ item.Date }}.</p>
         </a>
       </div>
     </section>
