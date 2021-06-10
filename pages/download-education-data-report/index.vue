@@ -19,8 +19,8 @@
           <div class="dept-unit-icon w-icon-dropdown-toggle"></div>
           <div class="accordion-text-block w-clearfix">{{item.Year}}<span class="academic-dat-inline-span"></span></div>
         </div>
-        <nav class="emis-data-detail w-dropdown-list" v-for="result in item.EmisData" :key="result.id">
-          <a download :href="result.downloadUrl" class="data-narrative-block"><span class="file-download-icon"></span> Download {{result.title}}</a>
+        <nav class="emis-data-detail w-dropdown-list">
+          <a download :href="item.DownloadUrl" class="data-narrative-block"><span class="file-download-icon"></span> Download Report</a>
         </nav>
       </div>
     </section>
@@ -43,23 +43,35 @@ export default {
     Search
   },
    async asyncData({ params }) {
-    const  data  = await axios.get('http://admin-cms.lasubeb.lg.gov.ng/emis-data')
+    const  postdata  = await axios.get('http://admin-cms.lasubeb.lg.gov.ng/emis-data')
+                   const newData = postdata.data.sort(function(a, b) {
+                var c = new Date(a.created_at);
+                var d = new Date(b.created_at);
+                return c-d;
+            });
     return {
-      posts: data.data,
-      savePosts: data.data
+      posts: newData,
       }
    },
    methods:{
-   filterPost(id){
+   async filterPost(id){
      if(id == 0){
-      return this.posts = this.savePosts
+       const  postdata  = await axios.get('http://admin-cms.lasubeb.lg.gov.ng/emis-data')
+         const newData = postdata.data.sort(function(a, b) {
+                var c = new Date(a.created_at);
+                var d = new Date(b.created_at);
+                return c-d;
+            });
+        this.posts = newData
      }
-     const allpost = this.savePosts
-    const newpost = allpost.filter(x => {
+     else{
+             const  data  = await axios.get('http://admin-cms.lasubeb.lg.gov.ng/emis-data')
+    const newpost = data.data.filter(x => {
       return x.id == id
     })
-
     this.posts = newpost
+     }
+
    }
    },
   head(){
