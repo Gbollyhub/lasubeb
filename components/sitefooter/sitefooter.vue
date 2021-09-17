@@ -25,8 +25,8 @@
         <div class="footer-block-text">
           2 Ikorodu Rd, Mende, Lagos State
           <br />Phone :
-          <a href="tel:+2348185431637" class="inline-link-reverse">
-            +2348185431637
+          <a href="tel:+2348150865676" class="inline-link-reverse">
+            +2348150865676
             <br>Email: info@lasubeb.lg.gov.ng<br>
           </a>
         </div>
