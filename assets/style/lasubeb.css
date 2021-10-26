@@ -2988,6 +2988,18 @@ blockquote {
   line-height: 1.1em;
 }
 
+.ekoexcel-div {
+  position: absolute;
+  right: 0;
+  top: 60%;
+  left: auto;
+  bottom: auto;
+  z-index: 99;
+  width: 10%;
+  padding: 14px;
+  background-color: #002c61;
+}
+
 @media screen and (max-width: 991px) {
   .emis-data-dropdown {
     width: 100%;
@@ -3605,6 +3617,11 @@ blockquote {
     width: 100%;
   }
 }
+/* .ekoexcel-div {
+  top: 40%;
+  bottom: auto;
+  width: 15%;
+} */
 
 @media screen and (max-width: 767px) {
   .hero-slider {
@@ -4024,6 +4041,11 @@ blockquote {
     margin-right: auto;
     margin-left: auto;
   }
+  .ekoexcel-div {
+    top: 29%;
+    bottom: auto;
+    width: 20%;
+  }
 }
 
 @media screen and (max-width: 479px) {
@@ -4208,6 +4230,11 @@ blockquote {
 
   .data-accordion-toggle {
     padding-left: 0px;
+  }
+  .ekoexcel-div {
+    top: 18%;
+    bottom: auto;
+    width: 25%;
   }
 }
 

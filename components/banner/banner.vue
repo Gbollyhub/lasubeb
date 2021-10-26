@@ -1,5 +1,8 @@
 <template>
-          <div data-delay="14000" data-animation="cross" data-autoplay="1" data-easing="ease-in-expo" data-duration="1000" data-infinite="1" class="hero-slider w-slider">
+<div>
+        <a href="https://ekoexcel.ng/" target="_blank" class="ekoexcel-div w-inline-block">
+      <img src="../../assets/images/EKOEXCELReverseLogoWithoutDis_1619090875152.png" loading="lazy" width="300" alt="Eko Excel"></a>
+     <div data-delay="14000" data-animation="cross" data-autoplay="1" data-easing="ease-in-expo" data-duration="1000" data-infinite="1" class="hero-slider w-slider">
     <div class="hero-mask w-slider-mask">
       <div v-for="slide in getImageSlider" :key="slide.id" id="subeb-hero-1" data-w-id="41b69d52-9a1f-da94-47d9-2dd97932bb5a" class="hero-slide w-slide">
         <div class="container-2 w-container">
@@ -19,6 +22,8 @@
     </div>
     <div class="hero-slide-nav w-slider-nav w-round"></div>
   </div>
+</div>
+
 </template>
 
 <script>
