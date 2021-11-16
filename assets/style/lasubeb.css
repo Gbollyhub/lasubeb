@@ -2577,9 +2577,30 @@ blockquote {
 
 .acsdemic-calendar-details {
   position: static;
+  background: #dddddd;
+  display: block;
+  min-width: 100%;
 }
 
-.acsdemic-calendar-details.w--open {
+.education-data-column {
+  margin-left: -10px;
+  margin-right: -10px;
+}
+.education-data-column:before,
+.education-data-column:after {
+  content: " ";
+  display: table;
+  grid-column-start: 1;
+  grid-row-start: 1;
+  grid-column-end: 2;
+  grid-row-end: 2;
+}
+.education-data-column:after {
+  clear: both;
+}
+
+
+.acsdemic-calendar-details{
   background-color: transparent;
 }
 
@@ -2809,6 +2830,22 @@ blockquote {
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   text-align: left;
+   margin-left: auto;
+  margin-right: auto;
+  max-width: 940px;
+}
+
+.data-container-list:before,
+.data-container-list:after {
+  content: " ";
+  display: table;
+  grid-column-start: 1;
+  grid-row-start: 1;
+  grid-column-end: 2;
+  grid-row-end: 2;
+}
+.data-container-list:after {
+  clear: both;
 }
 
 .data-title {

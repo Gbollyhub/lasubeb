@@ -3,25 +3,19 @@
     <section id="feature-section" class="feature-section news w-clearfix">
       <search/>
       <h2 class="heading-2 featured"><span class="text-span">lasubeb </span>LGEA head teachers data</h2>
-      <div data-hover="" data-delay="0" class="data-dropdown w-dropdown">
-        <div class="events-dropdwn-toggle w-dropdown-toggle">
-          <div class="w-icon-dropdown-toggle"></div>
-          <div class="events-type-text-block">Display by LGEA</div>
-        </div>
-        <nav class="events-dropdown-list w-dropdown-list">
-          <a href="#" class="events-type w-dropdown-link">AGEGE LGEA</a>
-          <a href="#" class="events-type w-dropdown-link">aJEROMI-IFELODUN LGEA</a>
-          <a href="#" class="events-type w-dropdown-link">ALIMOSHO LGEA</a>
-        </nav>
-      </div>
-      <div class="data-container-list w-container">
-        <div v-for="post in posts" :key="post.id"  data-hover="" data-delay="0" id="school-support-services" data-w-id="95e98a35-6bef-259a-c1c9-ddd0625da56b" class="acdemic-accordion w-dropdown">
-          <div class="data-accordion-toggle w-dropdown-toggle">
+      <select @change="filterPost($event)"  class="events-dropdwn-toggle events-type-text-block w-dropdown-toggle data-dropdown w-dropdown">
+        <option value=0 selected>Display by All LGEA</option>
+        <option :value="item.id"  v-for="item in posts" :key="item.id">{{item.lasubeb_lg_education_authority.LgeaTitle}}</option>
+      </select>
+
+      <div class="data-container-list">
+        <div v-for="post in newPosts" :key="post.id"  data-hover="" data-delay="0" id="school-support-services" data-w-id="95e98a35-6bef-259a-c1c9-ddd0625da56b" class="acdemic-accordion w-dropdown">
+          <div class="data-accordion-toggle w-dropdown-toggle" @click="showDropper">
             <div class="dept-unit-icon w-icon-dropdown-toggle"></div>
-            <div class="accordion-text-block w-clearfix">{{post.lasubeb_lg_education_authority.LgeaTitle}} LGEA - SCHOOLS &amp; HEAD TEACHERS DATA<span class="academic-dat-inline-span"></span></div>
+            <div class="accordion-text-block w-clearfix">{{post.lasubeb_lg_education_authority.LgeaTitle}} LGEA - SCHOOLS &amp; DATA<span class="academic-dat-inline-span"></span></div>
           </div>
-          <nav class="acsdemic-calendar-details w-dropdown-list">
-            <div  v-for="lgeaData in post.LgeaData" :key="lgeaData.id" class="education-data-column w-row">
+          <nav class="acsdemic-calendar-details" v-show="isSelected">
+            <div  v-for="lgeaData in post.LgeaData" :key="lgeaData.id" class="education-data-column">
               <div class="data-col w-col w-col-3 w-col-stack">
                 <div class="data-title">Name of School</div>
                 <div class="data_emisteachers">{{ lgeaData.NAME }}</div>
@@ -65,8 +59,29 @@ export default {
    async asyncData({ params }) {
     const  data  = await axios.get('http://admin-cms.lasubeb.lg.gov.ng/head-teachers-data')
     return {
-      posts: data.data
+      posts: data.data,
+      newPosts:data.data,
+      allPosts:data.data,
+      isSelected: false
       }
+   },
+
+   methods:{
+     showDropper(){
+     this.isSelected = !this.isSelected
+     },
+     filterPost(event){
+              this.newPosts = []
+       if(event.target.value == 0){
+         return this.newPosts = this.allPosts
+       }
+    let result = this.posts.filter( result => {
+      return result.id == event.target.value;
+    })
+
+    this.newPosts = result
+     }
+
    },
   head(){
     return{
