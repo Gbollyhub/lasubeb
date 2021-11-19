@@ -73,12 +73,13 @@ export default {
      filterPost(event){
               this.newPosts = []
        if(event.target.value == 0){
+         this.isSelected = false
          return this.newPosts = this.allPosts
        }
     let result = this.posts.filter( result => {
       return result.id == event.target.value;
     })
-
+      this.isSelected = true
     this.newPosts = result
      }
 
