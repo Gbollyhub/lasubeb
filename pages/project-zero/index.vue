@@ -13,6 +13,10 @@ to mobilize and accelerate support to tackle the menace of Out of School Childre
 The goal of Project Zero is to enrol and where applicable re-enrol pupils of school-going age who are out of school, due 
 to the pandemic or societal challenges back into government owned primary schools
  </p>
+<br><br>
+<div style="display:flex;justify-content:center;">
+  <a href="https://res.cloudinary.com/dja6wv2sl/raw/upload/v1646788699/project-zero_bjwbzh.docx" class="action-btn emis w-button" download="project-zero">Read more about Project Zero</a>
+</div>
 
       </div>
     </div>
