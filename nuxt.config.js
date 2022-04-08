@@ -81,6 +81,7 @@ export default {
   ** Global CSS
   */
   css: [
+    '~assets/style/table.css',
     '~assets/style/components.css',
     '~assets/style/lasubeb.css',
     '~assets/style/normalize.css',
@@ -92,6 +93,7 @@ export default {
   ** https://nuxtjs.org/guide/plugins
   */
   plugins: [
+    { src : '~/plugins/vue-apexchart.js', ssr : false },
   ],
   /*
   ** Auto import components
@@ -128,5 +130,8 @@ export default {
   ** See https://nuxtjs.org/api/configuration-build/
   */
   build: {
+    vendor : [
+      'vue-apexchart'
+   ]
   }
 }
