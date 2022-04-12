@@ -33,7 +33,7 @@ Therefore, you should know about the action plan so you can;
 
         </p>
         <br><br>
-         <div class="page-img-mask"><img src="../../assets/images/actionplan-note.jpg" alt="LASUBEB Pillars" class="feature-image-pillars"></div>
+         <div class="page-img-mask"><img src="../../assets/images/action-note.svg" alt="LASUBEB Pillars" class="feature-image-pillars"></div>
            <br><br><br>
             <h4 style="font-family:Oswald, sans-serif;font-size:20px">Action Plans  & TEP Monitoring Report</h4>
         <br>
