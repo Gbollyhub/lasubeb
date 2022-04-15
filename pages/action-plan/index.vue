@@ -6,38 +6,38 @@
       <h2 class="heading-2 featured"><span class="text-span">LASUBEB ACTION PLAN</span></h2>
      <div class="page-img-mask"><img src="../../assets/images/actionplan-banner.jpg" alt="LASUBEB Pillars" class="feature-image-pillars"></div>
       <div class="page-content-block ekoexcel">
-                <p class="paragraph-2">The action plan is essential document prepared annually by the
-        State Universal Basic Education Board (SUBEB) as part of the
-        requirement for accessing the UBE matching grant from the Universal
-        Basic Education Commission (UBEC). It is a comprehensive document
-        that describes in detail intervention projects and activities proposed to
-        be implemented in Early Childhood Care Development and Education
-        (ECCDE), primary and junior secondary schools across the state. 
-        <br><br>
-        This document usually specifies the beneficiary local government
-        education area of intervention and schools, including description,
-        duration of execution, quantity, unit costs and total costs of proposed
-        projects
+                <p class="paragraph-2">The Education Partnership (TEP) Centre is proud to collaborate with the Lagos State Universal 
+                  Basic Education Board (LASUBEB) on the digital dissemination of her Action Plans and our independent projects monitoring data, 
+                  as part of efforts to increase citizen awareness and agency, as well as facilitate public sector accountability and transparency. 
+                  This initiative serves a sustainable mechanism to establish the gains of TEP Centre's collaboration with Lagos SUBEB under the On Nigeria programme.
+
 
         </p>
         <br><br>
        
-       <h4 style="font-family:Oswald, sans-serif;font-size:20px">What you should know about action plan</h4>
+       <h4 style="font-family:Oswald, sans-serif;font-size:20px">On Nigeria</h4>
         <br>
-         <p class="paragraph-2">The action plan is a document that should be made public record
-for all citizens. The action plan will help citizens to be better informed
-of UBE interventions in their communities and improve their ability to
-monitor these interventions. Ultimately, citizens who are better informed
-are better positioned to demand transparent public service delivery.
-Therefore, you should know about the action plan so you can;
+         <p class="paragraph-2">The On Nigeria programme is targeted at promoting accountability, transparency and good 
+           governance in Nigeria by reducing retail corruption and strengthening Nigerian-led anti-corruption efforts. TEP 
+           Centre with support from the John D. & Catherine T. MacArthur Foundation was commissioned from 2017 to 2021 to track 
+           the utilisation of the Universal Basic Education (UBE) funds in Lagos State in order to improve public sector accountability 
+           and transparency. In line with this mandate, Lagos state Action Plans are simplified for education stakeholders at state and 
+           community levels, to equip them with information to assess the relevance and effectiveness of UBE interventions and carry out 
+           effective monitoring, course correction and advocacy. 
+Furthermore, during this four-year period, TEP Centre also recruited and trained community-based volunteers and supervisors to monitor and 
+track the status of projects assigned to their schools and communities from the annual Lagos SUBEB action plans. Consequently, 
+TEP Centre has compiled and published an independent monitoring report of UBE-funded projects within the 2015-2017 action plans.
+
 
         </p>
-        <br><br>
-         <div class="page-img-mask"><img src="../../assets/images/action-note.svg" alt="LASUBEB Pillars" class="feature-image-pillars"></div>
            <br><br><br>
-            <h4 style="font-family:Oswald, sans-serif;font-size:20px">Action Plans  & TEP Monitoring Report</h4>
+            <h4 style="font-family:Oswald, sans-serif;font-size:20px">Lagos SUBEB Action Plans  & TEP Monitoring Report</h4>
         <br>
-         <p class="paragraph-2">Select an action plan from the following  to view its information.</p>
+         <p class="paragraph-2">
+           The action plan is an essential document prepared annually by the State Universal Basic Education Boards (SUBEB) as part of the requirements for accessing the UBE matching grant from the Universal Basic Education Commission (UBEC). It is a comprehensive document that describes in detail intervention projects and activities proposed to be implemented in Early Childhood Care Development and Education (ECCDE), primary and junior secondary schools across the state.
+The action plan is a document that should be made public by all State Universal Education Boards (SUBEBs), for citizens to be better informed in order for them to assess the relevance and effectiveness of UBE interventions. This, ultimately, helps in promoting inclusion and strengthening of public service delivery in their communities. Please view available action plans below.
+
+         </p>
          <br><br>
          <div class="actionplan-row">
         <div @click="toActionPlan(item.year)" v-for="(item, index) in actionplans" :key="item.id" class="actionplan-col" :style="{background: index == 0 ? 'rgba(0, 143, 251, 0.85)' : 

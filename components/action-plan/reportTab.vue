@@ -1,13 +1,68 @@
 <template>
-  <div>
-         <div class="card-heading">
+    <div>
+      <div class="lg-modal"  v-show="lg_details">
+
+              <div class="app-card modal-card">
+
+
+                
+         <div class="app-space-between">
+        <div class="table-header" style=" font-size:16px;font-weight:600; color:black;text-transform:uppercase">{{lg_data.lgea}} DETAILS</div>
+        <div  @click="lg_details = false" style="cursor:pointer;font-size:16px;font-weight:600">X</div>
+         </div>
+        <br><br>
+          <div class="table-div"  v-if="!lg_data.school <= 0">
+        <table>
+            <thead>
+  <tr>
+    <th><div class="table-header">S/N</div></th>
+    <th><div class="table-header">CREATED DATE</div></th>
+    <th><div class="table-header">SCHOOL NAME</div></th>
+        <th><div class="table-header">CATEGORY</div></th>
+    <th><div class="table-header">STAGE OF COMPLETION</div></th>
+    <th><div class="table-header">IMAGES</div></th>
+  </tr>
+            </thead>
+            <tbody>
+  <tr v-for="(item,index) in lg_data.school" :key="index" >
+    <td><div class="table-data">{{index + 1}}</div></td>
+    <td><div class="table-data">{{item.date | moment }}</div></td>
+    <td><div class="table-data">{{item.school_name}}</div></td>
+    <td><div class="table-data">{{item.school_cat}}</div></td>
+    <td><div class="table-data">{{
+      item.stages == 1 ? 'Completed' :
+      item.stages == 2 ? 'Ongoing' :
+      item.stages == 3 ? 'Abandoned' :
+      item.stages == 4 ? 'Not Started' : ''
+    }}</div></td>
+    <td>
+      <div  v-if="item.images.length > 0" @click="imageIndex = 0" style="text-align:left;cursor:pointer"  class="link">View Images</div>
+       <div v-else style="color:red;text-align:left;cursor:pointer"  class="link">No Images</div>
+        <VueCoolLightBox 
+            :items="item.images" 
+            :index="imageIndex"
+            @close="imageIndex = null">
+          </VueCoolLightBox>
+    </td>
+
+  </tr>
+            </tbody>
+</table>
+       </div>
+       
+              </div>
+      </div>
+           <div class="app-card">
+
+  
+        <div class="card-heading">
           <div>
             <div class="text-block-9">TEP Monitoring Report</div>
           </div>
           <div>
             <div class="form-block ">
               <select v-model="project" class="app-card-select w-select">
-                   <option v-for="item in ProjectsList" :key="item.code" :value="item.code">{{item.title}}</option>
+                   <option :disabled="item.code == 1 ? false : item.code == 2 ? false : true" v-for="item in ProjectsList" :key="item.code" :value="item.code">{{item.title}}</option>
                 </select>
      
             </div>
@@ -27,25 +82,31 @@
             </div>
             <div class="monitoring-text">{{item.completed}} Completed Projects</div>
             <div class="monitoring-text">{{item.expected - item.completed}} Uncompleted Projects</div>
-            <div v-show="item.images.length > 0" style="cursor:pointer" @click="imageIndex = 0"  class="link">View Images</div>
-               <!-- <CoolLightBox 
-      :items="item.images" 
-      :index="imageIndex"
-      @close="imageIndex = null">
-    </CoolLightBox> -->
+
+             <div class="monitoring-text">Uploaded by : {{item.volunteer_id.first_name}} {{item.volunteer_id.last_name}}</div>
+            <div style="cursor:pointer" @click="openLgDetails(item)"  class="link">View Details</div>
           </div>
         </div>
-  </div>
+      </div>
+    </div>
 </template>
 
 <script>
 import axios from 'axios'
+import moment from 'moment'
 export default {
+    filters:{
+   moment: function(date){
+       return moment(date).format('MMMM Do YYYY, h:mm:ss a');
+   }
+  },
     props:['year'],
 
   data() {
     return {
-    imageIndex: null,
+    lg_data: {},
+          lg_details: false,
+          imageIndex: null,
           seriesArray: [],
           chartOptions: {
             chart: {
@@ -96,6 +157,9 @@ export default {
             },
   
           },
+     projectArray:[],
+     project:1,
+     loading:false,
      report:[],
     ProjectsList: [
       {
@@ -176,8 +240,7 @@ LGEASList:[
        },
 
 ],
-     project:1,
-     loading:false,
+
     }
   },
            created(){   
@@ -186,32 +249,135 @@ LGEASList:[
     },
     methods:{
 
+        async openLgDetails(item){
+    this.lg_details = true;
+    this.lg_data = item;
+    },
+
      async getReport(){
 
         this.loading = true;
-               
+        
+
+        const result = await axios.get(`https://tep-dashboard.herokuapp.com/get-allocation-by-year?year=${this.year}`)
+
+    const allocation =result.data[0];
+    this.$emit('update', allocation);
+
+      
+        
          const response = await axios.get(`https://tep-dashboard.herokuapp.com/comparison?year=${this.year}&project=${this.project}`)
 
-        const temp = response.data.map(x => {
+           
+         const final_array = [];
+         let num = 1;
+          for(let j = 0; j < response.data.length ; j++) {
+            
+       if(response.data[j].lgea === num){
+          let final_obj = {
+            'series': [],
+            'project': response.data[j].project,
+            'lgea': response.data[j].lgea,
+            'expected': response.data[j].expected,
+            'completed': 0,
+            'year': response.data[j].year,
+            'school':[],
+            'volunteer_id': response.data[j].volunteer_id,
+         }
+
+        
+         for(let i = 0; i < response.data.length ; i++) {
+            
+           if(response.data[i].lgea === num){
+               
+            final_obj.completed += response.data[i].stages == 1 ? 1 : 0,
+            final_obj.school.push({
+              'date': response.data[i].createdAt,
+              'school_name': response.data[i].school_name,
+              'school_cat': response.data[i].school_category,
+              'stages': response.data[i].stages,
+              'images': response.data[i].images
+              })
+           }
+         }
+          
+          final_obj.series = [(final_obj.completed/final_obj.expected) * 100]
+         
+          final_array.push(final_obj);
+          num += 1;
+       }
+          }
+          
+
+
+   
+           const temp = final_array.map(x => {
           return {
             ...x,
-            series: [(x.completed/x.expected) * 100],
             project: this.ProjectsList.find((entry)=>{return x.project === entry.code}).title,
             lgea: this.LGEASList.find((entry)=>{return x.lgea === entry.code}).title,
-            expected: x.expected,
-            completed: x.completed,
-            year: x.year
           }
         })
          this.loading = false;
         
-        this.seriesArray = temp
+
+        this.seriesArray = temp  
+
+   
       }
     }
 }
 </script>
 
 <style scoped>
+.app-space-between {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+.link {
+  color: #0093dd;
+  font-size: 0.7rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+.app-card {
+  position: relative;
+  margin-bottom: 2.5rem;
+  padding: 28px;
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 30%;
+  -ms-flex: 0 30%;
+  flex: 0 30%;
+  border-radius: 10px;
+  background-color: #fff;
+}
+.lg-modal {
+      display: flex;
+    background: rgba(22, 22, 22, 0.6);
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 99999999999999;
+}
+.modal-card {
+  flex: none !important;
+  width: 60% !important;
+  width: 70vh;
+  overflow: auto;
+}
 .app-btn {
   display: inline-block;
   padding: 8px 59px;
@@ -350,6 +516,10 @@ LGEASList:[
 
 
  @media screen and (max-width: 479px) {
+   .modal-card {
+
+  width: 90% !important;
+}
        .prject-detail-col {
     -webkit-flex-basis: 100%;
     -ms-flex-preferred-size: 100%;

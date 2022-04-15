@@ -86,7 +86,8 @@ export default {
     '~assets/style/lasubeb.css',
     '~assets/style/normalize.css',
     '~static/js/owl/assets/owl.carousel.min.css',
-    '~static/js/owl/assets/owl.theme.default.min.css'
+    '~static/js/owl/assets/owl.theme.default.min.css',
+    '~node_modules/vue-cool-lightbox/dist/vue-cool-lightbox.min.css'
   ],
   /*
   ** Plugins to load before mounting the App
@@ -94,6 +95,7 @@ export default {
   */
   plugins: [
     { src : '~/plugins/vue-apexchart.js', ssr : false },
+    { src : '~/plugins/vue-cool-lightbox.js', ssr : false },
   ],
   /*
   ** Auto import components
@@ -131,7 +133,8 @@ export default {
   */
   build: {
     vendor : [
-      'vue-apexchart'
+      'vue-apexchart',
+      'vue-cool-lightbox'
    ]
   }
 }

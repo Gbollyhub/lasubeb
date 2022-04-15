@@ -5,7 +5,7 @@
     <div class="flex-container w-container">
        <div class="app-space-between">
            <div>
-                <h2 class="heading-2 featured"><span class="text-span">LASUBEB ACTION PLANS AND MONITORING TOOL</span></h2>
+                <h2 class="heading-2 featured"><span class="text-span">LASUBEB ACTION PLAN AND MONITORING REPORT</span></h2>
            </div>
            <div>
                  <select v-model="year"  class="app-select w-select">
@@ -16,8 +16,8 @@
        </div>
        <br>
      <div class="content-tab">
-        <div class="tab-title" :class= "[ actionplan ? activeTabClass : '']" @click= "openActionPlanTab">ACTION PLAN</div>
-        <div v-show="reports.publish" class="tab-title" :class= "[ report ? activeTabClass : '']" @click= "openReportTab">MONITORING REPORT</div>
+        <div class="tab-title" :class= "[ actionplan ? activeTabClass : '']" @click= "openActionPlanTab">ACTION PLAN DATA</div>
+        <div v-show="reports.publish" class="tab-title" :class= "[ report ? activeTabClass : '']" @click= "openReportTab">MONITORING REPORT DATA</div>
         <div v-show="reports.publish" class="tab-title" :class= "[ comparison ? activeTabClass : '']" @click= "openComparisonTab">COMPARISON</div>
       </div>
       <ActionPlan  :year="year" v-show="actionplan"/>

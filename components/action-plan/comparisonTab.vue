@@ -177,15 +177,7 @@ LGEASList:[
 
    
       const response = await axios.get(`https://tep-dashboard.herokuapp.com/get-allocation`)
-      if(response.data.length <= 0) {
       
-           return      this.$notify({
-                        text: "No Action Plan Found",
-                        type: 'warn',
-                        duration: 3000,
-                        speed: 1000,
-                      })
-         }
     this.yearArray = response.data;
     this.year = response.data[0].year
    
@@ -220,13 +212,50 @@ LGEASList:[
          if(response.data.length <= 0) {
            this.loading =false;
          }
-        const temp = response.data.map(x => {
+       const final_array = [];
+         let num = 1;
+          for(let j = 0; j < response.data.length ; j++) {
+            
+       if(response.data[j].lgea === num){
+          let final_obj = {
+            'series': [],
+            'project': response.data[j].project,
+            'lgea': response.data[j].lgea,
+            'expected': response.data[j].expected,
+            'completed': 0,
+            'year': response.data[j].year,
+            'school':[],
+            'volunteer_id': response.data[j].volunteer_id,
+         }
+
+        
+         for(let i = 0; i < response.data.length ; i++) {
+            
+           if(response.data[i].lgea === num){
+               
+            final_obj.completed += response.data[i].stages == 1 ? 1 : 0,
+            final_obj.school.push({
+              'date': response.data[i].createdAt,
+              'school_name': response.data[i].school_name,
+              'school_cat': response.data[i].school_category,
+              'stages': response.data[i].stages,
+              'images': response.data[i].images
+              })
+           }
+         }
+          
+          final_obj.series = [(final_obj.completed/final_obj.expected) * 100]
+         
+          final_array.push(final_obj);
+          num += 1;
+       }
+          }
+          
+           const temp = final_array.map(x => {
           return {
+            ...x,
             project: this.projectArray.find((entry)=>{return x.project === entry.code}).title,
             lgea: this.LGEASList.find((entry)=>{return x.lgea === entry.code}).title,
-            expected: x.expected,
-            completed: x.completed,
-            year: x.year
           }
         })
         this.compareData.push(temp)
