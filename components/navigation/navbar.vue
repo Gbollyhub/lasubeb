@@ -8,7 +8,7 @@
     class="navbar w-nav"
   >
     <div class="container w-container">
-      <nuxt-link to="/" aria-current="page" class="logo-brand w-clearfix w-nav-brand w--current">
+      <a href="/" aria-current="page" class="logo-brand w-clearfix w-nav-brand w--current">
         <img
           :src="getLogo.LogoUrl"
           width="86"
@@ -19,7 +19,7 @@
           LAGOS STATE UNIVERSAL
           <br />BASIC EDUCATION BOARD
         </div>
-      </nuxt-link>
+      </a>
       <nav role="navigation" class="nav-menu w-nav-menu">
         <div data-hover data-delay="0" class="navlink w-dropdown">
           <div class="navlink dropdown-toggle w-dropdown-toggle">
@@ -27,27 +27,27 @@
             <div>ABOUT LASUBEB</div>
           </div>
           <nav class="navlink-dropdown-list-container w-dropdown-list">
-            <nuxt-link
-              to="/about-lasubeb-and-statutory-roles"
+            <a
+              href="/about-lasubeb-and-statutory-roles"
               class="navlink dropdown w-dropdown-link"
-            >LASUBEB STATUTORY ROLES</nuxt-link>
-            <nuxt-link
-              to="/lasubeb-vision-mission-values"
+            >LASUBEB STATUTORY ROLES</a>
+            <a
+              href="/lasubeb-vision-mission-values"
               class="navlink dropdown w-dropdown-link"
-            >VISION, MISSION</nuxt-link>
-            <nuxt-link
-              to="/lasubeb-goals-and-measure-of-success"
+            >VISION, MISSION</a>
+            <a
+              href="/lasubeb-goals-and-measure-of-success"
               class="navlink dropdown w-dropdown-link"
-            >MEASUREs OF LEARNER&#x27;S SUCCESS</nuxt-link>
-            <nuxt-link to="/lasubeb-pillars" class="navlink dropdown w-dropdown-link">OUR PILLARS</nuxt-link>
-            <nuxt-link
-              to="/lasubeb-department-statutory-units-key-functions"
+            >MEASUREs OF LEARNER&#x27;S SUCCESS</a>
+            <a href="/lasubeb-pillars" class="navlink dropdown w-dropdown-link">OUR PILLARS</a>
+            <a
+              href="/lasubeb-department-statutory-units-key-functions"
               class="navlink dropdown w-dropdown-link"
-            >DEPARTMENTS/STATUTORY UNITS</nuxt-link>
-            <nuxt-link
-              to="/lasubeb-lg-education-authority"
+            >DEPARTMENTS/STATUTORY UNITS</a>
+            <a
+              href="/lasubeb-lg-education-authority"
               class="navlink dropdown w-dropdown-link"
-            >LOCAL GOVERNMENT EDUCATION AUTHORITY (LGEA)</nuxt-link>
+            >LOCAL GOVERNMENT EDUCATION AUTHORITY (LGEA)</a>
           </nav>
         </div>
         <div data-hover data-delay="0" class="navlink w-dropdown">
@@ -56,11 +56,11 @@
             <div>THE BOARD</div>
           </div>
           <nav class="navlink-dropdown-list-container w-dropdown-list">
-            <nuxt-link to="/lasubeb-board" class="navlink dropdown w-dropdown-link">COMPOSITION</nuxt-link>
-            <nuxt-link
-              to="/lasubeb-strategic-priorities"
+            <a href="/lasubeb-board" class="navlink dropdown w-dropdown-link">COMPOSITION</a>
+            <a
+              href="/lasubeb-strategic-priorities"
               class="navlink dropdown w-dropdown-link"
-            >STRATEGIC PRIORITIES</nuxt-link>
+            >STRATEGIC PRIORITIES</a>
           </nav>
         </div>
         <div data-hover data-delay="0" class="navlink w-dropdown">
@@ -69,14 +69,14 @@
             <div>Programs</div>
           </div>
           <nav class="navlink-dropdown-list-container w-dropdown-list">
-            <nuxt-link to="/lasubeb-projects" class="navlink dropdown w-dropdown-link">projects</nuxt-link>
-            <nuxt-link to="#" class="navlink dropdown w-dropdown-link">INFRASTRUCTURE</nuxt-link>
-            <nuxt-link to="#" class="navlink dropdown w-dropdown-link">recruitment</nuxt-link>
-            <nuxt-link to="#" class="navlink dropdown w-dropdown-link">training</nuxt-link>
-            <nuxt-link to="/lasubeb-ekoexcel" class="navlink dropdown w-dropdown-link">eko excel</nuxt-link>
-            <nuxt-link to="#" class="navlink dropdown w-dropdown-link">homegrown feeding</nuxt-link>
-            <nuxt-link to="/lasubeb-structured-displance-learning" class="navlink dropdown w-dropdown-link">structured distance learning</nuxt-link>
-             <nuxt-link to="/project-zero" class="navlink dropdown w-dropdown-link">Project Zero</nuxt-link>
+            <a href="/lasubeb-projects" class="navlink dropdown w-dropdown-link">projects</a>
+            <a href="#" class="navlink dropdown w-dropdown-link">INFRASTRUCTURE</a>
+            <a href="#" class="navlink dropdown w-dropdown-link">recruitment</a>
+            <a href="#" class="navlink dropdown w-dropdown-link">training</a>
+            <a href="/lasubeb-ekoexcel" class="navlink dropdown w-dropdown-link">eko excel</a>
+            <a href="#" class="navlink dropdown w-dropdown-link">homegrown feeding</a>
+            <a href="/lasubeb-structured-displance-learning" class="navlink dropdown w-dropdown-link">structured distance learning</a>
+             <a href="/project-zero" class="navlink dropdown w-dropdown-link">Project Zero</a>
           </nav>
         </div>
         <div data-hover data-delay="0" class="navlink w-dropdown">
@@ -85,9 +85,9 @@
           <div>EDUCATION DATA</div>
           </div>
           <nav class="navlink-dropdown-list-container w-dropdown-list">
-            <nuxt-link to="/education-data" class="navlink dropdown w-dropdown-link">education mis</nuxt-link>
-            <nuxt-link to="/download-education-data-report" class="navlink w-dropdown-link">download lasubeb emis report</nuxt-link>
-            <!-- <nuxt-link to="/action-plan" class="navlink w-dropdown-link">Action Plan</nuxt-link> -->
+            <a href="/education-data" class="navlink dropdown w-dropdown-link">education mis</a>
+            <a href="/download-education-data-report" class="navlink w-dropdown-link">download lasubeb emis report</a>
+            <!-- <a href="/action-plan" class="navlink w-dropdown-link">Action Plan</a> -->
           </nav>
         </div>
         <div data-hover data-delay="0" class="navlink w-dropdown">
@@ -96,10 +96,10 @@
             <div>partnership</div>
           </div>
           <nav class="navlink-dropdown-list-container w-dropdown-list">
-            <nuxt-link
-              to="/lasubeb-partners"
+            <a
+              href="/lasubeb-partners"
               class="navlink dropdown w-dropdown-link"
-            >become a lasubeb partner</nuxt-link>
+            >become a lasubeb partner</a>
           </nav>
         </div>
         <div data-hover data-delay="0" class="navlink w-dropdown">
@@ -108,13 +108,13 @@
             <div>NEWS</div>
           </div>
           <nav class="navlink-dropdown-list-container w-dropdown-list">
-            <nuxt-link to="/lasubeb-news" class="navlink dropdown w-dropdown-link">NEWS</nuxt-link>
-            <nuxt-link to="/gallery" class="navlink dropdown w-dropdown-link">GALLERY</nuxt-link>
-            <nuxt-link to="/lasubeb-events-international" class="navlink dropdown w-dropdown-link">EVENTS</nuxt-link>
-            <nuxt-link to="/lasubeb-online-video-channel" target="_blank" class="navlink dropdown w-dropdown-link">VIDEOS</nuxt-link>
+            <a href="/lasubeb-news" class="navlink dropdown w-dropdown-link">NEWS</a>
+            <a href="/gallery" class="navlink dropdown w-dropdown-link">GALLERY</a>
+            <a href="/lasubeb-events-international" class="navlink dropdown w-dropdown-link">EVENTS</a>
+            <a href="/lasubeb-online-video-channel" target="_blank" class="navlink dropdown w-dropdown-link">VIDEOS</a>
           </nav>
         </div>
-        <nuxt-link to="/contact-us" class="navlink w-nav-link" style="font-size:12.15px">contact</nuxt-link>
+        <a href="/contact-us" class="navlink w-nav-link" style="font-size:12.15px">contact</a>
       </nav>
       <div class="menubtn w-nav-button">
         <div class="w-icon-nav-menu"></div>
