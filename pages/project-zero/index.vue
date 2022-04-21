@@ -15,7 +15,7 @@ to the pandemic or societal challenges back into government owned primary school
  </p>
 <br><br>
 <div style="display:flex;justify-content:center;">
-  <a href="https://res.cloudinary.com/dja6wv2sl/raw/upload/v1646788699/project-zero_bjwbzh.docx" class="action-btn emis w-button" download="project-zero">Read more about Project Zero</a>
+  <a href="https://lasubeb.fra1.cdn.digitaloceanspaces.com/PDF_Document/lasubeb_ProjectZero.pdf" class="action-btn emis w-button" download="project-zero">Read more about Project Zero</a>
 </div>
 
       </div>

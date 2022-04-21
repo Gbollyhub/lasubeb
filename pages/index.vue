@@ -206,7 +206,7 @@ export default {
 p {
     font-family: Ubuntu,Helvetica,sans-serif;
     color: #818181;
-    font-size: 12px !important;
+    font-size: 15px !important;
     line-height: 1.8em;
     text-align: justify;
 }

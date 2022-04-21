@@ -114,7 +114,7 @@
             <a href="/lasubeb-online-video-channel" target="_blank" class="navlink dropdown w-dropdown-link">VIDEOS</a>
           </nav>
         </div>
-        <a href="/contact-us" class="navlink w-nav-link" style="font-size:12.15px">contact</a>
+        <a href="/contact-us" class="navlink w-nav-link" style="font-size:13px">contact</a>
       </nav>
       <div class="menubtn w-nav-button">
         <div class="w-icon-nav-menu"></div>
