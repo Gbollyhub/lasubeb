@@ -87,7 +87,7 @@
           <nav class="navlink-dropdown-list-container w-dropdown-list">
             <a href="/education-data" class="navlink dropdown w-dropdown-link">education mis</a>
             <a href="/download-education-data-report" class="navlink w-dropdown-link">download lasubeb emis report</a>
-            <!-- <a href="/action-plan" class="navlink w-dropdown-link">Action Plan</a> -->
+            <a href="/action-plan" class="navlink w-dropdown-link">Action Plan</a>
           </nav>
         </div>
         <div data-hover data-delay="0" class="navlink w-dropdown">
