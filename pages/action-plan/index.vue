@@ -73,7 +73,7 @@ export default {
   },
      async asyncData({ params }) {
     
-      const response = await axios.get(`https://tep-dashboard.herokuapp.com/get-allocation`)
+      const response = await axios.get(`https://services-tep.lasubeb.lg.gov.ng/get-allocation`)
 
     return {
       actionplans: response.data

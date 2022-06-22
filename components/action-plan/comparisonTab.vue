@@ -176,7 +176,7 @@ LGEASList:[
  
 
    
-      const response = await axios.get(`https://tep-dashboard.herokuapp.com/get-allocation`)
+      const response = await axios.get(`https://services-tep.lasubeb.lg.gov.ng/get-allocation`)
       
     this.yearArray = response.data;
     this.year = response.data[0].year
@@ -207,7 +207,7 @@ LGEASList:[
            
       for (let index = 0; index < this.activityArray.length; index++) {
  
-        const response = await axios.get(`https://tep-dashboard.herokuapp.com/comparison?year=${this.activityArray[index]}&project=${this.project}`)
+        const response = await axios.get(`https://services-tep.lasubeb.lg.gov.ng/comparison?year=${this.activityArray[index]}&project=${this.project}`)
 
          if(response.data.length <= 0) {
            this.loading =false;

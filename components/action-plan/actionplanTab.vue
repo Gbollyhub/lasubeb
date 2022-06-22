@@ -209,7 +209,7 @@ export default {
          
      this.loading = true;
         const token = localStorage.getItem('pk');
-         const response = await axios.get(`https://tep-dashboard.herokuapp.com/get-projectdata?year=${this.year}&project=${value}`)
+         const response = await axios.get(`https://services-tep.lasubeb.lg.gov.ng/get-projectdata?year=${this.year}&project=${value}`)
          
        this.loading = false;
         this.report = response.data; 
@@ -217,11 +217,11 @@ export default {
    },
      async getAllReport(){
         this.loading = true
-        const result = await axios.get(`https://tep-dashboard.herokuapp.com/get-allocation-by-year?year=${this.year}`)
+        const result = await axios.get(`https://services-tep.lasubeb.lg.gov.ng/get-allocation-by-year?year=${this.year}`)
         this.allocation = result.data[0];
  
 
-         const response = await axios.get(`https://tep-dashboard.herokuapp.com/get-breakdown?year=${this.year}`)
+         const response = await axios.get(`https://services-tep.lasubeb.lg.gov.ng/get-breakdown?year=${this.year}`)
 
         this.breakdownReport = response.data; 
 

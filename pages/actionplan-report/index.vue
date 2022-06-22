@@ -48,7 +48,7 @@ export default {
   },
      async asyncData({ params }) {
     
-      const response = await axios.get(`https://tep-dashboard.herokuapp.com/get-allocation`)
+      const response = await axios.get(`https://services-tep.lasubeb.lg.gov.ng/get-allocation`)
 
     return {
       actionplans: response.data,
@@ -73,7 +73,7 @@ export default {
        async getReports() {
  
    
-      const response = await axios.get(`https://tep-dashboard.herokuapp.com/get-publish`)
+      const response = await axios.get(`https://services-tep.lasubeb.lg.gov.ng/get-publish`)
       if(response.data.length <= 0) {
        
            return      this.$notify({
