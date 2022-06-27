@@ -233,7 +233,7 @@ export default {
         })
          this.loading = false;
         
-
+         this.pie_series = []
         for (let index = 0; index < temp.length; index++) {
           this.pie_series.push(temp[index].actual_amount)
          

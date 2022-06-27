@@ -2,7 +2,7 @@
     <div>
       <div class="lg-modal"  v-show="lg_details">
 
-              <div class="app-card modal-card">
+              <div class="app-card modal-card" style="overflow:scroll; width: 70%; height:80vh;z-index:999999">
 
 
                 
@@ -62,7 +62,7 @@
           <div>
             <div class="form-block ">
               <select v-model="project" class="app-card-select w-select">
-                   <option :disabled="item.code == 1 ? false : item.code == 2 ? false : true" v-for="item in ProjectsList" :key="item.code" :value="item.code">{{item.title}}</option>
+                   <option :disabled="item.code == 1 ? false : item.code == 2 ? false : item.code == 3 ? false : true" v-for="item in ProjectsList" :key="item.code" :value="item.code">{{item.title}}</option>
                 </select>
      
             </div>
@@ -269,45 +269,126 @@ LGEASList:[
          const response = await axios.get(`https://services-tep.lasubeb.lg.gov.ng/comparison?year=${this.year}&project=${this.project}`)
 
            
-         const final_array = [];
-         let num = 1;
-          for(let j = 0; j < response.data.length ; j++) {
-            
-       if(response.data[j].lgea === num){
-          let final_obj = {
-            'series': [],
-            'project': response.data[j].project,
-            'lgea': response.data[j].lgea,
-            'expected': response.data[j].expected,
-            'completed': 0,
-            'year': response.data[j].year,
-            'school':[],
-            'volunteer_id': response.data[j].volunteer_id,
-         }
+          let new_arr = response.data.sort((a, b) => {
+        return a.lgea - b.lgea;
+      });
 
-        
-         for(let i = 0; i < response.data.length ; i++) {
-            
-           if(response.data[i].lgea === num){
-               
-            final_obj.completed += response.data[i].stages == 1 ? 1 : 0,
-            final_obj.school.push({
-              'date': response.data[i].createdAt,
-              'school_name': response.data[i].school_name,
-              'school_cat': response.data[i].school_category,
-              'stages': response.data[i].stages,
-              'images': response.data[i].images
-              })
-           }
-         }
-          
-          final_obj.series = [(final_obj.completed/final_obj.expected) * 100]
-         
-          final_array.push(final_obj);
-          num += 1;
-       }
+      let lgea_Arr = new_arr.map((y) => {
+        return y.lgea;
+      });
+      const final_array = [];
+      const lgea_regulator = [];
+      let num = 1;
+
+
+      for (let j = 0; j < new_arr.length; j++) {
+        let isNumRepeated = lgea_regulator.some((x) => {
+          return x === new_arr[j].lgea;
+        });
+        let isNumAmong = lgea_Arr.some((x) => {
+          return x === num;
+        });
+
+        if (isNumAmong) {
+          if (!isNumRepeated) {
+            if (new_arr[j].lgea === num) {
+              let final_obj = {
+                series: [],
+                project: new_arr[j].project,
+                lgea: new_arr[j].lgea,
+                expected: new_arr[j].expected - 1,
+                completed: 0,
+                year: new_arr[j].year,
+                school: [],
+                volunteer_id: new_arr[j].volunteer_id,
+              };
+
+              for (let i = 0; i < new_arr.length; i++) {
+                if (new_arr[i].lgea === num) {
+                  (final_obj.expected =
+                    final_obj.expected + new_arr[i].expected),
+                    (final_obj.completed += new_arr[i].stages == 1 ? 1 : 0),
+                    final_obj.school.push({
+                      date: new_arr[i].createdAt,
+                      school_name: new_arr[i].school_name,
+                      school_cat: new_arr[i].school_category,
+                      stages: new_arr[i].stages,
+                      images: new_arr[i].images,
+                    });
+                }
+              }
+
+              final_obj.series = [
+                (final_obj.completed / final_obj.expected) * 100,
+              ];
+
+              final_array.push(final_obj);
+              lgea_regulator.push(new_arr[j].lgea);
+              num += 1;
+            }
           }
-          
+        } else {
+          num += 1;
+
+          let max = Math.max(...lgea_Arr);
+          for (let k = num; k <= max; k++) {
+            let newIsNumAmong = lgea_Arr.some((x) => {
+              return x === num;
+            });
+
+            if (!newIsNumAmong) {
+              num += 1;
+            } else {
+              let newIsNumRepeated = lgea_regulator.some((x) => {
+                return x === new_arr[j].lgea;
+              });
+
+              if (!newIsNumRepeated) {
+                if (new_arr[j].lgea === num) {
+                  let final_obj = {
+                    series: [],
+                    project: new_arr[j].project,
+                    lgea: new_arr[j].lgea,
+                    expected: new_arr[j].expected - 1,
+                    completed: 0,
+                    year: new_arr[j].year,
+                    school: [],
+                    volunteer_id: new_arr[j].volunteer_id,
+                  };
+
+                  for (let i = 0; i < new_arr.length; i++) {
+                    if (new_arr[i].lgea === num) {
+                      (final_obj.expected =
+                        final_obj.expected + new_arr[i].expected),
+                        (final_obj.completed += new_arr[i].stages == 1 ? 1 : 0),
+                        final_obj.school.push({
+                          date: new_arr[i].createdAt,
+                          school_name: new_arr[i].school_name,
+                          school_cat: new_arr[i].school_category,
+                          stages: new_arr[i].stages,
+                          images: new_arr[i].images,
+                        });
+                    }
+                  }
+
+                  final_obj.series = [
+                    (final_obj.completed / final_obj.expected) * 100,
+                  ];
+
+                  final_array.push(final_obj);
+
+                  num += 1;
+
+                  lgea_regulator.push(new_arr[j].lgea);
+                }
+              } else {
+                console.log("bounce");
+              }
+              break;
+            }
+          }
+        }
+      }
 
 
    
