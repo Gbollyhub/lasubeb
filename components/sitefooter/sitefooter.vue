@@ -27,7 +27,7 @@
           <br />Phone :
           <a href="tel:+2348150865676" class="inline-link-reverse">
             +2348150865676
-            <br>Email: info@lasubeb.lg.gov.ng<br>
+            <br>Email: lagos_subeb@lagosstate.gov.ng<br>
           </a>
         </div>
          <div class="twitter-embed w-embed w-script">
