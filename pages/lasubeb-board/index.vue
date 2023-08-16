@@ -4,7 +4,7 @@
       <search/>
       <div class="board-intro-container w-container">
         <h2 class="heading-2 featured"><span class="text-span">THE BOARD</span> COMPOSITION</h2>
-        <p class="board-composiiton-p">The Board under the Chairmanship of {{getHomepage.ChairmanName}} was appointed by the Lagos State Governor, His Excellency, Mr. Babajide Olushola Sanwo-Olu</p>
+        <p class="board-composiiton-p">{{description.PageDescription}}</p>
       </div>
       <div class="board-container-list w-container">
         <div v-for="member in getBoardMembers" :key="member.id" class="board-member-div-block">
@@ -39,6 +39,12 @@ export default {
     dataSection,
     Search
   },
+  async asyncData({ params }) {
+    const  data  = await axios.get('http://admin-cms.lasubeb.lg.gov.ng/board-composition-page')
+    return {
+      description: data.data
+      }
+   },
   data(){
   return{
     class1: 'board-img',
