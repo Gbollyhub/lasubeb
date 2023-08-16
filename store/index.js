@@ -257,7 +257,6 @@ const createStore = () => {
 
 
         vuexContext.dispatch('setLogo', logo)
-        vuexContext.dispatch('setLogo', logo)
         vuexContext.dispatch('setDepartment', department)
         vuexContext.dispatch('setStatutory', statutory)
 
@@ -327,6 +326,10 @@ const createStore = () => {
       },
 
 
+      setBoardPage(vuexContext, payload) {
+        vuexContext.commit('setBoardPage', payload)
+      },
+      
       setHomepage(vuexContext, payload) {
         vuexContext.commit('setHomepage', payload)
       },
