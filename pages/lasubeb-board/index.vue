@@ -42,7 +42,7 @@ export default {
   async asyncData({ params }) {
     const  data  = await axios.get('http://admin-cms.lasubeb.lg.gov.ng/board-composition-page')
     return {
-      description: data.data
+      description: data
       }
    },
   data(){
