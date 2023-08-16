@@ -5,7 +5,7 @@
       <h2 class="heading-2 featured"><span class="text-span">Message</span> {{getHomepage.ChairmanName}} | Executive Chairman LASUBEB</h2>
       <div class="message-container w-container">
         <div class="message-div-block w-clearfix">
-          <div class="home-message-img-mask"><img :src="getHomepage.Section1Image" alt="Executive Chairman, LASUBEB"  class="home-feature-img"></div>
+          <div class="home-message-img-mask"><img :src="getHomepage.section1Image" alt="Executive Chairman, LASUBEB"  class="home-feature-img"></div>
         </div>
         <div class="message-div-block mesage-content">
           <div class="p-detail-news" v-html="marked(getHomepage.ChairmanMessage)"></div>
