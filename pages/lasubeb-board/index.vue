@@ -4,7 +4,7 @@
       <search/>
       <div class="board-intro-container w-container">
         <h2 class="heading-2 featured"><span class="text-span">THE BOARD</span> COMPOSITION</h2>
-        <p class="board-composiiton-p">The Board under the Chairmanship of Hon. Wahab Alawiye-King was appointed by the Lagos State Governor, His Excellency, Mr. Babajide Olushola Sanwo-Olu on 11th September, 2019</p>
+        <p class="board-composiiton-p">The Board under the Chairmanship of {{getHomepage.ChairmanName}} was appointed by the Lagos State Governor, His Excellency, Mr. Babajide Olushola Sanwo-Olu</p>
       </div>
       <div class="board-container-list w-container">
         <div v-for="member in getBoardMembers" :key="member.id" class="board-member-div-block">
@@ -48,6 +48,7 @@ export default {
   computed:{
    ...mapGetters([
       'getBoardMembers',
+      'getHomepage'
    ])
   },
   methods:{
