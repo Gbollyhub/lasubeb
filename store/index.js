@@ -25,7 +25,7 @@ const createStore = () => {
       newProjects: [],
       rehabProjects: [],
       schoolProjects: [],
-      boardPage: {},
+      boardPage: [],
       logo: ''
     },
     getters: {
