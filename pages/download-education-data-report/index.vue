@@ -11,7 +11,7 @@
         </div>
         <nav class="emis-data-dropdown-list w-dropdown-list">
           <a @click="filterPost(0)" href="#" class="events-type w-dropdown-link">All</a>
-          <a @click="filterPost(item.id)" href="#" class="events-type w-dropdown-link" v-for="item in savePosts" :key="item.id">{{item.Year}}</a>
+          <a @click="filterPost(item.id)" href="#" class="events-type w-dropdown-link" v-for="item in posts" :key="item.id">{{item.Year}}</a>
         </nav>
       </div>
       <div v-for="item in posts" :key="item.id" data-hover="" data-delay="0" id="school-support-services" data-w-id="c4ed7f41-ecf5-0801-d027-e0b9094dc4fa" class="data-accordion w-dropdown">
@@ -20,7 +20,7 @@
           <div class="accordion-text-block w-clearfix">{{item.Year}}<span class="academic-dat-inline-span"></span></div>
         </div>
         <nav class="emis-data-detail w-dropdown-list">
-          <a download :href="item.DownloadUrl" class="data-narrative-block"><span class="file-download-icon"></span> Download Report</a>
+          <a target="_blank" download :href="item.DownloadUrl" class="data-narrative-block"><span class="file-download-icon"></span> Download Report</a>
         </nav>
       </div>
     </section>

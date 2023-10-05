@@ -96,6 +96,7 @@ export default {
   plugins: [
     { src : '~/plugins/vue-apexchart.js', ssr : false },
     { src : '~/plugins/vue-cool-lightbox.js', ssr : false },
+    { src : '~/plugins/vue-notifications.js', ssr : false },
   ],
   /*
   ** Auto import components
