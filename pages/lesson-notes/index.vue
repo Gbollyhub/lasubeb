@@ -60,14 +60,19 @@
           <div class="data-accordion-toggle w-dropdown-toggle">
             <div class="dept-unit-icon w-icon-dropdown-toggle"></div>
             <div class="accordion-text-block w-clearfix">
-              {{ item.Title }}<span class="academic-dat-inline-span"></span>
+              {{ item.Title }} - {{ item.Date }}<span class="academic-dat-inline-span"></span>
             </div>
           </div>
           <nav class="emis-data-detail w-dropdown-list">
+            <div>
+              {{ item.Description }}
+            </div>
             <a
+            :key="doc.id"
+            v-for="doc in item.Upload"
               target="_blank"
               download
-              :href="item.Url"
+              :href="doc.url"
               class="data-narrative-block"
               ><span class="file-download-icon"></span> Download Report</a
             >
@@ -99,7 +104,7 @@ export default {
   },
   async asyncData({ params }) {
     const postdata = await axios.get(
-      "http://admin-cms.lasubeb.lg.gov.ng/lesson-notes"
+      "https://cms2.lasubeb.lg.gov.ng/lesson-notes"
     );
     const newData = postdata.data.sort(function(a, b) {
       var c = new Date(a.created_at);
@@ -127,7 +132,7 @@ export default {
     async filterPost(id) {
       if (id == 0) {
         const postdata = await axios.get(
-          "http://admin-cms.lasubeb.lg.gov.ng/lesson-notes"
+          "https://cms2.lasubeb.lg.gov.ng/lesson-notes"
         );
         const newData = postdata.data.sort(function(a, b) {
           var c = new Date(a.created_at);
@@ -137,7 +142,7 @@ export default {
         this.posts = newData;
       } else {
         const data = await axios.get(
-          "http://admin-cms.lasubeb.lg.gov.ng/lesson-notes"
+          "https://cms2.lasubeb.lg.gov.ng/lesson-notes"
         );
         const newpost = data.data.filter(x => {
           return x.id == id;

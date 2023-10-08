@@ -11,7 +11,7 @@
         <div>
           <form @submit.prevent="login">
             <div class="auth-form-col">
-              <label for="name" class="auth-form-label">Username</label
+              <label for="name" class="auth-form-label">Email Address</label
               ><input
                 v-model="user.email_address"
                 type="text"
