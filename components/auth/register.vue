@@ -118,7 +118,10 @@ export default {
             {
               username: this.user.first_name,
               email: this.user.email_address,
-              password: this.user.password
+              password: this.user.password,
+              firstName: this.user.first_name,
+              lastName: this.user.last_name,
+              phoneNumber: this.user.phone_number,
             }
           );
           if (typeof window !== "undefined") {
