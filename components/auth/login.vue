@@ -1,8 +1,7 @@
 <template>
   <div class="auth-bg">
-    <notifications />
-
     <div class="auth-bg-cover">
+      <notifications position="bottom right"/>
       <div class="auth-div registration">
         <div class="auth-heading">
           <div class="auth-header">Login to access this page</div>
@@ -16,7 +15,7 @@
                 v-model="user.email_address"
                 type="text"
                 class="auth-input w-input"
-                placeholder="Enter your username"
+                placeholder="Enter your email address"
                 required
               />
             </div>
@@ -33,7 +32,7 @@
 
             <!-- <router-link to="/" class="auth-forgot-password">Forgot Password</router-link> -->
             <br />
-            <button type="submit" class="auth-btn">LOGIN</button>
+            <button type="submit" class="auth-btn">{{loading ? 'LOADING...' : 'LOGIN'}}</button>
           </form>
         </div>
 
