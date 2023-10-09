@@ -61,9 +61,13 @@ export default {
       };
       try {
         this.loading = true;
-        const user = await axios.post(`https://lasubeb-services.lasubeb.lg.gov.ng/login`, resData);
+        const user = await axios.post(`https://cms2.lasubeb.lg.gov.ng/auth/local`, 
+        {
+          identifier: this.user.email_address,
+          password: this.user.password  
+        });
         if (typeof window !== "undefined") {
-          localStorage.setItem("pk", user.data.token);
+          localStorage.setItem("pk", JSON.stringify(user.data.jwt));
 
           this.loading = false;
             this.user.email_address = "";
@@ -73,12 +77,12 @@ export default {
       } catch (error) {
         this.loading = false;
         this.$notify({
-          text: error.response.data.error,
+          text: error.response.data.message[0].messages[0].message,
           type: "error",
           duration: 3000,
           speed: 1000
         });
-        this.error = error.response.data.error;
+        this.error = error.response.data.message[0].messages[0].message;
       }
     }
   }

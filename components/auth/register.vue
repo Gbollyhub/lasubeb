@@ -114,8 +114,12 @@ export default {
         try {
           this.loading = true;
           await axios.post(
-            `https://lasubeb-services.lasubeb.lg.gov.ng/create-account`,
-            resData
+            `https://cms2.lasubeb.lg.gov.ng/auth/local/register`,
+            {
+              username: this.user.first_name,
+              email: this.user.email_address,
+              password: this.user.password
+            }
           );
           if (typeof window !== "undefined") {
             this.loading = false;
