@@ -3036,6 +3036,18 @@ blockquote {
   background-color: #002c61;
 }
 
+.lash-div {
+  position: absolute;
+  right: auto;
+  top: 60%;
+  left: 0px;
+  bottom: auto;
+  z-index: 99;
+  width: 10%;
+  padding: 5px;
+  background-color: #002c61;
+}
+
 @media screen and (max-width: 991px) {
   .emis-data-dropdown {
     width: 100%;
@@ -4077,7 +4089,14 @@ blockquote {
     margin-right: auto;
     margin-left: auto;
   }
+
   .ekoexcel-div {
+    top: 29%;
+    bottom: auto;
+    width: 20%;
+  }
+
+  .lash-div {
     top: 29%;
     bottom: auto;
     width: 20%;
@@ -4268,6 +4287,12 @@ blockquote {
     padding-left: 0px;
   }
   .ekoexcel-div {
+    top: 18%;
+    bottom: auto;
+    width: 25%;
+  }
+
+  .lash-div {
     top: 18%;
     bottom: auto;
     width: 25%;
