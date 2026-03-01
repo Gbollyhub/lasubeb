@@ -1,8 +1,8 @@
 <template>
   <div>
-    <a href="https://ekoexcel.ng/" target="_blank" class="ekoexcel-div w-inline-block">
-      <img src="../../assets/images/EKOEXCELReverseLogoWithoutDis_1619090875152.png" loading="lazy" width="300"
-        alt="Eko Excel">
+    <a href="https://www.educationoutcomesfund.org/post/request-for-proposals-lagos-education-and-access-fund" target="_blank" class="ekoexcel-div w-inline-block">
+      <img src="../../assets/images/eof.png" loading="lazy" width="300"
+        alt="Education Outcomes Fund">
     </a>
     <a href="https://lashma.com/" target="_blank" class="lash-div w-inline-block">
       <img src="../../assets/images/lashma.jpg" loading="lazy" width="300"
